@@ -1,4 +1,7 @@
 config/essentialpatcher-equipped.json
 *.disabled
 mods/Essential_1-4-0-3_neoforge_1-21-1.jar
-*.disabled
+mods/essentialpatcher-1.21.1-NeoForge-1.0.7.jar
+/fancymenu_data/seamless_world_loading
+config/iris.properties
+config/essentialpatcher.json
