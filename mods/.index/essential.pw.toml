@@ -1,18 +1,18 @@
-filename = 'Essential_1-4-1-1_neoforge_1-21-1.jar'
+filename = 'Essential_1-4-0-3_neoforge_1-21-1.jar'
 name = 'Essential Mod'
 side = 'client'
 x-prismlauncher-dependencies = []
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = '1.4.1.1'
+x-prismlauncher-version-number = '1.4.0.3'
 
 [download]
-hash = 'bef6c28584632783b204b38bc5d9cb594e5f5b0c59cd3a08c92fc8ebbb5f542cef310717c368149305a29271b4f269eb82dd50ef9ed00cc66f37e6866958fa38'
+hash = 'f6995367df2715188a768e7e17ffb527433af2b1bdbcea02e2601e28b6cd07620769fa030ac09356190f2cc338628f3447ad8aea1aaa0622e496324b01b23a4e'
 hash-format = 'sha512'
 mode = 'url'
-url = 'https://cdn.modrinth.com/data/k2ZPuTBm/versions/NbXyFjGP/Essential_1-4-1-1_neoforge_1-21-1.jar'
+url = 'https://cdn.modrinth.com/data/k2ZPuTBm/versions/iwh7HMa5/Essential_1-4-0-3_neoforge_1-21-1.jar'
 
 [update.modrinth]
 mod-id = 'k2ZPuTBm'
-version = 'NbXyFjGP'
+version = 'iwh7HMa5'
