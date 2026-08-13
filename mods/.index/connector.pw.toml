@@ -1,0 +1,25 @@
+filename = 'connector-2.0.0-beta.16+1.21.1-full.jar'
+name = 'Sinytra Connector'
+side = 'both'
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'beta'
+x-prismlauncher-version-number = '2.0.0-beta.16+1.21.1'
+
+[download]
+hash = '39094eb8c514db0ffc474bf64a95ebb1a55d50db6a68fcb1dc0fcaea2d1d1fdeb44aa73de9b77a07b04cb7d75741f7c0ac9bb63eae5ded225b2bb0695588c064'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/u58R1TMW/versions/9Bz9VtV5/connector-2.0.0-beta.16%2B1.21.1-full.jar'
+
+[update.modrinth]
+mod-id = 'u58R1TMW'
+version = '9Bz9VtV5'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'Aqlf1Shp'
+type = 'REQUIRED'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'FYpiwiBR'
+type = 'OPTIONAL'
