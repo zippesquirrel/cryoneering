@@ -1,3 +1,0 @@
-[client]
-	#Disable Flywheel block entity visualization and let Create render kinetic blocks with its normal block entity renderer.
-	disableFlywheelVisualization = false

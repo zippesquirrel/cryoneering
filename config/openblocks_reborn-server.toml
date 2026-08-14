@@ -1,4 +1,0 @@
-#Grave settings
-[grave]
-	#Whether a grave should capture player drops when a player dies.
-	generateOnPlayerDeath = true
