@@ -19,7 +19,7 @@
   "distant_kinetic_gpu_budget_mi_b": 32,
   "simulated_contraption_render_distance_percent": 50,
   "service_threads": 8,
-  "sub_division_size": 28.0,
+  "sub_division_size": 63.0,
   "sky_fog_distance": 96,
   "fog_intensity": 1.0,
   "fog_density": 0.0,

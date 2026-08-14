@@ -1,0 +1,50 @@
+/nutrition reset
+/disease risk
+/disease remove
+/time set midnight
+/time set day
+/disease all
+/disease reset
+/nutrition reset
+/tick freeze
+/time set 0
+/time set 613
+/time set 743
+/time set 743s
+/time set 356s
+/time set 631
+/time set 731s
+/time set 8731s
+/pmweather clear all
+/tick step
+/tick step 1s
+/pmweather clear all
+/tick unfreeze
+/pmweather clear all
+/tick freeze
+/data get entity @s
+/tick unfreeze
+/time set midnight
+/time set day
+/time set midnight
+/data get block -1731 66 -4617
+/data get block -1732 68 -4612
+/data get block -1731 67 -4617
+/powergrid source set -1729 65 -4614 5 50
+/summon minecraft:drowned
+/summon minecraft:spider
+/kill x
+/kill a393c645-acd6-4a82-9ec5-89a16dbd4f3e
+/kill ebd415c2-3501-4ca6-8881-6db7fe46a9fd
+/pmweather clear all
+/time set day
+/pmweather spawn squall buildto 3 99
+/time set midnight
+/time set day
+/pmweather spawn squall buildto 3 99
+/pmweather aimtoplayer
+/pmweather aimtoplayer all
+/tp Fuzzie_Jeff ~ 3000 ~
+/tp Fuzzie_Jeff ~ 0 ~
+/voxy debug
+/voxy reload
