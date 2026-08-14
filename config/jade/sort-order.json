@@ -1,4 +1,8 @@
 {
+  "eclipticseasons:animal": null,
+  "eclipticseasons:cauldron": null,
+  "eclipticseasons:crop": null,
+  "eclipticseasons:greenhouse_core": null,
   "jade:block_face": null,
   "jade:block_properties": null,
   "jade:block_states": null,
@@ -58,5 +62,7 @@
   "minecraft:total_enchantment_power": null,
   "minecraft:villager_profession": null,
   "minecraft:waxed": null,
-  "minecraft:zombie_villager": null
+  "minecraft:zombie_villager": null,
+  "thirst:fluid_storage": null,
+  "thirst:water_cauldron_fluid": null
 }

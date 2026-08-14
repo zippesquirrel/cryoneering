@@ -1,0 +1,114 @@
+#PMWeather Aeronautics config schema: 0.9.0b cleanup-2tick
+[general]
+	#Minimum PMWeather wind-vector magnitude before effects are applied. This stays in PMWeather/mph-style units even though physics wind is converted internally.
+	# Default: 8.0
+	# Range: 0.0 ~ 300.0
+	windThreshold = 8.0
+	#Allow ProtoManly's Weather native tornadic wind vectors, including their real vertical component, in sampled wind.
+	enableTornadoSuction = true
+
+[airflow_lift]
+	#Inject local PMWeather wind into Sable lift/drag calculations. Nearby compatible lift providers may share a component-local PMWeather probe, but every provider still keeps its own Sable lift/drag calculation at its own position.
+	enableAirflowLift = true
+	#How much local PMWeather wind is treated as aerodynamic airflow for Sable lift providers. 1.0 = realistic converted PMWeather wind speed.
+	# Default: 1.0
+	# Range: 0.0 ~ 40.0
+	airflowInfluence = 1.0
+	#How often component-local lift-provider airflow probes ask PMWeather for fresh wind, in game ticks. Cached wind is reused between updates.
+	# Default: 2
+	# Range: 1 ~ 200
+	airflowWindSampleIntervalTicks = 2
+	#Target edge length, in lift-provider blocks, for component-local airflow probe regions before the global wind budget applies extra LOD. 1 approaches one probe per provider; 4 groups nearby compatible lift providers while every provider still keeps its own Sable force calculation.
+	# Default: 4
+	# Range: 1 ~ 32
+	airflowRegionEdgeBlocks = 4
+	#Soft maximum target number of PMWeather airflow probes for one Sable sub-level before the global sample budget is divided between body patches and airflow. Per-component minimum representation may raise the target above this value when needed. This limits queries only; it does not remove lift providers or their Sable lift/drag forces.
+	# Default: 32
+	# Range: 1 ~ 8192
+	maxAirflowSamplesPerObject = 32
+	#Minimum target probes per connected, orientation/signature-compatible lift-provider component while budget permits. 1 keeps each separate lift-provider component represented before extra detail is allocated.
+	# Default: 1
+	# Range: 1 ~ 64
+	minAirflowSamplesPerComponent = 1
+	#Minimum desired airflow-probe ratio relative to discovered lift providers before the global hard budget applies. 0.5 means 10 lift providers target at least 5 PMWeather probes. This changes atmospheric sampling density only; every provider still performs its own Sable lift/drag calculation.
+	# Default: 0.5
+	# Range: 0.0 ~ 1.0
+	minAirflowSampleRatio = 0.5
+
+[body_wind]
+	#Apply exterior aerodynamic pressure to the whole Sable sub-level. Disable for pure lift/drag integration.
+	enableBodyPush = true
+	#If true, body aero pressure uses real air-relative wind by subtracting the Sable body's linear velocity from PMWeather wind. This prevents bodies from being accelerated past the local air speed in one direction.
+	enableBodyRelativeWindDrag = true
+	#Main whole-body wind strength after PMWeather mph-style wind is converted to block/second physics speed. Default 0.06 is tuned for the quadratic surface-pressure solver and Sable's kpg block mass scale. Tornado wind still ramps with wind speed squared, but normal 10-15 mph wind is calmer than the 0.7.5e 0.1 default.
+	# Default: 0.06
+	# Range: 0.0 ~ 100.0
+	windInfluence = 0.06
+	#Optional extra mass damping for body wind. 0.0 = no extra damping, 1.0 = strongest damping. Sable physics already handles real mass.
+	# Default: 0.0
+	# Range: 0.0 ~ 1.0
+	massScaling = 0.0
+	#Strength of the quadratic exterior surface-pressure solver. This multiplies dynamic wind pressure after PMWeather mph-style wind is converted to physics speed.
+	# Default: 1.0
+	# Range: 0.0 ~ 5.0
+	aeroPatchPressureStrength = 1.0
+	#How strongly exterior patch area affects body wind force. 1.0 = physical area weighting, so larger exposed faces catch more wind. 0.0 = equal patch weighting for old tuning.
+	# Default: 1.0
+	# Range: 0.0 ~ 1.0
+	aeroPatchAreaWeightStrength = 1.0
+	#High safety cap on the linear impulse applied to a sub-level during each Sable physics substep. This is intended to catch extreme spikes, not tune normal wind strength.
+	# Default: 2000.0
+	# Range: 0.0 ~ 100000.0
+	maxImpulsePerSubstep = 2000.0
+	#Maximum fraction of the current air-relative normal velocity that body wind pressure may correct in one Sable physics substep. Default 0.5 keeps protection against feedback/overshoot while leaving normal wind strength controlled by windInfluence.
+	# Default: 0.5
+	# Range: 0.0 ~ 1.0
+	maxAirRelativeVelocityCorrectionPerSubstep = 0.5
+
+[differential_torque]
+	#Allow real uneven-pressure aerodynamic torque from differences between exterior patch pressures. Uniform side pressure still uses a stable pressure line through the center of mass, but pressure variation across patches may add capped rotational impulse so airborne objects do not look stale.
+	enableDifferentialPressureTorque = true
+	#Strength multiplier for uneven-pressure torque. 0.0 disables the extra torque; 1.0 uses the full measured patch-pressure residual. Defaults below 1.0 keep small objects lively without reintroducing old sparse-sample spin.
+	# Default: 0.6
+	# Range: 0.0 ~ 2.0
+	differentialPressureTorqueStrength = 0.6
+	#High safety cap for added uneven-pressure torque impulse per Sable physics substep. This is intended to catch extreme spin spikes while leaving normal uneven-pressure torque mostly unmodified.
+	# Default: 1000.0
+	# Range: 0.0 ~ 100000.0
+	maxDifferentialTorqueImpulse = 1000.0
+
+[aero_patch_sampling]
+	#Maximum full-surface aero patches from one Sable object that may request fresh PMWeather wind during one body wind update when the global budget allows it.
+	# Default: 32
+	# Range: 0 ~ 8192
+	maxAeroPatchSamplesPerObject = 32
+	#Minimum percent of a full-resolution exterior patch set to preserve when smart patch LOD is forced by the wind sample budget. 0.05 means a 400-patch ship may merge down to about 20 representative patches.
+	# Default: 0.05
+	# Range: 0.0 ~ 1.0
+	minAeroPatchDetailPercent = 0.05
+	#Absolute minimum representative patch count for smart patch LOD on compact objects. 6 keeps simple test objects represented by their main pressure directions while the percent floor protects large ships.
+	# Default: 6
+	# Range: 1 ~ 256
+	minAeroPatchCount = 6
+	#Maximum number of full-resolution exterior patches cached per Sable object after greedy face merging. If a structure has more raw patches, tiny low-importance regions are merged more aggressively during cache build.
+	# Default: 4096
+	# Range: 64 ~ 32768
+	maxCachedAeroPatches = 4096
+
+[performance]
+	#How often each Sable sub-level asks PMWeather for body-push wind samples, in game ticks. Cached raw wind is reused between samples and Sable physics substeps. Default 2 = ten fresh updates per second at 20 TPS.
+	# Default: 2
+	# Range: 1 ~ 200
+	bodyWindSampleIntervalTicks = 2
+	#Global safety budget for fresh PMWeather wind queries per server tick. Body exterior patches and component-local lift-provider airflow probes share this budget, reduce spatial detail fairly, deduplicate exact coordinates, then fall back to cached/zero wind if the hard limit is still reached.
+	# Default: 128
+	# Range: 16 ~ 100000
+	maxWindSamplesPerTick = 128
+	#Distance outside each exposed body face where PMWeather wind is sampled. Increase only if nearby contraption blocks interfere with exterior sampling.
+	# Default: 2.0
+	# Range: 0.0 ~ 64.0
+	edgeWindSampleMargin = 2.0
+
+[debug]
+	#Log sampled wind and impulses occasionally. Very noisy when enabled.
+	debugLogging = false

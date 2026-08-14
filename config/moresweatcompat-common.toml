@@ -1,0 +1,2 @@
+#Increases the safe temperature range based on armor insulation, use 0.0 to disable
+insulationSafeFactor = 1.0

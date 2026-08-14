@@ -1,0 +1,27 @@
+{
+  "config_version": "2.0.33",
+  "config_datetime": "2026-08-13_19-20-00",
+  "general": {
+    "disable_all_structures": false,
+    "prevent_structure_overlap": false,
+    "enable_global_spacing_and_separation_modifier": false,
+    "global_spacing_and_separation_modifier": 1.0
+  },
+  "structure_namespaces": [],
+  "structures": [
+    {
+      "name": "minecraft:ancient_city",
+      "is_disabled": true
+    },
+    {
+      "name": "minecraft:mineshaft",
+      "is_disabled": true
+    },
+    {
+      "name": "minecraft:monument",
+      "is_disabled": true
+    }
+  ],
+  "structure_sets": [],
+  "structure_template_pools": []
+}

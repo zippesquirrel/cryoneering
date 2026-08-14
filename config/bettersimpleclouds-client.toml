@@ -1,0 +1,258 @@
+#Cloud mesh performance - reduces the cost of Simple Clouds' per-frame cloud mesh generation.
+[performance]
+	#EXPERIMENTAL, OFF by default - big FPS gain but GLITCHES BIG CLOUDS. Forces Simple Clouds'
+	#concurrent (fixed-section) cloud mesh generation. Simple Clouds normally meshes clouds one GPU
+	#dispatch per chunk with a blocking CPU<->GPU sync after EVERY chunk (its 'Concurrent Compute
+	#Dispatches' option), which serializes the GPU and can eat most of the frame at HIGH detail. The
+	#fast path removes those syncs - BUT it gives each cloud chunk a fixed, equal-size mesh slot, and a
+	#dense chunk in a big/storm cloud needs far more than its share, so it overflows and drops faces at
+	#random each frame: constant twitching, flattened cloud bottoms, and missing in-cloud interior. This
+	#is inherent to the fixed-section design (Simple Clouds ships it off for the same reason) and can't
+	#be fixed by enlarging buffers, so it's off here too. Turn on ONLY if you want raw FPS and your
+	#clouds are small/uniform. Toggling rebuilds the mesh generator, so you can compare on/off live.
+	optimizeMeshGeneration = false
+
+#Far-cloud LOD - tame how the cloud mesh coarsens in the distance, so far clouds don't degrade
+#into big single cubes.
+[lod]
+	#Cap the cloud LOD level (coarseness): clouds NEVER render coarser than this - the coarser LOD rings
+	#are rebuilt from more, finer cubes instead, so far clouds keep their shape rather than becoming
+	#single cubes. This does NOT cull anything; it adds geometry the lower you set it. 0 = off (stock
+	#LOD, cheapest). 1 = forces the finest, hugely expensive; 2-3 = a good middle ground. Applies live -
+	#changing it rebuilds the cloud mesh (a brief hitch); no F3+T or restart needed.
+	# Default: 0
+	# Range: 0 ~ 6
+	maxLodLevel = 0
+	#How aggressively LOD softens BIG clouds (the huge, connected/storm masses) with distance - thins
+	#their wispy edges as they coarsen. 0 = leave big clouds alone (usual choice - they're the dramatic
+	#ones you want to keep). Higher = even big clouds thin down far away. Never removes a cloud's core,
+	#so clouds always still render.
+	# Default: 0.0
+	# Range: 0.0 ~ 1.0
+	bigCloudLodStrength = 0.0
+	#How aggressively LOD softens SMALL clouds (anything that isn't a huge connected mass, even if
+	#large in shape) with distance. Raise this to declutter the far sky - small clouds thin out as they
+	#coarsen instead of littering the horizon - while big clouds (above) stay. Never removes a cloud's
+	#core, so clouds always still render. Keyed off cloud storminess, so it targets the right clouds.
+	# Default: 0.0
+	# Range: 0.0 ~ 1.0
+	smallCloudLodStrength = 0.0
+	#Cull far SMALL clouds outright. Beyond the nearest (full-detail) ring, any cloud whose storminess
+	#is below this threshold is dropped entirely - the real fix for far small clouds that render as
+	#single cubes (the LOD cap can't help them: a small cloud is only a few cells, so finer cells are
+	#still a few cubes). Big storm clouds (storminess at/above the threshold) are untouched. 0 = off;
+	#~0.3-0.5 removes calm/small clouds far away; 1.0 would remove everything but the stormiest.
+	# Default: 0.0
+	# Range: 0.0 ~ 1.0
+	farSmallCloudCull = 0.0
+	#Remove small isolated "floating" cloud clusters from far clouds, at ANY LOD-coarsened ring (not
+	#just the furthest one). A cube is removed only if its WHOLE connected cluster is at most this many
+	#cells, so a stray single cube or a tiny blob drifting off in an LOD chunk is deleted as a whole,
+	#while big formations (large connected clusters, including their thin edges and tendrils) are left
+	#completely intact - this can only ever delete a small floater, never erode or punch holes in a real
+	#cloud. 0 = off; 1 = remove only single cubes; 2-6 = also remove blobs up to that many cubes (more
+	#aggressive). Full-detail clouds right around the camera are never touched. Enabling this flood-fills
+	#far cloud cells - an opt-in mesh-gen cost that grows with the value.
+	# Default: 0
+	# Range: 0 ~ 6
+	minClusterNeighbors = 0
+
+#Storm fog (distant rain) - how Simple Clouds' far rain wall behaves.
+[storm]
+	#Make the distant rain (storm fog) render over the CLOUDS behind it - so it stays consistent and the
+	#shaderpack's distance blur applies to it - while STILL being cut off by real terrain. Simple Clouds'
+	#far rain is a screen-space effect that stops where the view ray hits the depth it samples, and it
+	#reads the CLOUD layer's depth: so by default, wherever a cloud sits behind the rain, the blurry rain
+	#is cut off and disappears. With this on, the rain instead tests against the world (terrain) depth -
+	#terrain in front still cuts it off (rain only renders over what's actually behind it in the world),
+	#but clouds no longer do. Only affects the shader render path; applies live. Off = stock Simple Clouds
+	#(distant rain cut off behind clouds).
+	rainBehindClouds = true
+	#Fully disable the blur on Simple Clouds' distant rain (storm fog). The far rain is rendered low-res
+	#and then run through a box blur that is blended over the WHOLE screen, which smears its softness onto
+	#the edges of everything - including a near rain mod's close particles (e.g. Pretty Rain). With this on
+	#that blur pass is skipped entirely, so the distant rain stays crisp and stops bleeding onto the near
+	#rain. The far rain still renders; only its blur is removed. Applies live.
+	disableRainBlur = false
+
+#Cloud transparency - fix how clouds' translucent edges render.
+[transparency]
+	#Fix the mottled, 'inside and outside coincide' look of a cloud's soft translucent edges when you see
+	#it through another cloud (worst on big clouds). Simple Clouds blends those edges with weighted-blended
+	#OIT whose per-fragment weight falls off steeply with distance (pow(1-z,3)): across a big cloud's thick
+	#translucent fringe a NEAR cube's weight dwarfs a FAR cube's, so the order-independent blend is dominated
+	#per-patch and reads as faces darker/lighter in a noise pattern (like the cloud's inside and outside
+	#coincide). With this on, Better Simple Clouds swaps in its own copy of the transparency shader that
+	#flattens that depth weighting (strength below) so near and far fringe contribute evenly and the noise
+	#clears. Only while the camera is OUTSIDE clouds - the in-cloud interior fill is left on stock weighting.
+	#Applies live. Off = stock Simple Clouds transparency. (Small clouds have thin fringes, so they already
+	#look fine either way.)
+	fixTransparentEdges = true
+	#How strongly the transparent-edge fix above flattens the OIT depth weighting, as a percent. 0 = stock
+	#Simple Clouds weighting (no change even with the fix on); 100 = fully flat, near and far fringe weighted
+	#the same (smoothest, though very distant fringe then contributes a little more). ~70-90 clears the
+	#big-cloud noise while keeping some front-to-back ordering. Only matters when the fix is on. Applies live.
+	# Default: 80
+	# Range: 0 ~ 100
+	transparentEdgeSmoothing = 80
+
+#In-cloud immersion - makes flying through a Simple Clouds cloud feel like being inside one: solid
+#faces so it isn't see-through, a filled interior that ramps to an opaque view-distance shell (so you
+#can't see across a huge cloud), drifting motes, and optional fog.
+[immersion]
+	#Master switch for the whole in-cloud immersion effect (interior fill, motes, fog).
+	enabled = true
+	#Make Simple Clouds generate ALL cloud faces, so clouds aren't see-through from inside or above.
+	#Simple Clouds normally culls faces pointing away from the camera to save performance, which leaves
+	#the far side of a cloud (and every face once you're inside) with no geometry - you see straight
+	#through. This regenerates those faces (near the camera only, so distant clouds don't turn into
+	#giant cubes). Turn off to keep Simple Clouds' default culling.
+	solidCloudFaces = true
+	#Fill a big cloud's otherwise-hollow interior while you're inside it. Simple Clouds emits
+	#translucent cubes for the solid cells around you that ramp to an OPAQUE shell at the view distance
+	#below, so you genuinely can't see across a huge cloud (it works under any shaderpack because it's
+	#real geometry). Only the actual cloud is filled, never open air. Applies live; all the values
+	#below tune it without a restart.
+	interiorFillEnabled = true
+	#How far (in blocks) you can see while inside a cloud. Translucent haze fills the space within this
+	#distance and an opaque cloud shell sits right at it, cutting off the view like fog underwater. The
+	#in-cloud fog (below) also uses this distance. Lower = thicker, more enclosed; higher = airier.
+	# Default: 32
+	# Range: 8 ~ 96
+	viewDistanceBlocks = 32
+	#How thick the interior haze is, per cloud cell. It builds up the further you look (exponential
+	#fog), so this is really your in-cloud visibility dial: LOWER = see further / clearer, HIGHER =
+	#murkier / see less. Independent of the view distance above (which only sets where the haze stops
+	#and the shell sits). The haze shares the cloud's own colour. Try 0.05-0.15 to see well inside.
+	# Default: 0.12
+	# Range: 0.0 ~ 1.0
+	interiorHazeOpacity = 0.12
+	#Draw a solid opaque cloud wall right at the view distance, so you truly can't see across a huge
+	#cloud (it also hides distant cloud chunks). Turn OFF for haze only - then how far you see is set
+	#purely by the haze opacity above, with no hard cut-off (airier, but you may see distant clouds).
+	solidViewShell = true
+	#Also draw real distance fog (cloud-coloured) while the camera is inside a cloud, ending at the
+	#view distance above. This is what limits the view when shaders are OFF; under an Iris shaderpack
+	#the pack controls fog and may ignore it, which is why the opaque shell above exists. Only ever
+	#applied while you're actually inside a cloud.
+	fogEnabled = true
+	#Multiplier on how many drifting motes fill the cloud. 1.0 = default; 0 = none. The count still
+	#scales with the cloud's storminess, so calm clouds stay sparse no matter what this is set to.
+	# Default: 1.0
+	# Range: 0.0 ~ 3.0
+	motesDensity = 1.0
+	#Soft-edge padding, in blocks, above and below the cloud layer - how gradually the effect fades in
+	#and out as you cross the top and bottom of the cloud. The layer's real height is detected
+	#automatically; this only controls the softness of that vertical edge.
+	# Default: 12
+	# Range: 0 ~ 64
+	verticalPaddingBlocks = 12
+	#Show a small diagnostic line at the top-left while in a world: the current envelopment and
+	#storminess, the horizontal/vertical detection factors, your camera Y, the detected cloud layer
+	#[bottom..top], and the cloud type at the camera. Handy for finding clouds; turn off when happy.
+	debugOverlay = false
+
+#Cloud appearance - how clouds blend into the scene, especially under an Iris shaderpack.
+[appearance]
+	#Soften where clouds meet terrain, in blocks. Simple Clouds' clouds are solid cubes that know nothing
+	#about the world, so where one cuts into a mountain you get a hard polygonal edge - and because the
+	#cloud face and the terrain then sit at almost exactly the same depth, they Z-FIGHT: the intersection
+	#flickers as the depth test flips between cloud and terrain from pixel to pixel and frame to frame.
+	#With this on, a cloud fades out as it approaches the terrain behind it, so the cut becomes a soft
+	#gradient AND the flickering stops (the cloud contributes nothing exactly where the two coincide).
+	#This is the distance over which it fades: 0 = off (stock hard edge); ~8-16 is a natural haze; higher
+	#makes clouds shy away from terrain more. REQUIRES A SHADERPACK (Iris): only then does Simple Clouds
+	#render clouds after the world, which is what makes the terrain depth available to fade against. With
+	#shaders off this does nothing, no matter what it's set to.
+	# Default: 12
+	# Range: 0 ~ 64
+	softTerrainFadeBlocks = 12
+	#Make clouds look good at night instead of flat grey blobs. At night Simple Clouds darkens the cloud
+	#colour to a near-uniform dark grey, which flattens out the subtle per-cube shading that gives a cloud
+	#its shape - so clouds read as featureless blobs. With this on, the cloud shaders re-open that crushed
+	#dark range, lift the exposure a little and add a cool moonlit cast, so the cloud's form is visible
+	#again and it looks moonlit rather than muddy. Only affects night (fades in after dusk, gone by day -
+	#daytime clouds are untouched), and works with or without a shaderpack. On by default.
+	betterNightClouds = true
+	#How strong the night look is, as a percent. 100 = the default moonlit grade; lower = closer to
+	#Simple Clouds' darker vanilla night; higher (up to 200) = brighter, more lifted night clouds. 0 = off
+	#(same as turning the toggle above off). Only matters when Better Night Clouds is on.
+	# Default: 100
+	# Range: 0 ~ 200
+	nightCloudBrightness = 100
+	#Moonlight scattering THROUGH the clouds - the silver lining. Cloud droplets scatter light
+	#overwhelmingly FORWARDS, which is why a cloud drifting across the moon lights up along its edge
+	#instead of just blocking it. Simple Clouds has no notion of the moon at all, so a cloud crossing
+	#a full moon simply goes flat grey. This adds a physically-shaped forward-scattering lobe around
+	#the moon's direction, so clouds near it glow and clouds away from it do not. It already scales
+	#itself by moon PHASE (a full moon is ~4.4x a quarter moon, and a new moon gives nothing), by the
+	#moon's altitude, by rain, and by time of day - so it is silent by day and in a storm without any
+	#extra tuning. 0 = off.
+	# Default: 75
+	# Range: 0 ~ 200
+	cloudMoonGlow = 75
+	#How tightly the moon glow hugs the moon, as a scattering asymmetry percent. 76 is a realistic
+	#cloud-droplet value: sharply peaked forward, so the lining reads as a bright RIM on the cloud in
+	#front of the moon. Lower spreads the light into a broader wash over more of the sky; higher
+	#concentrates it into a tighter, more dramatic halo right at the moon.
+	# Default: 76
+	# Range: 0 ~ 95
+	cloudMoonGlowSharpness = 76
+	#Make the clouds blend into a shaderpack-lit scene instead of looking like flat white cut-outs.
+	#Simple Clouds renders clouds with its own shader (Iris can't run them through the pack), so they
+	#miss the pack's atmosphere/tonemap. This tints distant clouds toward the scene's sky colour and
+	#tweaks exposure/saturation (values below). OFF by default so clouds keep their true colour; turn on
+	#only if you want to experiment - it's an approximation, not true pack rendering.
+	cloudShaderMatch = false
+	#How much the clouds are tinted toward the scene's sky/atmosphere colour. 0 = none (pure cloud
+	#colour); higher = clouds pick up the sky's hue more (better aerial perspective, less flat-white).
+	# Default: 0.25
+	# Range: 0.0 ~ 1.0
+	cloudSkyTint = 0.25
+	#Cloud exposure multiplier. 1.0 = unchanged (true colour). Under shaders, clouds can look too
+	#bright/washed next to the tonemapped terrain; below 1.0 dims them to match. Above 1.0 brightens.
+	# Default: 1.0
+	# Range: 0.2 ~ 2.0
+	cloudBrightness = 1.0
+	#Cloud colour saturation. 1.0 = unchanged; below 1 greys them out, above 1 deepens the tint.
+	# Default: 1.0
+	# Range: 0.0 ~ 2.0
+	cloudSaturation = 1.0
+	#Soften the far edge of the cloud field. Simple Clouds fades distant clouds in its own shader, but
+	#an Iris shaderpack replaces that shader, so the clouds just hard-cut at the render edge. This
+	#instead thins the cloud geometry to nothing over the last stretch before the edge, so the cloud
+	#field peters out at the horizon under any shaderpack. Independent of the master switch above.
+	farEdgeFade = true
+	#How much of the cloud render distance the far-edge fade covers, as a percent. 25 = clouds start
+	#thinning at 75% of the render distance and are gone by 100%. Higher = a longer, gentler fade;
+	#lower = clouds stay full further out but the fade is more abrupt.
+	# Default: 25
+	# Range: 0 ~ 90
+	farEdgeFadePercent = 25
+	#EXPERIMENTAL far-cloud fog resistance. Simple Clouds fades distant clouds into the fog colour,
+	#which washes out the clouds near the render edge. This holds that fade back so far/edge clouds
+	#stay vivid. 0 = stock fade; 1.0 = clouds keep their full colour all the way to the edge (can look
+	#like they don't sit in the haze). A testing dial for improving far clouds.
+	# Default: 0.0
+	# Range: 0.0 ~ 1.0
+	farCloudFogResist = 0.0
+	#Fog the clouds over their OWN distance instead of the terrain's. The cloud shader is handed the
+	#terrain fog range, but clouds are drawn over a far bigger area than you can see terrain across -
+	#so every cloud past the terrain fog end clamps to fully fogged and the whole sky flattens into one
+	#flat colour with no depth. This replaces that range with the two percentages below, taken from the
+	#cloud field's own extent, so clouds keep a real near-to-far gradient. Matters most with fog mods
+	#that pull the terrain fog in hard (Better Fog does, especially at night). Off = stock behaviour.
+	cloudFogOwnRange = true
+	#Where cloud fog STARTS, as a percent of the cloud field's extent. This is the important one: at 0
+	#the fog begins at the camera and washes every cloud, near ones included, which is what makes the
+	#cloud field read as a single flat colour. Pushing the start out keeps near clouds clean and lets
+	#only the distant ones haze off, which is what gives the sky depth. Must be below the end percent.
+	# Default: 35
+	# Range: 0 ~ 95
+	cloudFogStartPercent = 35
+	#Where cloud fog reaches FULL, as a percent of the cloud field's extent. 100 = a cloud at the very
+	#edge of the field is completely fogged out. Lower pulls the haze inward so clouds disappear
+	#sooner; higher keeps the farthest clouds partly visible.
+	# Default: 100
+	# Range: 10 ~ 100
+	cloudFogEndPercent = 100

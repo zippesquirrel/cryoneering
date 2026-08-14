@@ -2,7 +2,7 @@ type = user_variables
 
 variable {
   name = days
-  value = 0
+  value = 353
   reset_on_launch = false
 }
 

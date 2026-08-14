@@ -1,0 +1,18 @@
+filename = 'create_cold_sweat-1.1.2.jar'
+name = 'Create: Cold Sweat'
+side = 'both'
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.1.2'
+
+[download]
+hash = '738b939c9bceae91282b00e029f702ca3486ab433a1b69754a74784b10526d3c28db263f7ade947152c0c129ff321169e1ed32fb422572308567ab83860bc418'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/Arx7g8V4/versions/4B4BwhGn/create_cold_sweat-1.1.2.jar'
+
+[update.modrinth]
+mod-id = 'Arx7g8V4'
+version = '4B4BwhGn'

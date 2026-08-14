@@ -1,0 +1,90 @@
+renderDebugOverlay: false
+
+# Enables all non-essential shaders. Having this option enabled might cause issues with other rendering mods such as Distant Horizons
+enableCustomShaders: true
+
+moveStaminaOverlay:
+  # Background color of stamina status bar
+  backgroundColor: #FF000000
+
+  # Gradient start color of stamina status bar
+  barGradientStartColor: #FF00CE14
+
+  # Gradient end color of stamina status bar
+  barGradientEndColor: #FF007F0E
+
+  # Gradient start color of stamina status bar when reached critical treshold
+  barGradientStartCriticalColor: #FFC10000
+
+  # Gradient end color of stamina status bar when reached critical treshold
+  barGradientEndCriticalColor: #FF780000
+
+  # Toggles overlay rendering
+  enabled: true
+
+  # Horizontal alignment to be used by this overlay
+  # Allowed values:
+  # - LEFT
+  # - CENTER
+  # - RIGHT
+  horizontalAlignment: LEFT
+
+  # Vertical alignment to be used by this overlay
+  # Allowed values:
+  # - TOP
+  # - CENTER
+  # - BOTTOM
+  verticalAlignment: BOTTOM
+
+  # X position offset
+  x: 5
+
+  # Y position offset
+  y: -5
+
+armStaminaOverlay:
+  # Background color of stamina status bar
+  backgroundColor: #FF000000
+
+  # Gradient start color of stamina status bar
+  barGradientStartColor: #FF00B2C2
+
+  # Gradient end color of stamina status bar
+  barGradientEndColor: #FF004EC2
+
+  # Gradient start color of stamina status bar when reached critical treshold
+  barGradientStartCriticalColor: #FFC10000
+
+  # Gradient end color of stamina status bar when reached critical treshold
+  barGradientEndCriticalColor: #FF780000
+
+  # Toggles overlay rendering
+  enabled: true
+
+  # Horizontal alignment to be used by this overlay
+  # Allowed values:
+  # - LEFT
+  # - CENTER
+  # - RIGHT
+  horizontalAlignment: LEFT
+
+  # Vertical alignment to be used by this overlay
+  # Allowed values:
+  # - TOP
+  # - CENTER
+  # - BOTTOM
+  verticalAlignment: BOTTOM
+
+  # X position offset
+  x: 5
+
+  # Y position offset
+  y: -9
+
+# Configure which on screen hint types will be displayed on HUD
+# Allowed values:
+# - NONE
+# - ADVANCED
+# - ALL
+hintDisplayMode: ALL
+

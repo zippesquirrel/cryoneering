@@ -1,0 +1,41 @@
+[
+  {
+    "user": {
+      "type": "player",
+      "name": "Fuzzie_Jeff",
+      "uniqueId": "bac6d256-ec93-4470-998b-5e527286fce8"
+    },
+    "time": 1786680878178,
+    "type": "Profiler",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/UAfU8sgkbR"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "Fuzzie_Jeff",
+      "uniqueId": "bac6d256-ec93-4470-998b-5e527286fce8"
+    },
+    "time": 1786663821862,
+    "type": "Profiler",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/JgumBfyyT4"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "Fuzzie_Jeff",
+      "uniqueId": "bac6d256-ec93-4470-998b-5e527286fce8"
+    },
+    "time": 1786663485651,
+    "type": "Profiler",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/Fybmi0Ffps"
+    }
+  }
+]

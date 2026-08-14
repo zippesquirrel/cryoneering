@@ -1,0 +1,294 @@
+#Server to Client synced configuration settings
+["Damage System"]
+	#Max health of the Head
+	# Default: 4
+	# Range: > 2
+	maxHealthHead = 4
+	#Max health of the Left Arm
+	# Default: 4
+	# Range: > 2
+	maxHealthLeft_Arm = 4
+	#Max health of the Left Leg
+	# Default: 4
+	# Range: > 2
+	maxHealthLeft_Leg = 4
+	#Max health of the Left Foot
+	# Default: 4
+	# Range: > 2
+	maxHealthLeft_Foot = 4
+	#Max health of the Body
+	# Default: 6
+	# Range: > 2
+	maxHealthBody = 6
+	#Max health of the Right Arm
+	# Default: 4
+	# Range: > 2
+	maxHealthRight_Arm = 4
+	#Max health of the Right Leg
+	# Default: 4
+	# Range: > 2
+	maxHealthRight_Leg = 4
+	#Max health of the Right Foot
+	# Default: 4
+	# Range: > 2
+	maxHealthRight_Foot = 4
+	#True if the head can cause death if health drops to 0
+	causeDeathHead = true
+	#True if the body can cause death if health drops to 0
+	causeDeathBody = true
+
+	["Locational Armor".Armor]
+		#The multiplier for local armor for every armor of slot Head
+		# Default: 6.0
+		# Range: 0.0 ~ 16.0
+		multiplierHead = 6.0
+		#The multiplier for local armor for every armor of slot Chest
+		# Default: 2.5
+		# Range: 0.0 ~ 16.0
+		multiplierChest = 2.5
+		#The multiplier for local armor for every armor of slot Legs
+		# Default: 3.0
+		# Range: 0.0 ~ 16.0
+		multiplierLegs = 3.0
+		#The multiplier for local armor for every armor of slot Feet
+		# Default: 6.0
+		# Range: 0.0 ~ 16.0
+		multiplierFeet = 6.0
+		#The static offset applied to any armor piece with a value greater than zero of slot Head
+		# Default: 1.0
+		# Range: 0.0 ~ 4.0
+		offsetHead = 1.0
+		#The static offset applied to any armor piece with a value greater than zero of slot Chest
+		# Default: 0.0
+		# Range: 0.0 ~ 4.0
+		offsetChest = 0.0
+		#The static offset applied to any armor piece with a value greater than zero of slot Legs
+		# Default: 0.0
+		# Range: 0.0 ~ 4.0
+		offsetLegs = 0.0
+		#The static offset applied to any armor piece with a value greater than zero of slot Feet
+		# Default: 0.0
+		# Range: 0.0 ~ 4.0
+		offsetFeet = 0.0
+
+	["Locational Armor".Toughness]
+		#The multiplier for local armor for every armor of slot Head
+		# Default: 4.0
+		# Range: 0.0 ~ 16.0
+		multiplierHead = 4.0
+		#The multiplier for local armor for every armor of slot Chest
+		# Default: 3.0
+		# Range: 0.0 ~ 16.0
+		multiplierChest = 3.0
+		#The multiplier for local armor for every armor of slot Legs
+		# Default: 3.0
+		# Range: 0.0 ~ 16.0
+		multiplierLegs = 3.0
+		#The multiplier for local armor for every armor of slot Feet
+		# Default: 3.5
+		# Range: 0.0 ~ 16.0
+		multiplierFeet = 3.5
+		#The static offset applied to any armor piece with a value greater than zero of slot Head
+		# Default: 0.0
+		# Range: 0.0 ~ 4.0
+		offsetHead = 0.0
+		#The static offset applied to any armor piece with a value greater than zero of slot Chest
+		# Default: 0.0
+		# Range: 0.0 ~ 4.0
+		offsetChest = 0.0
+		#The static offset applied to any armor piece with a value greater than zero of slot Legs
+		# Default: 0.0
+		# Range: 0.0 ~ 4.0
+		offsetLegs = 0.0
+		#The static offset applied to any armor piece with a value greater than zero of slot Feet
+		# Default: 0.0
+		# Range: 0.0 ~ 4.0
+		offsetFeet = 0.0
+
+	["Internal Healing".bandage]
+		#The total heals this item does when applied. 1 heal = half a heart
+		# Default: 4
+		# Range: 1 ~ 127
+		totalsHeals = 4
+		#The time it takes for a single heal to trigger. Total time this item is active = this * totalHeals
+		# Default: 18
+		# Range: 1 ~ 32767
+		secondsPerHeal = 18
+		#The time it takes in the GUI to apply the item in milliseconds
+		# Default: 3000
+		# Range: 0 ~ 16000
+		applyTime = 3000
+
+	["Internal Healing".plaster]
+		#The total heals this item does when applied. 1 heal = half a heart
+		# Default: 2
+		# Range: 1 ~ 127
+		totalsHeals = 2
+		#The time it takes for a single heal to trigger. Total time this item is active = this * totalHeals
+		# Default: 22
+		# Range: 1 ~ 32767
+		secondsPerHeal = 22
+		#The time it takes in the GUI to apply the item in milliseconds
+		# Default: 3000
+		# Range: 0 ~ 16000
+		applyTime = 3000
+
+["External Healing"]
+	#Allow vanilla's natural regeneration. Requires "allowOtherHealingItems" to be true
+	#**WARNING** This sets the gamerule "naturalRegeneration" for all of your worlds internally, so it persists even if you remove the mod
+	allowNaturalRegeneration = false
+	#If false, healing potions and other healing items will have no effect
+	allowOtherHealingItems = true
+	#Specifies how much percent of the max health should be restored when sleeping
+	# Default: 0.07
+	# Range: 0.0 ~ 1.0
+	sleepHealPercentage = 0.07
+	#The value external regen will be multiplied with. Has no effect if "allowOtherHealingItems" is disabled
+	# Default: 0.75
+	# Range: 0.0 ~ 20.0
+	otherRegenMultiplier = 0.75
+	#The value vanilla's natural regeneration will be multiplied with. Has no effect if "allowNaturalRegeneration" is disabled
+	# Default: 0.5
+	# Range: 0.0 ~ 20.0
+	naturalRegenMultiplier = 0.5
+	#Persistent mode for /firstaid naturalregen
+	#Allowed Values: OFF, LIMITED, LIMITED2, FULL
+	naturalRegenMode = "LIMITED"
+	#Persistent strategy for /firstaid naturalregen
+	#Allowed Values: CRITICAL, RANDOM
+	naturalRegenStrategy = "CRITICAL"
+	#Specifies how the vanilla resistance potion effect should reduce damage.
+	#By default, one level of resistance reduces 20% of damage. Changing this value to e.g. 10 will reduce the reduction to 10% damage reduction per level
+	# Default: 20
+	# Range: 1 ~ 40
+	resistanceReductionPercentPerLevel = 20
+
+[misc]
+	#If true, max health is scaled to your hearts, and the config entries get multiplier to match the max health
+	scaleMaxHealth = true
+	#If true, max health will be capped at 6 hearts and absorption at 2 hearts per limb. If false, the health cap will be much higher (64 hearts normal and 16 absorption)
+	capMaxHealth = true
+	#Specifies how the vanilla health is calculated. Affects the vanilla visual health bar, as well as the value other mods get to see when they query the player health.
+	#AVERAGE_ALL simply takes all limbs and calculates the average of it.
+	#AVERAGE_CRITICAL takes all critical limbs and calculates the average of it.
+	#MIN_CRITICAl takes the smallest health value of all critical limb.
+	#Does not have any effect if all critical limbs have been disabled.
+	#Allowed Values: AVERAGE_ALL, AVERAGE_CRITICAL, MIN_CRITICAL, CRITICAL_50_PERCENT_OTHER_50_PERCENT
+	vanillaHealthCalculation = "AVERAGE_ALL"
+	#If enabled, random damage distributions can leave critical limbs at 1hp if possible.
+	#When there is too much damage, the damage will still kill the player. Non-random distributions are not affected by this.
+	useFriendlyRandomDistribution = true
+	#Chance for friendly random damage behavior to trigger. 0 disables the protection roll, 1 always applies it when useFriendlyRandomDistribution is enabled.
+	# Default: 0.800000011920929
+	# Range: 0.0 ~ 1.0
+	friendlyRandomDistributionChance = 0.800000011920929
+	#If set to LOCAL_ENCHANTMENTS, only the enchantments for the armor for the body part that is currently being damaged is taken into account. The strength of the armor is multiplied by 4 (default value, can be changed by enchantmentMultiplier), so it matches the vanilla default
+	#If set to GLOBAL_ENCHANTMENTS, the enchantments of all armor pieces are taken into account for all body parts that have any kind of armor.
+	#Allowed Values: GLOBAL_ENCHANTMENTS, LOCAL_ENCHANTMENTS
+	armorEnchantmentMode = "LOCAL_ENCHANTMENTS"
+
+["Command Settings"]
+	#Persistent toggle for /firstaid pain (dynamic vs mild)
+	dynamicPainEnabled = true
+	#Pain level used when /firstaid pain mild is active
+	# Default: 1
+	# Range: 1 ~ 5
+	mildPainLevel = 1
+	#Enable red screen vignette overlay when in pain
+	enablePainVignette = true
+	#Enable radial pain blur / weak suppression warp post-processing
+	enablePainBlur = true
+	#Enable FOV compression (tunnel vision) when in pain
+	enablePainFovCompression = true
+	#Enable severe pain audio effects (tinnitus sound)
+	enablePainAudioEffects = true
+	#Persistent toggle for /firstaid suppression (dynamic vs mild)
+	lowSuppressionEnabled = true
+	#Persistent toggle for projectile near-miss suppression
+	projectileSuppressionEnabled = true
+	#Visual suppression intensity multiplier used when /firstaid suppression mild is active
+	# Default: 0.4
+	# Range: 0.0 ~ 1.0
+	lowSuppressionMultiplier = 0.4
+	#Persistent toggle for /firstaid revivewakeup (on vs off)
+	rescueWakeUpEnabled = true
+	#Persistent delay in seconds for /firstaid revivewakeup on [seconds]
+	# Default: 15.0
+	# Range: 0.0 ~ 3600.0
+	rescueWakeUpDelaySeconds = 15.0
+	#Maximum health fraction natural regeneration can restore in limited modes
+	# Default: 0.85
+	# Range: 0.0 ~ 1.0
+	naturalRegenLimitRatio = 0.85
+	#Critical limb health fraction at or below which critical natural regeneration is prioritized
+	# Default: 0.85
+	# Range: 0.0 ~ 1.0
+	naturalRegenCriticalPriorityRatio = 0.85
+	#Persistent toggle for /firstaid medicineeffect (realistic/assisted/casual)
+	#Allowed Values: REALISTIC, ASSISTED, CASUAL
+	medicineEffectMode = "REALISTIC"
+	#Multiplier applied to medicine timing; command presets set this to realistic=1.0, assisted=0.5, casual=0.25
+	# Default: 1.0
+	# Range: 0.01 ~ 20.0
+	medicineTimingMultiplier = 1.0
+	#Exact morphine activation delay in seconds
+	# Default: 10.0
+	# Range: 0.0 ~ 3600.0
+	morphineActivationDelaySeconds = 10.0
+	#Exact painkiller activation delay in seconds
+	# Default: 30.0
+	# Range: 0.0 ~ 3600.0
+	painkillerActivationDelaySeconds = 30.0
+	#Use duration of morphine in ticks (20 ticks = 1 second)
+	# Default: 40
+	# Range: 1 ~ 72000
+	morphineUseDuration = 40
+	#Use duration of painkillers in ticks (20 ticks = 1 second)
+	# Default: 32
+	# Range: 1 ~ 72000
+	painkillersUseDuration = 32
+	#Use duration of adrenaline injector in ticks (20 ticks = 1 second)
+	# Default: 40
+	# Range: 1 ~ 72000
+	adrenalineUseDuration = 40
+	#Use duration of morphine injector in ticks (20 ticks = 1 second)
+	# Default: 40
+	# Range: 1 ~ 72000
+	morphineInjectorUseDuration = 40
+	#If true, critically downed players can crawl slowly during the first 60% of the downed timer
+	criticalCrawlEnabled = true
+	#If true, opioid medicines build addiction and can trigger episodic withdrawal
+	addictionEnabled = true
+	#Persistent toggle for /firstaid injurydebuff (normal/low/off)
+	#Allowed Values: NORMAL, LOW, OFF
+	injuryDebuffMode = "NORMAL"
+	#Damage and healing scale used when /firstaid injurydebuff low is active
+	# Default: 0.4
+	# Range: 0.0 ~ 1.0
+	lowInjuryDebuffDamageScale = 0.4
+	#Amplifier scale used when /firstaid injurydebuff low is active
+	# Default: 0.5
+	# Range: 0.0 ~ 1.0
+	lowInjuryDebuffAmplifierScale = 0.5
+	#Duration scale used when /firstaid injurydebuff low is active
+	# Default: 0.5
+	# Range: 0.0 ~ 1.0
+	lowInjuryDebuffDurationScale = 0.5
+	#Per-effect overrides for /firstaid injurydebuff. Format: modid:effect=normal|low|off
+	injuryDebuffOverrides = []
+	#Entity type ids that cannot trigger suppression near-miss effects
+	suppressionEntityBlacklist = ["minecraft:potion"]
+	#If true, operators receive the FirstAid admin command tip when joining a world
+	commandTipsEnabled = true
+
+["Enchantment Handling"]
+	#Specifies the default modifier. This is only used if armorEnchantmentMode is LOCAL_ENCHANTMENTS, as this is used scale up the values to somewhat match what vanilla balances around (as vanilla balances around global enchantments)
+	# Default: 4
+	# Range: 0 ~ 4
+	enchantmentMultiplier = 4
+	#Specifies the overrides for the the modifier. This is only used if armorEnchantmentMode is LOCAL_ENCHANTMENTS. This can be used to set another multiplier for special enchantments
+	#This list specifies the resource location of the enchantment. Must be fully specified and cannot use wildcard. Example: minecraft:feather_falling. First entry here will be matched to first multiplier, second entry to second multiplier and so on
+	resourceLocations = ["minecraft:feather_falling"]
+	#Specifies the overrides for the the modifier. This is only used if armorEnchantmentMode is LOCAL_ENCHANTMENTS. This can be used to set another multiplier for special enchantments
+	#This list specifies the multiplier of the corresponding resource location. See resourceLocations comment. Must be between 0 and 4
+	overrideMultiplier = [2]

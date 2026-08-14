@@ -1,0 +1,32 @@
+filename = 'ploughandroll-1.2.0-alpha.1.jar'
+name = 'Create Aeronautics Addon: Plough & Roll!'
+side = 'both'
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'alpha'
+x-prismlauncher-version-number = '1.2.0'
+
+[download]
+hash = 'a77a0a0beba6a3d97aa2e8566e864e4139bb409bd8661e34174cd5c8ffb076748e9d38bf4d453e8bcc1ffc93016082bf6dec2c3a34fe341fe39f0dffd8ef5794'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/Sfzf8W4g/versions/eM1nMgs4/ploughandroll-1.2.0-alpha.1.jar'
+
+[update.modrinth]
+mod-id = 'Sfzf8W4g'
+version = 'eM1nMgs4'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'LNytGWDc'
+type = 'REQUIRED'
+version = 'UjX6dr61'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'oWaK0Q19'
+type = 'REQUIRED'
+version = 'w7zlLnea'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'T9PomCSv'
+type = 'REQUIRED'
+version = 'hyQUls27'

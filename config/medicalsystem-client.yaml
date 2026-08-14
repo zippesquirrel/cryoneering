@@ -1,0 +1,50 @@
+healthOverlay:
+  # Health overlay scale
+  scale: 1.0
+
+  # Health overlay transparency
+  transparency: 136
+
+  # Overlay color for dead limbs
+  deadLimbColor: #444444
+
+  # Color schema used for color blending of limb overlay based on the part health
+  colorSchema:
+    - #00FF00
+    - #FFFF00
+    - #FF0000
+
+  # Toggles overlay rendering
+  enabled: true
+
+  # Horizontal alignment to be used by this overlay
+  # Allowed values:
+  # - LEFT
+  # - CENTER
+  # - RIGHT
+  horizontalAlignment: LEFT
+
+  # Vertical alignment to be used by this overlay
+  # Allowed values:
+  # - TOP
+  # - CENTER
+  # - BOTTOM
+  verticalAlignment: TOP
+
+  # X position offset
+  x: 0
+
+  # Y position offset
+  y: 0
+
+# Allows you to toggle default health HUD overlay
+renderHealth: true
+
+# Set limb health detail render mode
+# Allowed values:
+# - NUMERIC
+# - HEARTS
+healthDisplayType: HEARTS
+
+numericHealthScale: 1
+

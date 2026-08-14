@@ -1,0 +1,144 @@
+		#General settings
+		[general_1.3.3]
+			#肢体血量系数
+			# Default: 1.0
+			# Range: 0.0 ~ 1000.0
+			BODY_LIFE_FACTOR = 1.0
+			#启用伤口治疗，关闭生命盾
+			TRADITION_HEALING = false
+			#生命盾衰减率(越大越慢)
+			# Default: 60.0
+			# Range: 1.0 ~ 3.4028234663852886E38
+			HEALTH_SHIELD_REDU = 60.0
+			#回血系数
+			# Default: 0.5
+			# Range: 0.0 ~ 1000.0
+			HEALING_FACTOR = 0.5
+			#绷带回复增益系数
+			# Default: 2.0
+			# Range: 0.0 ~ 10.0
+			BANDAGE_ACC = 2.0
+			#烧伤出血系数
+			# Default: 0.5
+			# Range: 0.0 ~ 10.0
+			BURN_BLEED_RATIO = 0.5
+			#内伤出血系数
+			# Default: 0.2
+			# Range: 0.0 ~ 10.0
+			INTERNAL_BLEED_RATIO = 0.2
+			#开放伤出血系数
+			# Default: 0.8
+			# Range: 0.0 ~ 10.0
+			OPEN_WOUND_BLEED_RATIO = 0.8
+			#饱食度恢复系数
+			# Default: 4.0
+			# Range: 1.0 ~ 3.4028234663852886E38
+			INTERNAL_FOOD_HEALING = 4.0
+			#出血-失血转化系数
+			# Default: 0.005
+			# Range: 0.0 ~ 3.4028234663852886E38
+			BLEED_VOLUME_RATIO = 0.005
+			#成瘾-戒断转化系数
+			# Default: 0.03
+			# Range: 0.0 ~ 3.4028234663852886E38
+			WITHDRAW_RATIO = 0.03
+			#伤口自愈系数
+			# Default: 500
+			# Range: > 1
+			BASE_SELF_HEALING_TIME = 500
+			#药品有效时间系数
+			# Default: 100
+			# Range: > 1
+			BASE_MED_AVAILABLE_TIME = 100
+			#出血自愈系数
+			# Default: 200
+			# Range: > 1
+			VOLUME_SELF_HEALING_TIME = 200
+			#治愈-抗性转化系数
+			# Default: 0.02
+			# Range: 0.0 ~ 1.0
+			RESISTANCE_CONVERT_RATIO = 0.02
+			#抗性上限
+			# Default: 0.4
+			# Range: 0.0 ~ 1.0
+			RESISTANCE_MAX = 0.4
+			#伤口脱臼阈值
+			# Default: 0.1
+			# Range: 0.0 ~ 2.0
+			BASE_DISLOCATION_THRESHOLD = 0.1
+			#伤口骨折阈值
+			# Default: 0.25
+			# Range: 0.0 ~ 2.0
+			BASE_FRACTURE_THRESHOLD = 0.25
+			#脱臼概率上限
+			# Default: 0.8
+			# Range: 0.0 ~ 1.0
+			BASE_DISLOCATION_MAX_PROB = 0.8
+			#骨折概率上限
+			# Default: 0.8
+			# Range: 0.0 ~ 1.0
+			BASE_FRACTURE_MAX_PROB = 0.8
+			#动脉出血-失血速度
+			# Default: 0.015
+			# Range: 0.0 ~ 1.0
+			FRACTURE_ARTERIAL_PROB = 0.015
+			#气胸概率
+			# Default: 0.05
+			# Range: 0.0 ~ 1.0
+			BASE_PNEUMOTHORAX_PROB = 0.05
+			#截肢阈值
+			# Default: 0.05
+			# Range: 0.0 ~ 2.0
+			BASE_AMPUTATION_THRESHOLD = 0.05
+			#截肢最大概率
+			# Default: 0.3
+			# Range: 0.0 ~ 1.0
+			BASE_AMPUTATION_MAX_PROB = 0.3
+			#允许濒死倒地
+			ALLOW_DOWN = true
+			#允许医生村民治疗
+			PLAYER_DOCTOR_HEALING = true
+			#头部贯穿伤-脑损伤概率
+			# Default: 0.7
+			# Range: 0.0 ~ 1.0
+			BYPASS_BRAIN_DAMAGE_PROB = 0.7
+			#贯穿伤-体内异物概率
+			# Default: 0.8
+			# Range: 0.0 ~ 1.0
+			BYPASS_FOREIGN_PROB = 0.8
+			#允许玩家倒地发光
+			DOWN_GLOWING = true
+			#允许玩家倒地爬行
+			PLAYER_DOWN_MOVING = true
+			#伤害部位严格等级：0-随机部位，1-少量部位约束，2-大量部位约束，3-严格部位
+			# Default: 2
+			# Range: 0 ~ 3
+			DAMAGE_PART_STRICK_LEVEL = 2
+			#受限的部位生命损伤
+			LIMITED_BODY_PART_VITALITY_LOST = true
+			#启用长生久视buff
+			ENABLE_LIVING_EFFECT = true
+			#启用放弃治疗
+			ENABLE_SELF_SUICIDE = true
+			#健康小人ui的x位置
+			# Default: 308
+			# Range: > 0
+			SMALL_CONDITION_X = 308
+			#健康小人ui的y位置
+			# Default: 214
+			# Range: > 0
+			SMALL_CONDITION_Y = 214
+			#健康小人ui的渐隐时间(-1为永不消失, -2为永不显示)
+			# Default: 3
+			# Range: > -2
+			SMALL_CONDITION_DISAPPEAR_DELAY = 3
+			#启用改型护甲计算
+			ARMOR_RECALCULATE = true
+			#护甲格挡恢复延迟
+			# Default: 5.0
+			# Range: 0.0 ~ 3.4028234663852886E38
+			BLOCK_RECOVER_DELAY = 5.0
+			#护甲格挡恢复速度
+			# Default: 0.1
+			# Range: 0.0 ~ 1.0
+			BLOCK_RECOVER_SPEED = 0.1

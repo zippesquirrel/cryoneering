@@ -1,0 +1,21 @@
+filename = 'diy_campfires-1.21.1neo-1.3.0.1.jar'
+name = 'DIY Campfires'
+side = 'both'
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21', '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.3.0.1'
+
+[download]
+hash = 'ee5553d439987974c1e08efdd29ab9fb25b939ead8c2722539da6e44f9d210e8ac7c22fd8e439cda1d133bfd503a34cdcbd7b2e4cdceca53f1b30daa09d7ad6e'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/iwRW9fBQ/versions/NcztYV8I/diy_campfires-1.21.1neo-1.3.0.1.jar'
+
+[update.modrinth]
+mod-id = 'iwRW9fBQ'
+version = 'NcztYV8I'
+
+[[x-prismlauncher-dependencies]]
+addonId = '5rSUyK0f'
+type = 'OPTIONAL'

@@ -1,0 +1,81 @@
+filename = 'betterdays-1.21.1-3.3.6.3-NEOFORGE.jar'
+name = 'Better Days'
+side = 'server'
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'NeoForge 1.21.1-3.3.6.3-NEOFORGE'
+
+[download]
+hash = '0beeb796055f8abdebb9304fe26b655068a52a9c'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 7978626
+project-id = 895618
+
+[[x-prismlauncher-dependencies]]
+addonId = '321283'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '634466'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '1122223'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '1071230'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '1118306'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '682683'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '291874'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '1144299'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '1076278'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '322036'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '676800'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '1320084'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '294667'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '276951'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '457570'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '459701'
+type = 'OPTIONAL'

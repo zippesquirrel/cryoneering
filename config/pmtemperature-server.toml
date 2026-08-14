@@ -1,0 +1,3 @@
+#Accounts for factors such as dew point and wind speed when calculating the temperature to supply to Cold Sweat.
+#This option may increase gameplay difficulty and should be disabled for casual play.
+use_apparent_temperature = false

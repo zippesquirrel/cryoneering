@@ -1,0 +1,26 @@
+filename = 'pmweather-1.21.1-0.17.10-alpha.jar'
+name = "ProtoManly's Weather"
+side = 'both'
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'alpha'
+x-prismlauncher-version-number = '0.17.10-alpha'
+
+[download]
+hash = 'fc13c230782a869f977d22c3d7d432857eac0e30a48f7e420dd6b5d516af916e0dfc637f96a11687b976acf856e384f9731c4cb9e7f8fce147a63876dffe3355'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/TfCsmTLI/versions/7VkfNYsM/pmweather-1.21.1-0.17.10-alpha.jar'
+
+[update.modrinth]
+mod-id = 'TfCsmTLI'
+version = '7VkfNYsM'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'YL57xq9U'
+type = 'INCOMPATIBLE'
+
+[[x-prismlauncher-dependencies]]
+addonId = '3KUWeVhG'
+type = 'EMBEDDED'
+version = 'S2FKHf1q'
