@@ -1,0 +1,18 @@
+filename = 'glowtone-neoforge-1.21.1-1.0.3-beta1.jar'
+name = 'Glowtone: Shaderless Shaders'
+side = 'both'
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21', '1.21.1' ]
+x-prismlauncher-release-type = 'beta'
+x-prismlauncher-version-number = '1.0.3-beta1-mc1.21.1-NeoForge'
+
+[download]
+hash = '69fd8c8582232fb5d73f6a548e7576d612ddfb3f5be6f0d9852b9b9c6eacd9da33feecd0fd74223e82f0379c59385a956a2337e613ef9e3bb3a36ed12371f40a'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/8yXsqoAM/versions/hNl3GZQg/glowtone-neoforge-1.21.1-1.0.3-beta1.jar'
+
+[update.modrinth]
+mod-id = '8yXsqoAM'
+version = 'hNl3GZQg'

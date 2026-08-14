@@ -1,0 +1,2 @@
+#Use LambDynamicLights lighting system instead of Veil.
+useLamb = true

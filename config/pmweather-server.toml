@@ -1,0 +1,157 @@
+[modules]
+	#Whether damage should be done by weather
+	dodamage = true
+	#Whether the mod's custom plants are enabled
+	useseasonalplants = true
+	#Whether the mod will generate any grass
+	dograssgeneration = true
+	#Whether the mod will update chunks in the world that stayed unloaded for an amount of time for seasons (will cause some performance loss with chunk loading)
+	doseasonallevelupdater = true
+	#Whether logs will rot whenever trees lose their leaves
+	dorotting = true
+	#Whether the mod's custom fire system is used
+	dowildfires = true
+	#Whether tornadoes should be possible
+	dotornadoes = true
+	#Whether cyclones should be possible
+	docyclones = true
+	#Whether squalls should be possible
+	dosqualls = true
+	#Whether debarking will be applied to logs
+	dodebarking = true
+	#Whether seasons exist
+	doseasons = true
+	#Whether temperatures affect crop growth and death
+	seasonalcrops = true
+
+[spawning]
+	#Range within which clouds and storms will spawn from players
+	# Default: 384
+	# Range: 256 ~ 2048
+	spawnrange = 384
+	#1 in x chance that a spawning storm will spawn as a squall
+	# Default: 10
+	# Range: 1 ~ 100
+	chanceinonesquall = 10
+	#1 in x chance that a spawning storm will spawn as a cyclone
+	# Default: 64
+	# Range: 1 ~ 100
+	chanceinonecyclone = 64
+	#1 in x chance that a storm will progress to stage 1
+	# Default: 2
+	# Range: 1 ~ 100
+	chanceinonestage1 = 2
+	#1 in x chance that a storm will progress to stage 2
+	# Default: 3
+	# Range: 1 ~ 100
+	chanceinonestage2 = 3
+	#1 in x chance that a storm will progress to stage 3 / tornado
+	# Default: 5
+	# Range: 1 ~ 100
+	chanceinonestage3 = 5
+	#Chance a storm will spawn each minute
+	# Default: 0.2
+	# Range: 0.0 ~ 1.0
+	stormspawnchanceperminute = 0.2
+	#Whether chance to spawn storms and chance for storms to progress is affected by the game environment
+	environmentsystem = true
+	#Risk curve, higher is rarer
+	# Default: 1.0
+	# Range: 0.5 ~ 2.0
+	riskcurve = 1.0
+	#Maximum number of active storms allowed to spawn
+	# Default: 3
+	# Range: 1 ~ 10
+	maxstorms = 3
+
+[storms]
+	#Multiplier of squall windspeeds
+	# Default: 1.25
+	# Range: 0.0 ~ 2.0
+	squallstrengthmultiplier = 1.25
+	#Maximum precipitation accumulation, 0 = off
+	# Default: 6
+	# Range: 0 ~ 8
+	snowaccumulationheight = 6
+	#List of blocks and respective windspeed at which they get damaged
+	blockstrengths = ["pmweather:reinforced_glass=140", "pmweather:reinforced_glass_pane=130", "minecraft:acacia_leaves=55", "minecraft:azalea_leaves=55", "minecraft:birch_leaves=50", "minecraft:dark_oak_leaves=55", "minecraft:cherry_leaves=55", "minecraft:flowering_azalea_leaves=55", "minecraft:mangrove_leaves=65", "minecraft:oak_leaves=55", "minecraft:jungle_leaves=55", "minecraft:chain=75", "minecraft:lantern=75", "minecraft:soul_lantern=75", "minecraft:cobweb=65", "minecraft:white_wool=60", "minecraft:orange_wool=60", "minecraft:magenta_wool=60", "minecraft:light_blue_wool=60", "minecraft:yellow_wool=60", "minecraft:lime_wool=60", "minecraft:pink_wool=60", "minecraft:gray_wool=60", "minecraft:light_gray_wool=60", "minecraft:cyan_wool=60", "minecraft:purple_wool=60", "minecraft:blue_wool=60", "minecraft:brown_wool=60", "minecraft:green_wool=60", "minecraft:red_wool=60", "minecraft:black_wool=60", "minecraft:chest=120"]
+	#List of blocks not allowed to be damaged
+	blacklistedblocks = ["minecraft:gravel", "minecraft:farmland", "minecraft:dirt_path", "minecraft:snow_block"]
+	#List of blocktags not allowed to be damaged
+	blacklistedblocktags = ["minecraft:dirt", "minecraft:base_stone_overworld", "minecraft:terracotta", "minecraft:badlands_terracotta", "minecraft:ice", "minecraft:sand"]
+	#List of blocktags allowed to be damaged when blacklisted if placed by a player
+	playerplacedwhitelist = ["minecraft:base_stone_overworld", "minecraft:terracotta", "minecraft:badlands_terracotta"]
+	#Size of storms
+	# Default: 456.0
+	# Range: 128.0 ~ 512.0
+	stormsize = 456.0
+	#Maximum width of tornadoes
+	# Default: 900
+	# Range: 100 ~ 1200
+	maxtornadowidth = 900
+	#Whether storms will aim at the player whenever strengthening into a tornado
+	aimatplayer = false
+	#Random range of blocks that storms will aim at around players
+	# Default: 248.0
+	# Range: 0.0 ~ 1024.0
+	aimatplayeroffset = 248.0
+	#Maximum number of blocks allowed to be damaged by a tornado per tick
+	# Default: 12500
+	# Range: 5000 ~ 40000
+	maxblocksdamagedpertick = 12500
+	#Whether damage should run every tick (off) or every 5th tick (on)
+	damageevery5thtick = true
+
+[global]
+	#Overcast Modifier
+	# Default: 1.0
+	# Range: 0.0 ~ 1.4
+	overcastpercent = 1.0
+	#Rain Modifier
+	# Default: 0.8
+	# Range: 0.0 ~ 1.25
+	rainstrength = 0.8
+	#Height of first cloud layer
+	# Default: 315.0
+	# Range: 150.0 ~ 350.0
+	layer0height = 315.0
+	#Height of cirrus cloud layer
+	# Default: 2000.0
+	# Range: 1000.0 ~ 3000.0
+	layerCheight = 2000.0
+	#Multiplier of base windspeeds
+	# Default: 1.0
+	# Range: 0.0 ~ 4.0
+	backgroundwindmultiplier = 1.0
+	#List of valid dimensions for spawning weather
+	validdimensions = ["minecraft:overworld"]
+	#Length of months for seasons (in days)
+	# Default: 8
+	# Range: 1 ~ 31
+	monthlength = 8
+
+[fire]
+	#List of blocks to be incinerated in high temperatures from fires
+	incinerateblocks = ["minecraft:torch", "minecraft:wall_torch", "minecraft:redstone_torch", "minecraft:redstone_wall_torch", "minecraft:soul_torch", "minecraft:soul_wall_torch", "minecraft:moss_carpet", "minecraft:lantern", "minecraft:soul_lantern", "pmweather:sleet_layer", "pmweather:ice_layer", "minecraft:snow", "minecraft:snow_block", "minecraft:ice", "minecraft:blue_ice", "minecraft:packed_ice", "minecraft:frosted_ice", "minecraft:cobweb", "minecraft:ladder"]
+	#Whether sources other than lightning can start PMWeather fires
+	allownonlightningfiresources = true
+
+[etc]
+	#Whether radar blocks require a completed WSR-88D to be nearby for display
+	requirewsr88d = false
+	#Whether the server will perform data conversion for large data sets to new data systems
+	largedataconversion = true
+
+	[compat.create]
+		#Whether windmill speed reacts to local windspeed (will cause visual jitter)
+		createwindmillspeed = false
+
+	[compat.sable]
+		#Wind multiplier for Sable physics
+		# Default: 1.0
+		# Range: 0.0 ~ 10.0
+		sablewindmult = 1.0
+		#Wind Inertia multiplier for Sable physics
+		# Default: 1.0
+		# Range: 0.0 ~ 1.0
+		sableinertiamod = 1.0

@@ -1,0 +1,4 @@
+#Allow all items tagged 'minecraft:pickaxe' to rotate or interact with this mod's blocks (Modded or otherwise).
+tagged_pickaxe_compat = true
+#When placing blocks, allow crouching to switch to alternative block states upon placement
+crouch_to_change_states = true

@@ -1,0 +1,52 @@
+filename = '§c1.21.2 Redstone Torch§r.zip'
+name = 'Redstone Torch Backport'
+side = 'client'
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = []
+x-prismlauncher-mc-versions = [
+    '1.14',
+    '1.14.1',
+    '1.14.2',
+    '1.14.3',
+    '1.14.4',
+    '1.15',
+    '1.15.1',
+    '1.15.2',
+    '1.16',
+    '1.16.1',
+    '1.16.2',
+    '1.16.3',
+    '1.16.4',
+    '1.16.5',
+    '1.17',
+    '1.17.1',
+    '1.18',
+    '1.18.1',
+    '1.18.2',
+    '1.19',
+    '1.19.1',
+    '1.19.2',
+    '1.19.3',
+    '1.19.4',
+    '1.20',
+    '1.20.1',
+    '1.20.2',
+    '1.20.3',
+    '1.20.4',
+    '1.20.5',
+    '1.20.6',
+    '1.21',
+    '1.21.1'
+]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.0.0'
+
+[download]
+hash = '6d170a049138de7ecef7aa59c7a180dd04648d30a5c4d5f9afbdd610433cc78b8de9871f7bbb733c0635c9b27fc2e91fcc4ae34b4ecb8db1889616aad1c15467'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/VuMFO1Oz/versions/xcyaoqev/§c1.21.2 Redstone Torch§r.zip'
+
+[update.modrinth]
+mod-id = 'VuMFO1Oz'
+version = 'xcyaoqev'

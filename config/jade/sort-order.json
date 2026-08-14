@@ -63,6 +63,9 @@
   "minecraft:villager_profession": null,
   "minecraft:waxed": null,
   "minecraft:zombie_villager": null,
+  "supplementaries:hat_stand": null,
+  "supplementaries:present": null,
+  "supplementaries:safe": null,
   "thirst:fluid_storage": null,
   "thirst:water_cauldron_fluid": null
 }

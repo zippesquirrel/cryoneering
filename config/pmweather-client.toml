@@ -1,0 +1,65 @@
+[graphics]
+	#Whether the mod will disable Minecraft's base game fog system.
+	basegamefog = true
+	#Quality of volumetric clouds
+	#Allowed Values: POTATO, LOW, MEDIUM, HIGH, PC_KILLER
+	volumetricsquality = "MEDIUM"
+	#Render scale of volumetric clouds (Causes artifacting but greatly improves performance)
+	# Default: 2.5
+	# Range: 1.0 ~ 4.0
+	volumetricsdownsample = 2.5
+	#Whether the mod will forgo texture lookup FBM noise in favor of on the fly calculation
+	computationalnoise = false
+	#Whether the mod will attempt to fix bleeding when downsampled
+	glowfix = true
+	#Whether the sun will cast light on clouds, turning this off will improve performance at the cost of visuals
+	simplelighting = true
+	#Whether the mod will blur the output of the volumetrics shader
+	volumetricsblur = true
+	#Whether the mod will render grass as swaying in the wind
+	swayinggrass = true
+	#Fire particle density
+	# Default: 0.25
+	# Range: 0.0 ~ 1.0
+	fireparticledensity = 0.25
+	#Max distance particles will spawn from the player
+	# Default: 1024
+	# Range: 256 ~ 2048
+	maxparticlespawndistancefromplayer = 1024
+	#Density of debris particles, lower values are more performant
+	# Default: 0.35
+	# Range: 0.0 ~ 1.0
+	debrisparticledensity = 0.35
+	#Particle Density of Rain
+	# Default: 30
+	# Range: 5 ~ 60
+	rainparticledensity = 30
+	#Radar resolution
+	# Default: 100
+	# Range: 32 ~ 200
+	radarresolution = 100
+
+[sound]
+	#Volume of leaves in wind
+	# Default: 0.0
+	# Range: 0.0 ~ 1.0
+	leavesvolume = 0.0
+	#Volume of tornado sirens
+	# Default: 0.75
+	# Range: 0.0 ~ 1.0
+	sirenvolume = 0.75
+
+[debug]
+	#Whether to use radar debugging
+	radardebugging = false
+	#Radar mode when radar debugging is enabled
+	#Allowed Values: TEMPERATURE, SST, CLOUDS, WINDFIELDS, GLOBALWINDS, LOCALWINDS, CAPE, CAPE3KM, CINH, LAPSERATE03, LAPSERATE36, FIRE, PRECIPITATION
+	radarmode = "TEMPERATURE"
+
+[etc]
+	#Whether anemometers will shake at high speed
+	funenometers = false
+	#Whether to use the metric system over imperial
+	metric = false
+	#Whether radars should be forced into 3x3 size, even when extended
+	3x3radar = false

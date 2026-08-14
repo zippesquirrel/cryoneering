@@ -1,0 +1,45 @@
+[general]
+	#Rendering backend for the dynamic light. LAMB uses LambDynamicLights: lightmap-based and works with shaders. VEIL uses Veil deferred point lights: colored, with sub-level shadows. OFF disables client lighting.
+	#Allowed Values: OFF, LAMB, VEIL
+	mode = "LAMB"
+	#Overall brightness of the dynamic light. 1.0 is normal; lower values dim, higher values brighten.
+	# Default: 1.0
+	# Range: 0.0 ~ 2.0
+	luminanceMultiplier = 1.0
+	#Minimum time in milliseconds between updates of the light a moving structure casts into the world (its own carried light). 0 updates every tick for the smoothest result; higher values reduce cost.
+	# Default: 0
+	# Range: 0 ~ 500
+	updateInterval = 0
+	#Minimum time in milliseconds between updates of the world light cast back onto a moving structure (the reverse direction, used by the 'light onto structures' options). 0 updates every tick for the smoothest result; higher values reduce cost.
+	# Default: 0
+	# Range: 0 ~ 500
+	worldUpdateInterval = 0
+	#Show a short message in the bottom-right corner when something needs attention: no lighting backend installed, the backend a setting needs not installed, or a feature that disabled itself. The same messages always go to the log.
+	showStatusOverlay = true
+
+#Light cast into the world by a moving structure's own blocks.
+[lightFromStructures]
+	#Cast light from the blocks a moving Create contraption carries.
+	enableContraptionDynamicLight = true
+	#Cast light from the blocks a moving Sable sub-level carries, including casting a carried beacon's beam out into the world along the sub-level's up axis as it moves and tilts.
+	enableSubLevelDynamicLight = true
+
+#Light cast onto a moving structure by nearby world sources.
+[lightOntoStructures]
+	#Light Create contraptions from nearby dynamic world sources such as held torches, glowing mobs, and dropped glowing items, plus directed or shaped light from LambDynamicLights such as another mod's flashlight or a beacon beam.
+	enableWorldToContraptionLambLight = false
+	#Light Sable sub-levels from nearby world light: dynamic sources, static blocks like torches, glowstone, and lava, and directed or shaped light from LambDynamicLights such as another mod's flashlight or a beacon beam.
+	enableWorldToSubLevelLambLight = false
+	#Light blocks and entities rendered through Flywheel, such as Create kinetics (rotating shafts and cogs) and content from other Flywheel-based mods, from nearby dynamic world sources such as held torches, glowing mobs, and dropped glowing items, plus directed or shaped light from LambDynamicLights such as another mod's flashlight or a beacon beam.
+	enableWorldToFlywheelLight = false
+	#Light contraptions and sub-levels from nearby world light sources.
+	enableWorldToStructureVeilLight = false
+
+#Fixes for how Sable sub-levels look under Iris. Applied by the bundled Contraption Lights Fixes mod, and only in effect with Sable, Iris, and Veil all installed. Shading and sky light change immediately; ambient occlusion changes as sub-levels rebuild.
+[sableIrisFixes]
+	#Restore directional face shading on Sable sub-levels under Iris. Without it, sub-levels look flat and too bright because Iris skips the shading Sable normally applies. Works with or without a shaderpack.
+	fixSubLevelShading = true
+	#Scale a Sable sub-level's sky light to the world sky light at its position under Iris, so a build goes dark in a cave or underground instead of staying lit as if under open sky. Works with or without a shaderpack.
+	fixSubLevelSkyLight = true
+	#Shade the corners and recesses of a Sable sub-level the way the shaderpack shades the world's. Without it a build's corners wash out, and its glowing blocks are dimmed instead. Only applies with a shaderpack loaded, and only to packs that handle ambient occlusion themselves.
+	fixSubLevelAmbientOcclusion = true
