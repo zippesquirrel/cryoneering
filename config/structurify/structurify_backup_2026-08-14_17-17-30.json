@@ -1,6 +1,6 @@
 {
   "config_version": "2.0.33",
-  "config_datetime": "2026-08-14_17-17-30",
+  "config_datetime": "2026-08-14_17-13-12",
   "general": {
     "disable_all_structures": false,
     "prevent_structure_overlap": false,
@@ -55,10 +55,6 @@
     },
     {
       "name": "minecraft:ruined_portal_swamp",
-      "is_disabled": true
-    },
-    {
-      "name": "minecraft:trial_chambers",
       "is_disabled": true
     }
   ],
