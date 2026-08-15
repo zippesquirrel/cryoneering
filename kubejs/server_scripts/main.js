@@ -1,11 +1,9 @@
 // Visit the wiki for more info - https://kubejs.com/
 console.info('Hello, World! (Loaded server example script)')
 
-// File: kubejs/server_scripts/slab_tags.js
-
 ServerEvents.tags('item', event => {
     Item.getTypeList().forEach(item => {
-        const id = item // e.g. "minecraft:oak_slab"
+        const id = item
 
         if (id.includes('slab')) {
             event.add('minecraft:slabs', id)
@@ -49,7 +47,7 @@ ServerEvents.tags('item', event => {
             const patterns = groups[name]
             if (patterns.some(re => re.test(id))) {
                 event.add('invgrid:' + name, id)
-                return true // stops .some(), acts like break
+                return true 
             }
             return false
         })
@@ -61,7 +59,6 @@ ServerEvents.tags('item', event => {
         one: [/minecraft:flowers/],
         twobyone: [/sable:half_volume/,/minecraft:trapdoors/],
         twobythree: [/minecraft:doors/]
-        // ...rest of your groups
     }
     
     Item.getTypeList().forEach(id => {
@@ -81,8 +78,6 @@ ServerEvents.tags('item', event => {
         })
     })
 })
-
-// File: kubejs/server_scripts/all_items_tag.js
 
 ServerEvents.tags('item', event => {
     const blockIds = new Set(Block.getTypeList().map(b => b.toString()))
