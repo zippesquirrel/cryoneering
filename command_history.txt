@@ -7,8 +7,6 @@
 /savaruinv reload
 /reload
 /savaruinv reload
-/reload
-/savaruinv reload
 /nutrition reset
 /reload
 /savaruinv reload
@@ -48,3 +46,5 @@
 /savaruinv reload
 /reload
 /savaruinv reload
+/time set day
+/give Fuzzie_Jeff electroenergetics:empty_spool

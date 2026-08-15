@@ -1,0 +1,251 @@
+{
+  "custom": false,
+  "create:basin": {
+    "lifespan": 1000,
+    "repair material": "create:andesite_alloy",
+    "full repair cost": 10,
+    "explodes": false,
+    "broken version": "minecraft:andesite",
+    "type": "basin"
+  },
+  "create:water_wheel": {
+    "lifespan": 1000,
+    "repair material": "create:andesite_alloy",
+    "full repair cost": 10,
+    "explodes": false,
+    "broken version": "none",
+    "type": "kinetic_machine"
+  },
+  "create:large_waterwheel": {
+    "lifespan": 1000,
+    "repair material": "create:andesite_alloy",
+    "full repair cost": 10,
+    "explodes": false,
+    "broken version": "none",
+    "type": "kinetic_machine"
+  },
+  "create:crushing_wheel": {
+    "lifespan": 1000,
+    "repair material": "create:andesite_alloy",
+    "full repair cost": 10,
+    "explodes": false,
+    "broken version": "none",
+    "type": "kinetic_machine"
+  },
+  "create:steam_engine": {
+    "lifespan": 1000,
+    "repair material": "create:andesite_alloy",
+    "full repair cost": 10,
+    "explodes": true,
+    "broken version": "none",
+    "type": "large_engine"
+  },
+  "create:windmill_bearing": {
+    "lifespan": 1000,
+    "repair material": "create:andesite_alloy",
+    "full repair cost": 10,
+    "explodes": false,
+    "broken version": "none",
+    "type": "kinetic_machine"
+  },
+  "create:mechanical_drill": {
+    "lifespan": 1000,
+    "repair material": "create:andesite_alloy",
+    "full repair cost": 10,
+    "explodes": false,
+    "broken version": "none",
+    "type": "kinetic_machine"
+  },
+  "createdieselgenerators:diesel_engine": {
+    "lifespan": 1000,
+    "repair material": "create:andesite_alloy",
+    "full repair cost": 10,
+    "explodes": false,
+    "broken version": "none",
+    "type": "kinetic_machine"
+  },
+  "createdieselgenerators:large_diesel_engine": {
+    "lifespan": 1000,
+    "repair material": "create:andesite_alloy",
+    "full repair cost": 10,
+    "explodes": false,
+    "broken version": "none",
+    "type": "kinetic_machine"
+  },
+  "createdieselgenerators:huge_diesel_engine": {
+    "lifespan": 1000,
+    "repair material": "create:andesite_alloy",
+    "full repair cost": 10,
+    "explodes": true,
+    "broken version": "none",
+    "type": "large_engine"
+  },
+  "simulated:white_portable_engine": {
+    "lifespan": 1000,
+    "repair material": "create:iron_sheet",
+    "full repair cost": 10,
+    "explodes": false,
+    "broken version": "none",
+    "type": "kinetic_machine"
+  },
+  "simulated:orange_portable_engine": {
+    "lifespan": 1000,
+    "repair material": "create:iron_sheet",
+    "full repair cost": 10,
+    "explodes": false,
+    "broken version": "none",
+    "type": "kinetic_machine"
+  },
+  "simulated:pink_portable_engine": {
+    "lifespan": 1000,
+    "repair material": "create:iron_sheet",
+    "full repair cost": 10,
+    "explodes": false,
+    "broken version": "none",
+    "type": "kinetic_machine"
+  },
+  "simulated:light_blue_portable_engine": {
+    "lifespan": 1000,
+    "repair material": "create:iron_sheet",
+    "full repair cost": 10,
+    "explodes": false,
+    "broken version": "none",
+    "type": "kinetic_machine"
+  },
+  "simulated:yellow_portable_engine": {
+    "lifespan": 1000,
+    "repair material": "create:iron_sheet",
+    "full repair cost": 10,
+    "explodes": false,
+    "broken version": "none",
+    "type": "kinetic_machine"
+  },
+  "simulated:lime_portable_engine": {
+    "lifespan": 1000,
+    "repair material": "create:iron_sheet",
+    "full repair cost": 10,
+    "explodes": false,
+    "broken version": "none",
+    "type": "kinetic_machine"
+  },
+  "simulated:magenta_portable_engine": {
+    "lifespan": 1000,
+    "repair material": "create:iron_sheet",
+    "full repair cost": 10,
+    "explodes": false,
+    "broken version": "none",
+    "type": "kinetic_machine"
+  },
+  "simulated:gray_portable_engine": {
+    "lifespan": 1000,
+    "repair material": "create:iron_sheet",
+    "full repair cost": 10,
+    "explodes": false,
+    "broken version": "none",
+    "type": "kinetic_machine"
+  },
+  "simulated:light_gray_portable_engine": {
+    "lifespan": 1000,
+    "repair material": "create:iron_sheet",
+    "full repair cost": 10,
+    "explodes": false,
+    "broken version": "none",
+    "type": "kinetic_machine"
+  },
+  "simulated:cyan_portable_engine": {
+    "lifespan": 1000,
+    "repair material": "create:iron_sheet",
+    "full repair cost": 10,
+    "explodes": false,
+    "broken version": "none",
+    "type": "kinetic_machine"
+  },
+  "simulated:purple_portable_engine": {
+    "lifespan": 1000,
+    "repair material": "create:iron_sheet",
+    "full repair cost": 10,
+    "explodes": false,
+    "broken version": "none",
+    "type": "kinetic_machine"
+  },
+  "simulated:blue_portable_engine": {
+    "lifespan": 1000,
+    "repair material": "create:iron_sheet",
+    "full repair cost": 10,
+    "explodes": false,
+    "broken version": "none",
+    "type": "kinetic_machine"
+  },
+  "simulated:brown_portable_engine": {
+    "lifespan": 1000,
+    "repair material": "create:iron_sheet",
+    "full repair cost": 10,
+    "explodes": false,
+    "broken version": "none",
+    "type": "kinetic_machine"
+  },
+  "simulated:green_portable_engine": {
+    "lifespan": 1000,
+    "repair material": "create:iron_sheet",
+    "full repair cost": 10,
+    "explodes": false,
+    "broken version": "none",
+    "type": "kinetic_machine"
+  },
+  "simulated:red_portable_engine": {
+    "lifespan": 1000,
+    "repair material": "create:iron_sheet",
+    "full repair cost": 10,
+    "explodes": false,
+    "broken version": "none",
+    "type": "kinetic_machine"
+  },
+  "simulated:black_portable_engine": {
+    "lifespan": 1000,
+    "repair material": "create:iron_sheet",
+    "full repair cost": 10,
+    "explodes": false,
+    "broken version": "none",
+    "type": "kinetic_machine"
+  },
+  "tfmg:turbine_engine": {
+    "lifespan": 1000,
+    "repair material": "create:andesite_alloy",
+    "full repair cost": 10,
+    "explodes": true,
+    "broken version": "none",
+    "type": "tfmg_engine"
+  },
+  "tfmg:regular_engine": {
+    "lifespan": 1000,
+    "repair material": "create:andesite_alloy",
+    "full repair cost": 10,
+    "explodes": false,
+    "broken version": "none",
+    "type": "tfmg_engine"
+  },
+  "tfmg:radial_engine": {
+    "lifespan": 1000,
+    "repair material": "create:andesite_alloy",
+    "full repair cost": 10,
+    "explodes": false,
+    "broken version": "none",
+    "type": "tfmg_engine"
+  },
+  "tfmg:large_engine": {
+    "lifespan": 1000,
+    "repair material": "create:andesite_alloy",
+    "full repair cost": 10,
+    "explodes": true,
+    "broken version": "none",
+    "type": "large_engine"
+  },
+  "tfmg:simple_large_engine": {
+    "lifespan": 1000,
+    "repair material": "create:andesite_alloy",
+    "full repair cost": 10,
+    "explodes": true,
+    "broken version": "none",
+    "type": "large_engine"
+  }
+}

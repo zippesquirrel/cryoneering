@@ -301,7 +301,7 @@ alternateWirePlacement = false
 	#This describes how many times the simulation is run every tick.
 	# Default: 1
 	# Range: 1 ~ 64
-	microTicks = 1
+	microTicks = 16
 	#.
 	#Balances solver stability and capacitor accuracy (0.5 = most accurate, 1.0 = most stable).
 	# Default: 0.5005000233650208
