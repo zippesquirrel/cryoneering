@@ -13,7 +13,7 @@
   "hungerZeroTimestamp": -1,
   "happinessZeroTimestamp": -1,
   "maxPoopsCap": 10,
-  "screenWidth": 640,
-  "screenHeight": 337,
+  "screenWidth": 480,
+  "screenHeight": 253,
   "poops": []
 }

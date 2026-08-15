@@ -1,0 +1,3 @@
+[printer]
+	#Allow computers to print named name tags.
+	enableNameTagPrinting = true

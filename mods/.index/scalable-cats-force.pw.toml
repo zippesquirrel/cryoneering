@@ -1,0 +1,18 @@
+filename = 'ScalableCatsForce-NeoForge-3.7.1-build-11-with-library.jar'
+name = "Scalable Cat's Force"
+side = ''
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1', '1.21.2', '1.21.3', '1.21.4', '1.21.5', '1.21.6', '1.21.7', '1.21.8' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '3.7.1-build-11-neoforge'
+
+[download]
+hash = 'b96d133a016dde480458d6102d66353c7eeacf6a'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 6737240
+project-id = 320926

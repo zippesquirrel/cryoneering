@@ -106,7 +106,7 @@
 	#Overcast Modifier
 	# Default: 1.0
 	# Range: 0.0 ~ 1.4
-	overcastpercent = 1.0
+	overcastpercent = 0.7
 	#Rain Modifier
 	# Default: 0.8
 	# Range: 0.0 ~ 1.25

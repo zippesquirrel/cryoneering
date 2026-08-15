@@ -1,6 +1,6 @@
 [graphics]
 	#Whether the mod will disable Minecraft's base game fog system.
-	basegamefog = true
+	basegamefog = false
 	#Quality of volumetric clouds
 	#Allowed Values: POTATO, LOW, MEDIUM, HIGH, PC_KILLER
 	volumetricsquality = "MEDIUM"

@@ -1,0 +1,21 @@
+filename = 'opencomputers-1.9.4-2.jar'
+name = 'OpenComputers: Rebooted'
+side = 'server'
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'OpenComputers v1.9.4-2'
+
+[download]
+hash = '67f1cd7b5e21bd6013c0e79d1fc014ac87bb0b9e'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 8614366
+project-id = 1634364
+
+[[x-prismlauncher-dependencies]]
+addonId = '320926'
+type = 'REQUIRED'

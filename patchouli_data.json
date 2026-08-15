@@ -1,0 +1,17 @@
+{
+  "bookGuiScale": 0,
+  "clickedVisualize": false,
+  "bookData": {
+    "caupona:book": {
+      "viewedEntries": [
+        "caupona:intro/stew_pots",
+        "caupona:intro/stove",
+        "caupona:intro/lead_cookwares",
+        "caupona:intro/lead",
+        "caupona:intro/counter_with_dolium"
+      ],
+      "bookmarks": [],
+      "completedManualQuests": []
+    }
+  }
+}

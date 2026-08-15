@@ -1,0 +1,29 @@
+filename = 'CEE-Dye-Depot-1.21.1-1.0.0.jar'
+name = 'Create: Electro Energetics x Dye Depot'
+side = 'both'
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.21.1-1.0.0'
+
+[download]
+hash = '007c7dfd4fa1a52c354a3318b90a7abbb308de04729447af97b120f03d9dc962bcb624dfd279721254b15d788f3c059011cca985b14c3fd279f317e2a0ace3f5'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/qXNu3bRo/versions/T7B9IrUo/CEE-Dye-Depot-1.21.1-1.0.0.jar'
+
+[update.modrinth]
+mod-id = 'qXNu3bRo'
+version = 'T7B9IrUo'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'naUMeOvG'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'dl88rsIq'
+type = 'REQUIRED'
+
+[[x-prismlauncher-dependencies]]
+addonId = 'qYJdIoAx'
+type = 'REQUIRED'

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "rules": [
+    { "item": "minecraft:shield", "size": [2, 3] },
+    { "tag" : "#c:tools", "size":[1,2]},
+    { "tag" :"immersive_engineering:toolbox/tools","size":[1,2]},
+    { "tag" : "#invgrid:twobythree", "size":[2,3]},
+    { "tag" : "#invgrid:onebytwo", "size":[1,2]},
+    { "tag" : "#invgrid:twobyone", "size":[2,1]},
+    { "tag" : "#invgrid:threebyone", "size":[3,1]},
+    { "tag" : "#invgrid:threebytwo", "size":[3,2]},
+    { "tag" : "#invgrid:three", "size":[3,3]},
+    { "tag" : "#invgrid:two", "size":[2,2]},
+    { "tag" : "#invgrid:one", "size":[1,1]},
+    { "tag" : "#invgrid:item", "size":[1,1]}
+  ],
+  "defaultRule": { "size": [2, 2] },
+  "containers": {
+    "enabled": true,
+    "whitelist": [],
+    "blacklist": []
+  }
+}
