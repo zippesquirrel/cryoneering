@@ -79,3 +79,5 @@ cryoneering/resourcepacks/custom_spotlights/assets/searchlights/models/block/sea
 cryoneering/resourcepacks/custom_spotlights/assets/searchlights/models/block/headlight_on.json
 cryoneering/resourcepacks/custom_spotlights/assets/searchlights/models/block/headlight_off.json
 cryoneering/resourcepacks/.index/redstone-torch-backport.pw.toml
+/.cache
+/mods/.index

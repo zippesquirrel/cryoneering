@@ -1,17 +1,3 @@
-/savaruinv reload
-/reload
-/savaruinv reload
-/reload
-/savaruinv reload
-/reload
-/savaruinv reload
-/reload
-/savaruinv reload
-/nutrition reset
-/reload
-/savaruinv reload
-/reload
-/savaruinv reload
 /reload
 /savaruinv reload
 /reload
@@ -48,3 +34,17 @@
 /savaruinv reload
 /time set day
 /give Fuzzie_Jeff electroenergetics:empty_spool
+/reload
+/data get block 106 65 103
+/effect give Fuzzie_Jeff minecraft:night_vision infinite 255 true
+/cdg oil get
+/cdg oil locate
+/tp @s 104 ~ 88
+/cdg oil get
+/cdg oil regenerate
+/cdg oil set 500
+/cdg oil set infinity
+/coe setvein 154 65 -148 createoreexcavation:ore_vein_type/iron 5
+/coe setvein 154 65 -148 createoreexcavation:ore_vein_type/gold 5
+/coe locate iron
+/coe locate createoreexcavation:ore_vein_type/lapis

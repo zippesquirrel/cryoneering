@@ -1,5 +1,5 @@
 {
-  "custom": false,
+  "custom": true,
   "create:basin": {
     "lifespan": 1000,
     "repair material": "create:andesite_alloy",
@@ -12,7 +12,7 @@
     "lifespan": 1000,
     "repair material": "create:andesite_alloy",
     "full repair cost": 10,
-    "explodes": false,
+    "explodes": true,
     "broken version": "none",
     "type": "kinetic_machine"
   },
@@ -49,6 +49,14 @@
     "type": "kinetic_machine"
   },
   "create:mechanical_drill": {
+    "lifespan": 1000,
+    "repair material": "create:andesite_alloy",
+    "full repair cost": 10,
+    "explodes": false,
+    "broken version": "none",
+    "type": "kinetic_machine"
+  },
+  "create:cogwheel":{
     "lifespan": 1000,
     "repair material": "create:andesite_alloy",
     "full repair cost": 10,
