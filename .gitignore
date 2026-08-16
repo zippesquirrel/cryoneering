@@ -61,3 +61,21 @@ hotbar.nbt
 emi.json
 /downloads
 command_history.txt
+instance.png
+instance.json
+disabledmods/essentialpatcher-1.21.1-NeoForge-1.0.7.jar
+cryoneering/resourcepacks/§c1.21.2 Redstone Torch§r.zip
+cryoneering/resourcepacks/VanillaTweaks_r587033_MC1.21.x.zip
+cryoneering/resourcepacks/custom_spotlights/pack.mcmeta
+cryoneering/resourcepacks/custom_spotlights/assets/searchlights/textures/block/searchlight_on.png
+cryoneering/resourcepacks/custom_spotlights/assets/searchlights/textures/block/searchlight_off.png
+cryoneering/resourcepacks/custom_spotlights/assets/searchlights/textures/block/particles.png
+cryoneering/resourcepacks/custom_spotlights/assets/searchlights/textures/block/headlight_on.png
+cryoneering/resourcepacks/custom_spotlights/assets/searchlights/textures/block/headlight_off.png
+cryoneering/resourcepacks/custom_spotlights/assets/searchlights/models/item/searchlight.json
+cryoneering/resourcepacks/custom_spotlights/assets/searchlights/models/item/headlight.json
+cryoneering/resourcepacks/custom_spotlights/assets/searchlights/models/block/searchlight_on.json
+cryoneering/resourcepacks/custom_spotlights/assets/searchlights/models/block/searchlight.json
+cryoneering/resourcepacks/custom_spotlights/assets/searchlights/models/block/headlight_on.json
+cryoneering/resourcepacks/custom_spotlights/assets/searchlights/models/block/headlight_off.json
+cryoneering/resourcepacks/.index/redstone-torch-backport.pw.toml
