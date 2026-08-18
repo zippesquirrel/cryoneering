@@ -93,3 +93,56 @@ ServerEvents.tags('item', event => {
     
 })
 
+ServerEvents.tags('block', event => {
+    const conductiveTags = ['/metal/','/iron/','/zinc/','/brass/','/industrial_plating/','/copper/','/gold/']
+    conductiveTags.forEach((item => {
+        event.add('electroenergetics:earth',item)
+    }))
+    
+})
+
+ServerEvents.loaded(event => {
+    event.server.runCommandSilent('veil post_processing remove @a pmweather:sky')
+})
+
+PlayerEvents.loggedIn(event => {
+    event.server.runCommandSilent(`veil post_processing remove ${event.player.username} pmweather:sky`)
+})
+
+ColdSweatEvents.registries(event => {
+ 
+    event.addBoilerFuel(fuel =>
+        fuel.items("createdieselgenerators:diesel_bucket")
+            .fuel(1000) 
+    )
+    event.addHearthFuel(fuel =>
+        fuel.items("createdieselgenerators:diesel_bucket")
+            .fuel(1000) 
+    )
+
+
+    event.addBoilerFuel(fuel =>
+        fuel.items("createdieselgenerators:gasoline_bucket")
+            .fuel(850) 
+    )
+    event.addHearthFuel(fuel =>
+        fuel.items("createdieselgenerators:gasoline_bucket")
+            .fuel(850) 
+    )
+ 
+
+    event.addBoilerFuel(fuel =>
+        fuel.items("createdieselgenerators:ethanol_bucket")
+            .fuel(700) 
+    )
+
+    event.addHearthFuel(fuel =>
+        fuel.items("createdieselgenerators:ethanol_bucket")
+            .fuel(700)
+    )
+})
+ 
+ 
+
+
+

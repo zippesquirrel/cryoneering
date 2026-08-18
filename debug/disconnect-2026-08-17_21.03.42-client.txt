@@ -1,0 +1,403 @@
+---- Minecraft Network Protocol Error Report ----
+
+// Hi. I'm Sable and I dislike float casts
+Please make sure this issue is not caused by Sable before reporting it to other mod authors.
+If you cannot reproduce it without Sable, file a report on the issue tracker
+https://github.com/ryanhcode/sable/issues
+
+// Too many suspicious packets
+
+Time: 2026-08-17 21:03:42
+Description: Packet handling error
+
+java.lang.NullPointerException: Cannot invoke "net.minecraft.client.multiplayer.ClientLevel$ClientLevelData.setDifficulty(net.minecraft.world.Difficulty)" because "this.levelData" is null
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.multiplayer.ClientPacketListener.handleChangeDifficulty(ClientPacketListener.java:1639) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:konkrete.mixins.json:client.IMixinClientPacketListener from mod konkrete,pl:mixin:APP:client.voxy.mixins.json:minecraft.MixinClientPacketListener from mod voxy,pl:mixin:APP:computercraft-client.forge.mixins.json:ClientPacketListenerMixin from mod computercraft,pl:mixin:APP:jamlib.client.mixins.json:event.ClientPacketListenerMixin from mod jamlib,pl:mixin:APP:ponder-common.mixins.json:client.accessor.ClientPacketListenerAccessor from mod ponder,pl:mixin:APP:sable.mixins.json:entity.entities_stick_sublevels.ClientPacketListenerMixin from mod sable,pl:mixin:APP:sable.mixins.json:entity.entity_rotations_and_riding.ClientPacketListenerMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.lighting.ClientPacketListenerMixin from mod sable,pl:mixin:APP:fancymenu.mixins.json:client.MixinClientPacketListener from mod fancymenu,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.network.protocol.game.ClientboundChangeDifficultyPacket.handle(ClientboundChangeDifficultyPacket.java:37) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.network.protocol.game.ClientboundChangeDifficultyPacket.handle(ClientboundChangeDifficultyPacket.java:9) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$0(PacketUtils.java:27) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:148) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:23) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:mixin,re:computing_frames,re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:122) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.thread.BlockableEventLoop.runAllTasks(BlockableEventLoop.java:111) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.runTick(Minecraft.java:1155) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:notenoughcrashes.mixins.json:client.MixinMinecraftClient from mod notenoughcrashes,pl:mixin:APP:veil.debug.mixins.json:client.DebugMinecraftMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineMinecraftMixin from mod veil,pl:mixin:APP:veil.neoforge.mixins.json:client.MinecraftMixin from mod veil,pl:mixin:APP:simulated.mixins.json:handle.MinecraftMixin from mod simulated,pl:mixin:APP:carryon.mixins.json:MinecraftMixin from mod carryon,pl:mixin:APP:konkrete.mixins.json:client.MixinMinecraft from mod konkrete,pl:mixin:APP:entity_model_features.mixins.json:MixinResourceReloadStart from mod entity_model_features,pl:mixin:APP:entity_model_features.mixins.json:accessor.MinecraftClientAccessor from mod entity_model_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinMinecraftClient from mod entity_texture_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinResourceReload from mod entity_texture_features,pl:mixin:APP:client.voxy.mixins.json:minecraft.MixinMinecraft from mod voxy,pl:mixin:APP:architectury.mixins.json:MixinMinecraft from mod architectury,pl:mixin:APP:lambdynlights.mixins.json:MinecraftClientMixin from mod lambdynlights_runtime,pl:mixin:APP:transition.mixins.json:EntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:EntityRendererMixin from mod transition,pl:mixin:APP:transition.mixins.json:BlockEntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:MinecraftMixin from mod transition,pl:mixin:APP:lithium-neoforge.mixins.json:startup.MinecraftMixin from mod lithium,pl:mixin:APP:aeronautics.mixins.json:custom_situational_music.MinecraftMixin from mod aeronautics,pl:mixin:APP:papi.mixins.json:memoryleakfix.MinecraftScreenshotMixin from mod papi,pl:mixin:APP:drippyloadingscreen.mixins.json:client.IMixinMinecraft from mod drippyloadingscreen,pl:mixin:APP:emi.mixins.json:MinecraftClientMixin from mod emi,pl:mixin:APP:immersiveengineering.mixins.json:accessors.client.MinecraftAccess from mod immersiveengineering,pl:mixin:APP:flywheel.impl.mixins.json:MinecraftMixin from mod flywheel,pl:mixin:APP:ponder-common.mixins.json:client.WindowResizeMixin from mod ponder,pl:mixin:APP:create.mixins.json:accessor.MinecraftAccessor from mod create,pl:mixin:APP:sable.mixins.json:camera.new_camera_types.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:punching.MinecraftMixin from mod sable,pl:mixin:APP:entityculling.mixins.json:DebugScreenEntriesAccessor from mod entityculling,pl:mixin:APP:entityculling.mixins.json:LivingEntityRendererAccessor from mod entityculling,pl:mixin:APP:yumi_mc_core.mixins.json:client.MinecraftClientMixin from mod yumi_mc_core,pl:mixin:APP:fancymenu.mixins.json:client.IMixinMinecraft from mod fancymenu,pl:mixin:APP:fancymenu.mixins.json:client.MixinMinecraft from mod fancymenu,pl:mixin:APP:yacl.mixins.json:MinecraftMixin from mod yet_another_config_lib_v3,pl:mixin:APP:cold_sweat.mixin.json:MixinInventoryOpenClient from mod cold_sweat,pl:mixin:APP:cold_sweat.mixin.json:MixinPickEntity from mod cold_sweat,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.run(Minecraft.java:807) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:notenoughcrashes.mixins.json:client.MixinMinecraftClient from mod notenoughcrashes,pl:mixin:APP:veil.debug.mixins.json:client.DebugMinecraftMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineMinecraftMixin from mod veil,pl:mixin:APP:veil.neoforge.mixins.json:client.MinecraftMixin from mod veil,pl:mixin:APP:simulated.mixins.json:handle.MinecraftMixin from mod simulated,pl:mixin:APP:carryon.mixins.json:MinecraftMixin from mod carryon,pl:mixin:APP:konkrete.mixins.json:client.MixinMinecraft from mod konkrete,pl:mixin:APP:entity_model_features.mixins.json:MixinResourceReloadStart from mod entity_model_features,pl:mixin:APP:entity_model_features.mixins.json:accessor.MinecraftClientAccessor from mod entity_model_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinMinecraftClient from mod entity_texture_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinResourceReload from mod entity_texture_features,pl:mixin:APP:client.voxy.mixins.json:minecraft.MixinMinecraft from mod voxy,pl:mixin:APP:architectury.mixins.json:MixinMinecraft from mod architectury,pl:mixin:APP:lambdynlights.mixins.json:MinecraftClientMixin from mod lambdynlights_runtime,pl:mixin:APP:transition.mixins.json:EntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:EntityRendererMixin from mod transition,pl:mixin:APP:transition.mixins.json:BlockEntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:MinecraftMixin from mod transition,pl:mixin:APP:lithium-neoforge.mixins.json:startup.MinecraftMixin from mod lithium,pl:mixin:APP:aeronautics.mixins.json:custom_situational_music.MinecraftMixin from mod aeronautics,pl:mixin:APP:papi.mixins.json:memoryleakfix.MinecraftScreenshotMixin from mod papi,pl:mixin:APP:drippyloadingscreen.mixins.json:client.IMixinMinecraft from mod drippyloadingscreen,pl:mixin:APP:emi.mixins.json:MinecraftClientMixin from mod emi,pl:mixin:APP:immersiveengineering.mixins.json:accessors.client.MinecraftAccess from mod immersiveengineering,pl:mixin:APP:flywheel.impl.mixins.json:MinecraftMixin from mod flywheel,pl:mixin:APP:ponder-common.mixins.json:client.WindowResizeMixin from mod ponder,pl:mixin:APP:create.mixins.json:accessor.MinecraftAccessor from mod create,pl:mixin:APP:sable.mixins.json:camera.new_camera_types.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:punching.MinecraftMixin from mod sable,pl:mixin:APP:entityculling.mixins.json:DebugScreenEntriesAccessor from mod entityculling,pl:mixin:APP:entityculling.mixins.json:LivingEntityRendererAccessor from mod entityculling,pl:mixin:APP:yumi_mc_core.mixins.json:client.MinecraftClientMixin from mod yumi_mc_core,pl:mixin:APP:fancymenu.mixins.json:client.IMixinMinecraft from mod fancymenu,pl:mixin:APP:fancymenu.mixins.json:client.MixinMinecraft from mod fancymenu,pl:mixin:APP:yacl.mixins.json:MinecraftMixin from mod yet_another_config_lib_v3,pl:mixin:APP:cold_sweat.mixin.json:MixinInventoryOpenClient from mod cold_sweat,pl:mixin:APP:cold_sweat.mixin.json:MixinPickEntity from mod cold_sweat,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/notenoughcrashes@4.4.9+1.21.1/fudge.notenoughcrashes.mixinhandlers.InGameCatcher.handleClientCrash(InGameCatcher.java:36) ~[notenoughcrashes-neoforge-4.4.9+1.21.1.jar%23336!/:?] {re:mixin,re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.modify$zze000$notenoughcrashes$atTheEndOfSecondCatchBeforePrintingCrashReport(Minecraft.java:3096) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:notenoughcrashes.mixins.json:client.MixinMinecraftClient from mod notenoughcrashes,pl:mixin:APP:veil.debug.mixins.json:client.DebugMinecraftMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineMinecraftMixin from mod veil,pl:mixin:APP:veil.neoforge.mixins.json:client.MinecraftMixin from mod veil,pl:mixin:APP:simulated.mixins.json:handle.MinecraftMixin from mod simulated,pl:mixin:APP:carryon.mixins.json:MinecraftMixin from mod carryon,pl:mixin:APP:konkrete.mixins.json:client.MixinMinecraft from mod konkrete,pl:mixin:APP:entity_model_features.mixins.json:MixinResourceReloadStart from mod entity_model_features,pl:mixin:APP:entity_model_features.mixins.json:accessor.MinecraftClientAccessor from mod entity_model_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinMinecraftClient from mod entity_texture_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinResourceReload from mod entity_texture_features,pl:mixin:APP:client.voxy.mixins.json:minecraft.MixinMinecraft from mod voxy,pl:mixin:APP:architectury.mixins.json:MixinMinecraft from mod architectury,pl:mixin:APP:lambdynlights.mixins.json:MinecraftClientMixin from mod lambdynlights_runtime,pl:mixin:APP:transition.mixins.json:EntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:EntityRendererMixin from mod transition,pl:mixin:APP:transition.mixins.json:BlockEntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:MinecraftMixin from mod transition,pl:mixin:APP:lithium-neoforge.mixins.json:startup.MinecraftMixin from mod lithium,pl:mixin:APP:aeronautics.mixins.json:custom_situational_music.MinecraftMixin from mod aeronautics,pl:mixin:APP:papi.mixins.json:memoryleakfix.MinecraftScreenshotMixin from mod papi,pl:mixin:APP:drippyloadingscreen.mixins.json:client.IMixinMinecraft from mod drippyloadingscreen,pl:mixin:APP:emi.mixins.json:MinecraftClientMixin from mod emi,pl:mixin:APP:immersiveengineering.mixins.json:accessors.client.MinecraftAccess from mod immersiveengineering,pl:mixin:APP:flywheel.impl.mixins.json:MinecraftMixin from mod flywheel,pl:mixin:APP:ponder-common.mixins.json:client.WindowResizeMixin from mod ponder,pl:mixin:APP:create.mixins.json:accessor.MinecraftAccessor from mod create,pl:mixin:APP:sable.mixins.json:camera.new_camera_types.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:punching.MinecraftMixin from mod sable,pl:mixin:APP:entityculling.mixins.json:DebugScreenEntriesAccessor from mod entityculling,pl:mixin:APP:entityculling.mixins.json:LivingEntityRendererAccessor from mod entityculling,pl:mixin:APP:yumi_mc_core.mixins.json:client.MinecraftClientMixin from mod yumi_mc_core,pl:mixin:APP:fancymenu.mixins.json:client.IMixinMinecraft from mod fancymenu,pl:mixin:APP:fancymenu.mixins.json:client.MixinMinecraft from mod fancymenu,pl:mixin:APP:yacl.mixins.json:MinecraftMixin from mod yet_another_config_lib_v3,pl:mixin:APP:cold_sweat.mixin.json:MixinInventoryOpenClient from mod cold_sweat,pl:mixin:APP:cold_sweat.mixin.json:MixinPickEntity from mod cold_sweat,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.run(Minecraft.java:828) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:notenoughcrashes.mixins.json:client.MixinMinecraftClient from mod notenoughcrashes,pl:mixin:APP:veil.debug.mixins.json:client.DebugMinecraftMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineMinecraftMixin from mod veil,pl:mixin:APP:veil.neoforge.mixins.json:client.MinecraftMixin from mod veil,pl:mixin:APP:simulated.mixins.json:handle.MinecraftMixin from mod simulated,pl:mixin:APP:carryon.mixins.json:MinecraftMixin from mod carryon,pl:mixin:APP:konkrete.mixins.json:client.MixinMinecraft from mod konkrete,pl:mixin:APP:entity_model_features.mixins.json:MixinResourceReloadStart from mod entity_model_features,pl:mixin:APP:entity_model_features.mixins.json:accessor.MinecraftClientAccessor from mod entity_model_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinMinecraftClient from mod entity_texture_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinResourceReload from mod entity_texture_features,pl:mixin:APP:client.voxy.mixins.json:minecraft.MixinMinecraft from mod voxy,pl:mixin:APP:architectury.mixins.json:MixinMinecraft from mod architectury,pl:mixin:APP:lambdynlights.mixins.json:MinecraftClientMixin from mod lambdynlights_runtime,pl:mixin:APP:transition.mixins.json:EntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:EntityRendererMixin from mod transition,pl:mixin:APP:transition.mixins.json:BlockEntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:MinecraftMixin from mod transition,pl:mixin:APP:lithium-neoforge.mixins.json:startup.MinecraftMixin from mod lithium,pl:mixin:APP:aeronautics.mixins.json:custom_situational_music.MinecraftMixin from mod aeronautics,pl:mixin:APP:papi.mixins.json:memoryleakfix.MinecraftScreenshotMixin from mod papi,pl:mixin:APP:drippyloadingscreen.mixins.json:client.IMixinMinecraft from mod drippyloadingscreen,pl:mixin:APP:emi.mixins.json:MinecraftClientMixin from mod emi,pl:mixin:APP:immersiveengineering.mixins.json:accessors.client.MinecraftAccess from mod immersiveengineering,pl:mixin:APP:flywheel.impl.mixins.json:MinecraftMixin from mod flywheel,pl:mixin:APP:ponder-common.mixins.json:client.WindowResizeMixin from mod ponder,pl:mixin:APP:create.mixins.json:accessor.MinecraftAccessor from mod create,pl:mixin:APP:sable.mixins.json:camera.new_camera_types.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:punching.MinecraftMixin from mod sable,pl:mixin:APP:entityculling.mixins.json:DebugScreenEntriesAccessor from mod entityculling,pl:mixin:APP:entityculling.mixins.json:LivingEntityRendererAccessor from mod entityculling,pl:mixin:APP:yumi_mc_core.mixins.json:client.MinecraftClientMixin from mod yumi_mc_core,pl:mixin:APP:fancymenu.mixins.json:client.IMixinMinecraft from mod fancymenu,pl:mixin:APP:fancymenu.mixins.json:client.MixinMinecraft from mod fancymenu,pl:mixin:APP:yacl.mixins.json:MinecraftMixin from mod yet_another_config_lib_v3,pl:mixin:APP:cold_sweat.mixin.json:MixinInventoryOpenClient from mod cold_sweat,pl:mixin:APP:cold_sweat.mixin.json:MixinPickEntity from mod cold_sweat,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/notenoughcrashes@4.4.9+1.21.1/fudge.notenoughcrashes.mixinhandlers.InGameCatcher.handleClientCrash(InGameCatcher.java:36) ~[notenoughcrashes-neoforge-4.4.9+1.21.1.jar%23336!/:?] {re:mixin,re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.modify$zze000$notenoughcrashes$atTheEndOfSecondCatchBeforePrintingCrashReport(Minecraft.java:3096) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:notenoughcrashes.mixins.json:client.MixinMinecraftClient from mod notenoughcrashes,pl:mixin:APP:veil.debug.mixins.json:client.DebugMinecraftMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineMinecraftMixin from mod veil,pl:mixin:APP:veil.neoforge.mixins.json:client.MinecraftMixin from mod veil,pl:mixin:APP:simulated.mixins.json:handle.MinecraftMixin from mod simulated,pl:mixin:APP:carryon.mixins.json:MinecraftMixin from mod carryon,pl:mixin:APP:konkrete.mixins.json:client.MixinMinecraft from mod konkrete,pl:mixin:APP:entity_model_features.mixins.json:MixinResourceReloadStart from mod entity_model_features,pl:mixin:APP:entity_model_features.mixins.json:accessor.MinecraftClientAccessor from mod entity_model_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinMinecraftClient from mod entity_texture_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinResourceReload from mod entity_texture_features,pl:mixin:APP:client.voxy.mixins.json:minecraft.MixinMinecraft from mod voxy,pl:mixin:APP:architectury.mixins.json:MixinMinecraft from mod architectury,pl:mixin:APP:lambdynlights.mixins.json:MinecraftClientMixin from mod lambdynlights_runtime,pl:mixin:APP:transition.mixins.json:EntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:EntityRendererMixin from mod transition,pl:mixin:APP:transition.mixins.json:BlockEntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:MinecraftMixin from mod transition,pl:mixin:APP:lithium-neoforge.mixins.json:startup.MinecraftMixin from mod lithium,pl:mixin:APP:aeronautics.mixins.json:custom_situational_music.MinecraftMixin from mod aeronautics,pl:mixin:APP:papi.mixins.json:memoryleakfix.MinecraftScreenshotMixin from mod papi,pl:mixin:APP:drippyloadingscreen.mixins.json:client.IMixinMinecraft from mod drippyloadingscreen,pl:mixin:APP:emi.mixins.json:MinecraftClientMixin from mod emi,pl:mixin:APP:immersiveengineering.mixins.json:accessors.client.MinecraftAccess from mod immersiveengineering,pl:mixin:APP:flywheel.impl.mixins.json:MinecraftMixin from mod flywheel,pl:mixin:APP:ponder-common.mixins.json:client.WindowResizeMixin from mod ponder,pl:mixin:APP:create.mixins.json:accessor.MinecraftAccessor from mod create,pl:mixin:APP:sable.mixins.json:camera.new_camera_types.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:punching.MinecraftMixin from mod sable,pl:mixin:APP:entityculling.mixins.json:DebugScreenEntriesAccessor from mod entityculling,pl:mixin:APP:entityculling.mixins.json:LivingEntityRendererAccessor from mod entityculling,pl:mixin:APP:yumi_mc_core.mixins.json:client.MinecraftClientMixin from mod yumi_mc_core,pl:mixin:APP:fancymenu.mixins.json:client.IMixinMinecraft from mod fancymenu,pl:mixin:APP:fancymenu.mixins.json:client.MixinMinecraft from mod fancymenu,pl:mixin:APP:yacl.mixins.json:MinecraftMixin from mod yet_another_config_lib_v3,pl:mixin:APP:cold_sweat.mixin.json:MixinInventoryOpenClient from mod cold_sweat,pl:mixin:APP:cold_sweat.mixin.json:MixinPickEntity from mod cold_sweat,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.run(Minecraft.java:828) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:notenoughcrashes.mixins.json:client.MixinMinecraftClient from mod notenoughcrashes,pl:mixin:APP:veil.debug.mixins.json:client.DebugMinecraftMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineMinecraftMixin from mod veil,pl:mixin:APP:veil.neoforge.mixins.json:client.MinecraftMixin from mod veil,pl:mixin:APP:simulated.mixins.json:handle.MinecraftMixin from mod simulated,pl:mixin:APP:carryon.mixins.json:MinecraftMixin from mod carryon,pl:mixin:APP:konkrete.mixins.json:client.MixinMinecraft from mod konkrete,pl:mixin:APP:entity_model_features.mixins.json:MixinResourceReloadStart from mod entity_model_features,pl:mixin:APP:entity_model_features.mixins.json:accessor.MinecraftClientAccessor from mod entity_model_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinMinecraftClient from mod entity_texture_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinResourceReload from mod entity_texture_features,pl:mixin:APP:client.voxy.mixins.json:minecraft.MixinMinecraft from mod voxy,pl:mixin:APP:architectury.mixins.json:MixinMinecraft from mod architectury,pl:mixin:APP:lambdynlights.mixins.json:MinecraftClientMixin from mod lambdynlights_runtime,pl:mixin:APP:transition.mixins.json:EntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:EntityRendererMixin from mod transition,pl:mixin:APP:transition.mixins.json:BlockEntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:MinecraftMixin from mod transition,pl:mixin:APP:lithium-neoforge.mixins.json:startup.MinecraftMixin from mod lithium,pl:mixin:APP:aeronautics.mixins.json:custom_situational_music.MinecraftMixin from mod aeronautics,pl:mixin:APP:papi.mixins.json:memoryleakfix.MinecraftScreenshotMixin from mod papi,pl:mixin:APP:drippyloadingscreen.mixins.json:client.IMixinMinecraft from mod drippyloadingscreen,pl:mixin:APP:emi.mixins.json:MinecraftClientMixin from mod emi,pl:mixin:APP:immersiveengineering.mixins.json:accessors.client.MinecraftAccess from mod immersiveengineering,pl:mixin:APP:flywheel.impl.mixins.json:MinecraftMixin from mod flywheel,pl:mixin:APP:ponder-common.mixins.json:client.WindowResizeMixin from mod ponder,pl:mixin:APP:create.mixins.json:accessor.MinecraftAccessor from mod create,pl:mixin:APP:sable.mixins.json:camera.new_camera_types.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:punching.MinecraftMixin from mod sable,pl:mixin:APP:entityculling.mixins.json:DebugScreenEntriesAccessor from mod entityculling,pl:mixin:APP:entityculling.mixins.json:LivingEntityRendererAccessor from mod entityculling,pl:mixin:APP:yumi_mc_core.mixins.json:client.MinecraftClientMixin from mod yumi_mc_core,pl:mixin:APP:fancymenu.mixins.json:client.IMixinMinecraft from mod fancymenu,pl:mixin:APP:fancymenu.mixins.json:client.MixinMinecraft from mod fancymenu,pl:mixin:APP:yacl.mixins.json:MinecraftMixin from mod yet_another_config_lib_v3,pl:mixin:APP:cold_sweat.mixin.json:MixinInventoryOpenClient from mod cold_sweat,pl:mixin:APP:cold_sweat.mixin.json:MixinPickEntity from mod cold_sweat,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.main.Main.main(Main.java:230) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:mixin,pl:runtimedistcleaner:A,re:classloading,pl:mixin:A,pl:runtimedistcleaner:A}
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {re:mixin}
+	at MC-BOOTSTRAP/fml_loader@4.0.43/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-4.0.43.jar%23161!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.43/net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:124) ~[loader-4.0.43.jar%23161!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.43/net.neoforged.fml.loading.targets.CommonClientLaunchHandler.runService(CommonClientLaunchHandler.java:32) ~[loader-4.0.43.jar%23161!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.43/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-4.0.43.jar%23161!/:4.0] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-11.0.5.jar%23166!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-11.0.5.jar%23166!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-11.0.5.jar%23166!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.run(Launcher.java:103) [modlauncher-11.0.5.jar%23166!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.main(Launcher.java:74) [modlauncher-11.0.5.jar%23166!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-11.0.5.jar%23166!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-11.0.5.jar%23166!/:?] {}
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.run(BootstrapLauncher.java:210) [bootstraplauncher-2.0.2.jar:?] {}
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:69) [bootstraplauncher-2.0.2.jar:?] {}
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {re:mixin}
+	at io.github.zekerzhayard.forgewrapper.installer.Main.main(Main.java:67) [ForgeWrapper-prism-2026-08-01.jar:prism-2026-08-01] {}
+	at org.prismlauncher.launcher.impl.StandardLauncher.launch(StandardLauncher.java:115) [NewLaunch.jar:?] {}
+	at org.prismlauncher.EntryPoint.listen(EntryPoint.java:129) [NewLaunch.jar:?] {}
+	at org.prismlauncher.EntryPoint.main(EntryPoint.java:70) [NewLaunch.jar:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.network.protocol.PacketUtils.fillCrashReport(PacketUtils.java:56) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:classloading}
+-- Incoming Packet --
+Details:
+	Type: clientbound/minecraft:change_difficulty
+	Is Terminal: false
+	Is Skippable: false
+Stacktrace:
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.network.protocol.PacketUtils.fillCrashReport(PacketUtils.java:56) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.multiplayer.ClientCommonPacketListenerImpl.storeDisconnectionReport(ClientCommonPacketListenerImpl.java:130) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:mixin,pl:runtimedistcleaner:A,re:computing_frames,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:client.voxy.mixins.json:minecraft.MixinClientCommonPacketListenerImpl from mod voxy,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.multiplayer.ClientCommonPacketListenerImpl.onPacketError(ClientCommonPacketListenerImpl.java:114) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:mixin,pl:runtimedistcleaner:A,re:computing_frames,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:client.voxy.mixins.json:minecraft.MixinClientCommonPacketListenerImpl from mod voxy,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$0(PacketUtils.java:32) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:148) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:23) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:mixin,re:computing_frames,re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:122) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.thread.BlockableEventLoop.runAllTasks(BlockableEventLoop.java:111) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.runTick(Minecraft.java:1155) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:notenoughcrashes.mixins.json:client.MixinMinecraftClient from mod notenoughcrashes,pl:mixin:APP:veil.debug.mixins.json:client.DebugMinecraftMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineMinecraftMixin from mod veil,pl:mixin:APP:veil.neoforge.mixins.json:client.MinecraftMixin from mod veil,pl:mixin:APP:simulated.mixins.json:handle.MinecraftMixin from mod simulated,pl:mixin:APP:carryon.mixins.json:MinecraftMixin from mod carryon,pl:mixin:APP:konkrete.mixins.json:client.MixinMinecraft from mod konkrete,pl:mixin:APP:entity_model_features.mixins.json:MixinResourceReloadStart from mod entity_model_features,pl:mixin:APP:entity_model_features.mixins.json:accessor.MinecraftClientAccessor from mod entity_model_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinMinecraftClient from mod entity_texture_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinResourceReload from mod entity_texture_features,pl:mixin:APP:client.voxy.mixins.json:minecraft.MixinMinecraft from mod voxy,pl:mixin:APP:architectury.mixins.json:MixinMinecraft from mod architectury,pl:mixin:APP:lambdynlights.mixins.json:MinecraftClientMixin from mod lambdynlights_runtime,pl:mixin:APP:transition.mixins.json:EntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:EntityRendererMixin from mod transition,pl:mixin:APP:transition.mixins.json:BlockEntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:MinecraftMixin from mod transition,pl:mixin:APP:lithium-neoforge.mixins.json:startup.MinecraftMixin from mod lithium,pl:mixin:APP:aeronautics.mixins.json:custom_situational_music.MinecraftMixin from mod aeronautics,pl:mixin:APP:papi.mixins.json:memoryleakfix.MinecraftScreenshotMixin from mod papi,pl:mixin:APP:drippyloadingscreen.mixins.json:client.IMixinMinecraft from mod drippyloadingscreen,pl:mixin:APP:emi.mixins.json:MinecraftClientMixin from mod emi,pl:mixin:APP:immersiveengineering.mixins.json:accessors.client.MinecraftAccess from mod immersiveengineering,pl:mixin:APP:flywheel.impl.mixins.json:MinecraftMixin from mod flywheel,pl:mixin:APP:ponder-common.mixins.json:client.WindowResizeMixin from mod ponder,pl:mixin:APP:create.mixins.json:accessor.MinecraftAccessor from mod create,pl:mixin:APP:sable.mixins.json:camera.new_camera_types.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:punching.MinecraftMixin from mod sable,pl:mixin:APP:entityculling.mixins.json:DebugScreenEntriesAccessor from mod entityculling,pl:mixin:APP:entityculling.mixins.json:LivingEntityRendererAccessor from mod entityculling,pl:mixin:APP:yumi_mc_core.mixins.json:client.MinecraftClientMixin from mod yumi_mc_core,pl:mixin:APP:fancymenu.mixins.json:client.IMixinMinecraft from mod fancymenu,pl:mixin:APP:fancymenu.mixins.json:client.MixinMinecraft from mod fancymenu,pl:mixin:APP:yacl.mixins.json:MinecraftMixin from mod yet_another_config_lib_v3,pl:mixin:APP:cold_sweat.mixin.json:MixinInventoryOpenClient from mod cold_sweat,pl:mixin:APP:cold_sweat.mixin.json:MixinPickEntity from mod cold_sweat,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.run(Minecraft.java:807) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:notenoughcrashes.mixins.json:client.MixinMinecraftClient from mod notenoughcrashes,pl:mixin:APP:veil.debug.mixins.json:client.DebugMinecraftMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineMinecraftMixin from mod veil,pl:mixin:APP:veil.neoforge.mixins.json:client.MinecraftMixin from mod veil,pl:mixin:APP:simulated.mixins.json:handle.MinecraftMixin from mod simulated,pl:mixin:APP:carryon.mixins.json:MinecraftMixin from mod carryon,pl:mixin:APP:konkrete.mixins.json:client.MixinMinecraft from mod konkrete,pl:mixin:APP:entity_model_features.mixins.json:MixinResourceReloadStart from mod entity_model_features,pl:mixin:APP:entity_model_features.mixins.json:accessor.MinecraftClientAccessor from mod entity_model_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinMinecraftClient from mod entity_texture_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinResourceReload from mod entity_texture_features,pl:mixin:APP:client.voxy.mixins.json:minecraft.MixinMinecraft from mod voxy,pl:mixin:APP:architectury.mixins.json:MixinMinecraft from mod architectury,pl:mixin:APP:lambdynlights.mixins.json:MinecraftClientMixin from mod lambdynlights_runtime,pl:mixin:APP:transition.mixins.json:EntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:EntityRendererMixin from mod transition,pl:mixin:APP:transition.mixins.json:BlockEntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:MinecraftMixin from mod transition,pl:mixin:APP:lithium-neoforge.mixins.json:startup.MinecraftMixin from mod lithium,pl:mixin:APP:aeronautics.mixins.json:custom_situational_music.MinecraftMixin from mod aeronautics,pl:mixin:APP:papi.mixins.json:memoryleakfix.MinecraftScreenshotMixin from mod papi,pl:mixin:APP:drippyloadingscreen.mixins.json:client.IMixinMinecraft from mod drippyloadingscreen,pl:mixin:APP:emi.mixins.json:MinecraftClientMixin from mod emi,pl:mixin:APP:immersiveengineering.mixins.json:accessors.client.MinecraftAccess from mod immersiveengineering,pl:mixin:APP:flywheel.impl.mixins.json:MinecraftMixin from mod flywheel,pl:mixin:APP:ponder-common.mixins.json:client.WindowResizeMixin from mod ponder,pl:mixin:APP:create.mixins.json:accessor.MinecraftAccessor from mod create,pl:mixin:APP:sable.mixins.json:camera.new_camera_types.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:punching.MinecraftMixin from mod sable,pl:mixin:APP:entityculling.mixins.json:DebugScreenEntriesAccessor from mod entityculling,pl:mixin:APP:entityculling.mixins.json:LivingEntityRendererAccessor from mod entityculling,pl:mixin:APP:yumi_mc_core.mixins.json:client.MinecraftClientMixin from mod yumi_mc_core,pl:mixin:APP:fancymenu.mixins.json:client.IMixinMinecraft from mod fancymenu,pl:mixin:APP:fancymenu.mixins.json:client.MixinMinecraft from mod fancymenu,pl:mixin:APP:yacl.mixins.json:MinecraftMixin from mod yet_another_config_lib_v3,pl:mixin:APP:cold_sweat.mixin.json:MixinInventoryOpenClient from mod cold_sweat,pl:mixin:APP:cold_sweat.mixin.json:MixinPickEntity from mod cold_sweat,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/notenoughcrashes@4.4.9+1.21.1/fudge.notenoughcrashes.mixinhandlers.InGameCatcher.handleClientCrash(InGameCatcher.java:36) ~[notenoughcrashes-neoforge-4.4.9+1.21.1.jar%23336!/:?] {re:mixin,re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.modify$zze000$notenoughcrashes$atTheEndOfSecondCatchBeforePrintingCrashReport(Minecraft.java:3096) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:notenoughcrashes.mixins.json:client.MixinMinecraftClient from mod notenoughcrashes,pl:mixin:APP:veil.debug.mixins.json:client.DebugMinecraftMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineMinecraftMixin from mod veil,pl:mixin:APP:veil.neoforge.mixins.json:client.MinecraftMixin from mod veil,pl:mixin:APP:simulated.mixins.json:handle.MinecraftMixin from mod simulated,pl:mixin:APP:carryon.mixins.json:MinecraftMixin from mod carryon,pl:mixin:APP:konkrete.mixins.json:client.MixinMinecraft from mod konkrete,pl:mixin:APP:entity_model_features.mixins.json:MixinResourceReloadStart from mod entity_model_features,pl:mixin:APP:entity_model_features.mixins.json:accessor.MinecraftClientAccessor from mod entity_model_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinMinecraftClient from mod entity_texture_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinResourceReload from mod entity_texture_features,pl:mixin:APP:client.voxy.mixins.json:minecraft.MixinMinecraft from mod voxy,pl:mixin:APP:architectury.mixins.json:MixinMinecraft from mod architectury,pl:mixin:APP:lambdynlights.mixins.json:MinecraftClientMixin from mod lambdynlights_runtime,pl:mixin:APP:transition.mixins.json:EntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:EntityRendererMixin from mod transition,pl:mixin:APP:transition.mixins.json:BlockEntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:MinecraftMixin from mod transition,pl:mixin:APP:lithium-neoforge.mixins.json:startup.MinecraftMixin from mod lithium,pl:mixin:APP:aeronautics.mixins.json:custom_situational_music.MinecraftMixin from mod aeronautics,pl:mixin:APP:papi.mixins.json:memoryleakfix.MinecraftScreenshotMixin from mod papi,pl:mixin:APP:drippyloadingscreen.mixins.json:client.IMixinMinecraft from mod drippyloadingscreen,pl:mixin:APP:emi.mixins.json:MinecraftClientMixin from mod emi,pl:mixin:APP:immersiveengineering.mixins.json:accessors.client.MinecraftAccess from mod immersiveengineering,pl:mixin:APP:flywheel.impl.mixins.json:MinecraftMixin from mod flywheel,pl:mixin:APP:ponder-common.mixins.json:client.WindowResizeMixin from mod ponder,pl:mixin:APP:create.mixins.json:accessor.MinecraftAccessor from mod create,pl:mixin:APP:sable.mixins.json:camera.new_camera_types.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:punching.MinecraftMixin from mod sable,pl:mixin:APP:entityculling.mixins.json:DebugScreenEntriesAccessor from mod entityculling,pl:mixin:APP:entityculling.mixins.json:LivingEntityRendererAccessor from mod entityculling,pl:mixin:APP:yumi_mc_core.mixins.json:client.MinecraftClientMixin from mod yumi_mc_core,pl:mixin:APP:fancymenu.mixins.json:client.IMixinMinecraft from mod fancymenu,pl:mixin:APP:fancymenu.mixins.json:client.MixinMinecraft from mod fancymenu,pl:mixin:APP:yacl.mixins.json:MinecraftMixin from mod yet_another_config_lib_v3,pl:mixin:APP:cold_sweat.mixin.json:MixinInventoryOpenClient from mod cold_sweat,pl:mixin:APP:cold_sweat.mixin.json:MixinPickEntity from mod cold_sweat,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.run(Minecraft.java:828) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:notenoughcrashes.mixins.json:client.MixinMinecraftClient from mod notenoughcrashes,pl:mixin:APP:veil.debug.mixins.json:client.DebugMinecraftMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineMinecraftMixin from mod veil,pl:mixin:APP:veil.neoforge.mixins.json:client.MinecraftMixin from mod veil,pl:mixin:APP:simulated.mixins.json:handle.MinecraftMixin from mod simulated,pl:mixin:APP:carryon.mixins.json:MinecraftMixin from mod carryon,pl:mixin:APP:konkrete.mixins.json:client.MixinMinecraft from mod konkrete,pl:mixin:APP:entity_model_features.mixins.json:MixinResourceReloadStart from mod entity_model_features,pl:mixin:APP:entity_model_features.mixins.json:accessor.MinecraftClientAccessor from mod entity_model_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinMinecraftClient from mod entity_texture_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinResourceReload from mod entity_texture_features,pl:mixin:APP:client.voxy.mixins.json:minecraft.MixinMinecraft from mod voxy,pl:mixin:APP:architectury.mixins.json:MixinMinecraft from mod architectury,pl:mixin:APP:lambdynlights.mixins.json:MinecraftClientMixin from mod lambdynlights_runtime,pl:mixin:APP:transition.mixins.json:EntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:EntityRendererMixin from mod transition,pl:mixin:APP:transition.mixins.json:BlockEntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:MinecraftMixin from mod transition,pl:mixin:APP:lithium-neoforge.mixins.json:startup.MinecraftMixin from mod lithium,pl:mixin:APP:aeronautics.mixins.json:custom_situational_music.MinecraftMixin from mod aeronautics,pl:mixin:APP:papi.mixins.json:memoryleakfix.MinecraftScreenshotMixin from mod papi,pl:mixin:APP:drippyloadingscreen.mixins.json:client.IMixinMinecraft from mod drippyloadingscreen,pl:mixin:APP:emi.mixins.json:MinecraftClientMixin from mod emi,pl:mixin:APP:immersiveengineering.mixins.json:accessors.client.MinecraftAccess from mod immersiveengineering,pl:mixin:APP:flywheel.impl.mixins.json:MinecraftMixin from mod flywheel,pl:mixin:APP:ponder-common.mixins.json:client.WindowResizeMixin from mod ponder,pl:mixin:APP:create.mixins.json:accessor.MinecraftAccessor from mod create,pl:mixin:APP:sable.mixins.json:camera.new_camera_types.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:punching.MinecraftMixin from mod sable,pl:mixin:APP:entityculling.mixins.json:DebugScreenEntriesAccessor from mod entityculling,pl:mixin:APP:entityculling.mixins.json:LivingEntityRendererAccessor from mod entityculling,pl:mixin:APP:yumi_mc_core.mixins.json:client.MinecraftClientMixin from mod yumi_mc_core,pl:mixin:APP:fancymenu.mixins.json:client.IMixinMinecraft from mod fancymenu,pl:mixin:APP:fancymenu.mixins.json:client.MixinMinecraft from mod fancymenu,pl:mixin:APP:yacl.mixins.json:MinecraftMixin from mod yet_another_config_lib_v3,pl:mixin:APP:cold_sweat.mixin.json:MixinInventoryOpenClient from mod cold_sweat,pl:mixin:APP:cold_sweat.mixin.json:MixinPickEntity from mod cold_sweat,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/notenoughcrashes@4.4.9+1.21.1/fudge.notenoughcrashes.mixinhandlers.InGameCatcher.handleClientCrash(InGameCatcher.java:36) ~[notenoughcrashes-neoforge-4.4.9+1.21.1.jar%23336!/:?] {re:mixin,re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.modify$zze000$notenoughcrashes$atTheEndOfSecondCatchBeforePrintingCrashReport(Minecraft.java:3096) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:notenoughcrashes.mixins.json:client.MixinMinecraftClient from mod notenoughcrashes,pl:mixin:APP:veil.debug.mixins.json:client.DebugMinecraftMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineMinecraftMixin from mod veil,pl:mixin:APP:veil.neoforge.mixins.json:client.MinecraftMixin from mod veil,pl:mixin:APP:simulated.mixins.json:handle.MinecraftMixin from mod simulated,pl:mixin:APP:carryon.mixins.json:MinecraftMixin from mod carryon,pl:mixin:APP:konkrete.mixins.json:client.MixinMinecraft from mod konkrete,pl:mixin:APP:entity_model_features.mixins.json:MixinResourceReloadStart from mod entity_model_features,pl:mixin:APP:entity_model_features.mixins.json:accessor.MinecraftClientAccessor from mod entity_model_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinMinecraftClient from mod entity_texture_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinResourceReload from mod entity_texture_features,pl:mixin:APP:client.voxy.mixins.json:minecraft.MixinMinecraft from mod voxy,pl:mixin:APP:architectury.mixins.json:MixinMinecraft from mod architectury,pl:mixin:APP:lambdynlights.mixins.json:MinecraftClientMixin from mod lambdynlights_runtime,pl:mixin:APP:transition.mixins.json:EntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:EntityRendererMixin from mod transition,pl:mixin:APP:transition.mixins.json:BlockEntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:MinecraftMixin from mod transition,pl:mixin:APP:lithium-neoforge.mixins.json:startup.MinecraftMixin from mod lithium,pl:mixin:APP:aeronautics.mixins.json:custom_situational_music.MinecraftMixin from mod aeronautics,pl:mixin:APP:papi.mixins.json:memoryleakfix.MinecraftScreenshotMixin from mod papi,pl:mixin:APP:drippyloadingscreen.mixins.json:client.IMixinMinecraft from mod drippyloadingscreen,pl:mixin:APP:emi.mixins.json:MinecraftClientMixin from mod emi,pl:mixin:APP:immersiveengineering.mixins.json:accessors.client.MinecraftAccess from mod immersiveengineering,pl:mixin:APP:flywheel.impl.mixins.json:MinecraftMixin from mod flywheel,pl:mixin:APP:ponder-common.mixins.json:client.WindowResizeMixin from mod ponder,pl:mixin:APP:create.mixins.json:accessor.MinecraftAccessor from mod create,pl:mixin:APP:sable.mixins.json:camera.new_camera_types.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:punching.MinecraftMixin from mod sable,pl:mixin:APP:entityculling.mixins.json:DebugScreenEntriesAccessor from mod entityculling,pl:mixin:APP:entityculling.mixins.json:LivingEntityRendererAccessor from mod entityculling,pl:mixin:APP:yumi_mc_core.mixins.json:client.MinecraftClientMixin from mod yumi_mc_core,pl:mixin:APP:fancymenu.mixins.json:client.IMixinMinecraft from mod fancymenu,pl:mixin:APP:fancymenu.mixins.json:client.MixinMinecraft from mod fancymenu,pl:mixin:APP:yacl.mixins.json:MinecraftMixin from mod yet_another_config_lib_v3,pl:mixin:APP:cold_sweat.mixin.json:MixinInventoryOpenClient from mod cold_sweat,pl:mixin:APP:cold_sweat.mixin.json:MixinPickEntity from mod cold_sweat,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.run(Minecraft.java:828) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:notenoughcrashes.mixins.json:client.MixinMinecraftClient from mod notenoughcrashes,pl:mixin:APP:veil.debug.mixins.json:client.DebugMinecraftMixin from mod veil,pl:mixin:APP:veil.pipeline.mixins.json:client.PipelineMinecraftMixin from mod veil,pl:mixin:APP:veil.neoforge.mixins.json:client.MinecraftMixin from mod veil,pl:mixin:APP:simulated.mixins.json:handle.MinecraftMixin from mod simulated,pl:mixin:APP:carryon.mixins.json:MinecraftMixin from mod carryon,pl:mixin:APP:konkrete.mixins.json:client.MixinMinecraft from mod konkrete,pl:mixin:APP:entity_model_features.mixins.json:MixinResourceReloadStart from mod entity_model_features,pl:mixin:APP:entity_model_features.mixins.json:accessor.MinecraftClientAccessor from mod entity_model_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinMinecraftClient from mod entity_texture_features,pl:mixin:APP:entity_texture_features.mixins.json:reloading.MixinResourceReload from mod entity_texture_features,pl:mixin:APP:client.voxy.mixins.json:minecraft.MixinMinecraft from mod voxy,pl:mixin:APP:architectury.mixins.json:MixinMinecraft from mod architectury,pl:mixin:APP:lambdynlights.mixins.json:MinecraftClientMixin from mod lambdynlights_runtime,pl:mixin:APP:transition.mixins.json:EntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:EntityRendererMixin from mod transition,pl:mixin:APP:transition.mixins.json:BlockEntityRenderStateMixin from mod transition,pl:mixin:APP:transition.mixins.json:MinecraftMixin from mod transition,pl:mixin:APP:lithium-neoforge.mixins.json:startup.MinecraftMixin from mod lithium,pl:mixin:APP:aeronautics.mixins.json:custom_situational_music.MinecraftMixin from mod aeronautics,pl:mixin:APP:papi.mixins.json:memoryleakfix.MinecraftScreenshotMixin from mod papi,pl:mixin:APP:drippyloadingscreen.mixins.json:client.IMixinMinecraft from mod drippyloadingscreen,pl:mixin:APP:emi.mixins.json:MinecraftClientMixin from mod emi,pl:mixin:APP:immersiveengineering.mixins.json:accessors.client.MinecraftAccess from mod immersiveengineering,pl:mixin:APP:flywheel.impl.mixins.json:MinecraftMixin from mod flywheel,pl:mixin:APP:ponder-common.mixins.json:client.WindowResizeMixin from mod ponder,pl:mixin:APP:create.mixins.json:accessor.MinecraftAccessor from mod create,pl:mixin:APP:sable.mixins.json:camera.new_camera_types.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:plot.MinecraftMixin from mod sable,pl:mixin:APP:sable.mixins.json:punching.MinecraftMixin from mod sable,pl:mixin:APP:entityculling.mixins.json:DebugScreenEntriesAccessor from mod entityculling,pl:mixin:APP:entityculling.mixins.json:LivingEntityRendererAccessor from mod entityculling,pl:mixin:APP:yumi_mc_core.mixins.json:client.MinecraftClientMixin from mod yumi_mc_core,pl:mixin:APP:fancymenu.mixins.json:client.IMixinMinecraft from mod fancymenu,pl:mixin:APP:fancymenu.mixins.json:client.MixinMinecraft from mod fancymenu,pl:mixin:APP:yacl.mixins.json:MinecraftMixin from mod yet_another_config_lib_v3,pl:mixin:APP:cold_sweat.mixin.json:MixinInventoryOpenClient from mod cold_sweat,pl:mixin:APP:cold_sweat.mixin.json:MixinPickEntity from mod cold_sweat,pl:mixin:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.main.Main.main(Main.java:230) ~[client-1.21.1-20240808.144430-srg.jar%23276!/:?] {re:mixin,pl:runtimedistcleaner:A,re:classloading,pl:mixin:A,pl:runtimedistcleaner:A}
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {re:mixin}
+	at MC-BOOTSTRAP/fml_loader@4.0.43/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-4.0.43.jar%23161!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.43/net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:124) ~[loader-4.0.43.jar%23161!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.43/net.neoforged.fml.loading.targets.CommonClientLaunchHandler.runService(CommonClientLaunchHandler.java:32) ~[loader-4.0.43.jar%23161!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.43/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-4.0.43.jar%23161!/:4.0] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-11.0.5.jar%23166!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-11.0.5.jar%23166!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-11.0.5.jar%23166!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.run(Launcher.java:103) [modlauncher-11.0.5.jar%23166!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.main(Launcher.java:74) [modlauncher-11.0.5.jar%23166!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-11.0.5.jar%23166!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-11.0.5.jar%23166!/:?] {}
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.run(BootstrapLauncher.java:210) [bootstraplauncher-2.0.2.jar:?] {}
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:69) [bootstraplauncher-2.0.2.jar:?] {}
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {re:mixin}
+	at io.github.zekerzhayard.forgewrapper.installer.Main.main(Main.java:67) [ForgeWrapper-prism-2026-08-01.jar:prism-2026-08-01] {}
+	at org.prismlauncher.launcher.impl.StandardLauncher.launch(StandardLauncher.java:115) [NewLaunch.jar:?] {}
+	at org.prismlauncher.EntryPoint.listen(EntryPoint.java:129) [NewLaunch.jar:?] {}
+	at org.prismlauncher.EntryPoint.main(EntryPoint.java:70) [NewLaunch.jar:?] {}
+
+
+-- Connection --
+Details:
+	Protocol: play
+	Flow: CLIENTBOUND
+	Server type: <none>
+	Server brand: neoforge
+
+-- Dynamic Lighting --
+Details:
+	Description: This section contains information related to dynamic lighting, this may not be related to your crash.
+	Mode: fancy
+	Dynamic Light Sources: 0
+	Spatial Hash Occupancy: 0 / 1024
+
+-- System Details --
+Details:
+	Minecraft Version: 1.21.1
+	Minecraft Version ID: 1.21.1
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 21.0.7, Microsoft
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Microsoft
+	Memory: 5462966848 bytes (5209 MiB) / 9730785280 bytes (9280 MiB) up to 12884901888 bytes (12288 MiB)
+	CPUs: 16
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Ryzen 7 7700X 8-Core Processor             
+	Identifier: AuthenticAMD Family 25 Model 97 Stepping 2
+	Microarchitecture: Zen 3
+	Frequency (GHz): 4.50
+	Number of physical packages: 1
+	Number of physical CPUs: 8
+	Number of logical CPUs: 16
+	Graphics card #0 name: AMD Radeon(TM) Graphics
+	Graphics card #0 vendor: Advanced Micro Devices, Inc.
+	Graphics card #0 VRAM (MiB): 512.00
+	Graphics card #0 deviceId: VideoController1
+	Graphics card #0 versionInfo: 32.0.21045.1000
+	Graphics card #1 name: AMD Radeon RX 9060 XT
+	Graphics card #1 vendor: Advanced Micro Devices, Inc.
+	Graphics card #1 VRAM (MiB): 16304.00
+	Graphics card #1 deviceId: VideoController2
+	Graphics card #1 versionInfo: 32.0.31035.1003
+	Memory slot #0 capacity (MiB): 16384.00
+	Memory slot #0 clockSpeed (GHz): 5.60
+	Memory slot #0 type: Unknown
+	Memory slot #1 capacity (MiB): 16384.00
+	Memory slot #1 clockSpeed (GHz): 5.60
+	Memory slot #1 type: Unknown
+	Virtual memory max (MiB): 63699.98
+	Virtual memory used (MiB): 46668.92
+	Swap memory total (MiB): 31849.99
+	Swap memory used (MiB): 2320.02
+	Space in storage for jna.tmpdir (MiB): <path not set>
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): <path not set>
+	Space in storage for io.netty.native.workdir (MiB): <path not set>
+	Space in storage for java.io.tmpdir (MiB): available: 79741.29, total: 952805.00
+	Space in storage for workdir (MiB): available: 79741.29, total: 952805.00
+	JVM Flags: 3 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xms8096m -Xmx12288m
+	Yumi MC Core: 1.0.0-beta.1+1.21.1
+	Mods: 
+		aeronautics: Create Aeronautics v1.3.1
+		aeronautics_bundled: Create Aeronautics v1.3.1
+		aeronautics_utility_objects: Create Aeronautics: Transmission & Linkage v0.2.5
+		another_furniture: Another Furniture v4.0.2
+		apollib: Apollib v1.2.0
+		architectury: Architectury v13.0.11
+		atmospherics: Atmospherics v2.6.5
+		azimuth: Azimuth v1.4.7
+		betterdays: BetterDays v3.3.6.3
+		betterf3: BetterF3 v11.0.3
+		biome_replacer: Biome Replacer v3.1-hippo
+		bits_n_bobs: Create Bits 'n' Bobs v2.2.5
+		bits_n_dyes: Create: Bits 'n' Dyes v1.1.2
+		bits_n_tracks: Bits 'n' Tracks v1.0.3.1
+		carryon: Carry On v2.2.6
+		caupona: Caupona v1.21.1-0.5.6
+		chunky: Chunky v1.4.23
+		cloth_config: Cloth Config v15 API v15.0.140
+		cold_sweat: Cold Sweat v2.4.2
+		comforts: Comforts v9.0.5+1.21.1
+		computercraft: CC: Tweaked v1.120.2
+		contraptionlights: Contraption Lights v1.4.0
+		contraptionlightsfixes: Contraption Lights Fixes v1.5.0
+		controlling: Controlling v19.0.5
+		create: Create v6.0.10
+		create_cold_sweat: Create: Cold Sweat v1.1.2
+		create_connected: Create: Connected v1.3.2-mc1.21.1
+		create_mod_roller_plough_fix: Create Mod Roller & Plough Fix v1.1.0
+		createdeco: Create Deco v2.1.3
+		createdieselgenerators: Create Diesel Generators v1.21.1-1.3.15
+		ctm: ConnectedTexturesMod v1.21-1.2.1+3
+		diy_campfires: DIY Campfires v1.3.0.1
+		dndecor: Design n' Decor v2.2b
+		drippyloadingscreen: Drippy Loading Screen v3.1.5
+		dye_depot: Dye Depot v2.1.1
+		e4mc: e4mc v6.2.1
+		emi: EMI v1.1.24+1.21.1+neoforge
+		entity_model_features: Entity Model Features v3.2.4
+		entity_texture_features: Entity Texture Features v7.1
+		entityculling: EntityCulling v1.10.5
+		fancymenu: FancyMenu v3.9.10
+		flightboost: SpeedFly v1.0.0
+		flywheel: Flywheel v1.0.6
+		fzzy_config: Fzzy Config v0.7.6+1.21+neoforge
+		immersiveengineering: Immersive Engineering v12.3.2-190
+		industrialhellscape: Industrial Hellscape v1.1.3
+		item_obliterator: Item Obliterator v2.3.0
+		jade: Jade v15.10.6+neoforge
+		jamlib: JamLib v1.3.6+1.21.1
+		jei: Just Enough Items v19.44.0.401
+		konkrete: Konkrete v1.9.9
+		kotlinforforge: Kotlin For Forge v5.12.0
+		lambdynlights: LambDynamicLights v4.8.10+1.21.1
+		lambdynlights_api: LambDynamicLights (API) v4.8.10+1.21.1
+		lambdynlights_runtime: LambDynamicLights (Runtime) v4.8.10+1.21.1
+		lithium: Lithium v0.15.4+mc1.21.1
+		lithostitched: Lithostitched v1.8.0+beta4
+		marbledsfirstaid: Marbled's First Aid v1.2.1.0
+		matrixmod: matrixmod v0.1
+		melody: Melody v1.0.10
+		minecraft: Minecraft v1.21.1
+		mod_menu: Better ModList v21.1.1
+		mr_better_snowybiome: Snowy Biomes: Enhanced v1-v2.5.1
+		necronomicon: Necronomicon v1.6.0
+		neoforge: NeoForge v21.1.248
+		no_surface_lava: No Surface Lava v1.1
+		notenoughcrashes: Not Enough Crashes v4.4.9+1.21.1
+		offroad: Create Offroad v1.3.1
+		opencomputers: OpenComputers v1.9.4-2
+		oregenerationdisabler: Ore Generation Disabler v1.0.1
+		panoptic: Panoptic v1.08a
+		papi: Put A Plug In it! v1.2.1
+		patchouli: Patchouli v1.21.1-93-NEOFORGE
+		paxi: Paxi v1.21.1-NeoForge-5.1.3
+		placeholder_api: Placeholder API Neoforge v2.4.1+1.21
+		pmtemperature: PMTemperature v1.1.5
+		pmweather: ProtoManly's Weather v0.17.13
+		ponder: Ponder v1.0.82+mc1.21.1
+		pride: Pride Lib v1.2.4+1.21.1
+		removergeodos: RemoverGeodo v1.0.0
+		rhino: Rhino v2101.2.8-build.91
+		sable: Sable v2.0.4
+		sablecompanion: Sable Companion v1.6.0
+		savaru_inv: Savaru Inv v2.1.4.5
+		searchables: Searchables v1.0.2
+		searchlights: SearchLights v1.3.1
+		shut_up_gl_error: Shut Up GL Error v2.0.0+1.21.1
+		simplecanister: Junkyard Utils v1.2.2
+		simulated: Create Simulated v1.3.1
+		softimprints: Soft Imprints v2.8.0
+		spark: spark v1.10.124
+		spectrelib: SpectreLib v0.17.2+1.21
+		spruceui: SpruceUI v6.2.5+1.21.1
+		structurify: Structurify v2.0.33
+		struts: Strut Your Stuff v1.3.0
+		tectonic: Tectonic v3.0.26
+		thirst: Thirst Was Reclaimed v1.21.1-3.0.4
+		threatengl: ThreatenGL v2.0.4-release.10
+		transition: TRansition v1.0.21
+		trender: TRender v1.0.15
+		veil: Veil v4.3.2
+		voxy: neo-voxy v0.3.3
+		whitenoise: WhiteNoise v2.2.0
+		worldedit: WorldEdit v7.3.8+6939-7d32b45
+		yet_another_config_lib_v3: YetAnotherConfigLib v3.8.2+1.21.1-neoforge
+		yumi_mc_core: Yumi Minecraft Libraries: Foundation v1.0.0-beta.1+1.21.1
+		yungsapi: YUNG's API v1.21.1-NeoForge-5.1.6
+		zfastnoise: Fast Noise Mod v1.0.13+1.21.1+neoforge
+	ModLauncher: 11.0.5+main.901c6ea8
+	ModLauncher launch target: forgeclient
+	ModLauncher services: 
+		sponge-mixin-0.15.2+mixin.0.8.7.jar mixin PLUGINSERVICE 
+		loader-4.0.43.jar slf4jfixer PLUGINSERVICE 
+		loader-4.0.43.jar runtime_enum_extender PLUGINSERVICE 
+		at-modlauncher-10.0.1.jar accesstransformer PLUGINSERVICE 
+		loader-4.0.43.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-11.0.5.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-11.0.5.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		kotlinforforge@5.12.0
+		kotori_scala@3.7.1-build-11
+		javafml@4.0
+		lowcodefml@4.0
+		minecraft@4.0
+	Mod List: 
+		another_furniture-neoforge-4.0.2.jar              |Another Furniture             |another_furniture             |4.0.2               |Manifest: NOSIGNATURE
+		apollib-1.2.0-neoforge-21.1.jar                   |Apollib                       |apollib                       |1.2.0               |Manifest: NOSIGNATURE
+		architectury-13.0.11-neoforge.jar                 |Architectury                  |architectury                  |13.0.11             |Manifest: NOSIGNATURE
+		atmospherics-2.6.5-mc-1.21.1.jar                  |Atmospherics                  |atmospherics                  |2.6.5               |Manifest: NOSIGNATURE
+		azimuth-1.4.7.jar                                 |Azimuth                       |azimuth                       |1.4.7               |Manifest: NOSIGNATURE
+		better_modlist-21.1.1.jar                         |Better ModList                |mod_menu                      |21.1.1              |Manifest: NOSIGNATURE
+		betterdays-1.21.1-3.3.6.3-NEOFORGE.jar            |BetterDays                    |betterdays                    |3.3.6.3             |Manifest: NOSIGNATURE
+		BetterF3-11.0.3-NeoForge-1.21.1.jar               |BetterF3                      |betterf3                      |11.0.3              |Manifest: NOSIGNATURE
+		biomereplacer-3.1-hippo-neo.jar                   |Biome Replacer                |biome_replacer                |3.1-hippo           |Manifest: NOSIGNATURE
+		bits_n_tracks-1.0.3.1-release.jar                 |Bits 'n' Tracks               |bits_n_tracks                 |1.0.3.1             |Manifest: NOSIGNATURE
+		carryon-neoforge-1.21.1-2.2.6.13.jar              |Carry On                      |carryon                       |2.2.6               |Manifest: NOSIGNATURE
+		Caupona-1.21.1-0.5.6.jar                          |Caupona                       |caupona                       |1.21.1-0.5.6        |Manifest: NOSIGNATURE
+		cc-tweaked-1.21.1-forge-1.120.2.jar               |CC: Tweaked                   |computercraft                 |1.120.2             |Manifest: NOSIGNATURE
+		Chunky-NeoForge-1.4.23.jar                        |Chunky                        |chunky                        |1.4.23              |Manifest: NOSIGNATURE
+		cloth-config-15.0.140-neoforge.jar                |Cloth Config v15 API          |cloth_config                  |15.0.140            |Manifest: NOSIGNATURE
+		ColdSweat-2.4.2.jar                               |Cold Sweat                    |cold_sweat                    |2.4.2               |Manifest: NOSIGNATURE
+		comforts-neoforge-9.0.5+1.21.1.jar                |Comforts                      |comforts                      |9.0.5+1.21.1        |Manifest: NOSIGNATURE
+		CTM-1.21-1.2.1+3.jar                              |ConnectedTexturesMod          |ctm                           |1.21-1.2.1+3        |Manifest: NOSIGNATURE
+		contraption-lights-neoforge-1.21.1-1.4.0.jar      |Contraption Lights            |contraptionlights             |1.4.0               |Manifest: NOSIGNATURE
+		contraptionlights-fixes-neoforge-1.21.1-1.5.0.jar |Contraption Lights Fixes      |contraptionlightsfixes        |1.5.0               |Manifest: NOSIGNATURE
+		Controlling-neoforge-1.21.1-19.0.5.jar            |Controlling                   |controlling                   |19.0.5              |Manifest: NOSIGNATURE
+		create-1.21.1-6.0.10.jar                          |Create                        |create                        |6.0.10              |Manifest: NOSIGNATURE
+		create-aeronautics-bundled-1.21.1-1.3.1.jar       |Create Aeronautics            |aeronautics_bundled           |1.3.1               |Manifest: NOSIGNATURE
+		dev.eriksonn.aeronautics.aeronautics-neoforge-1.21|Create Aeronautics            |aeronautics                   |1.3.1               |Manifest: NOSIGNATURE
+		create_aeronautics_transmission_linkage-0.2.5.jar |Create Aeronautics: Transmissi|aeronautics_utility_objects   |0.2.5               |Manifest: NOSIGNATURE
+		bits_n_bobs-2.2.5.jar                             |Create Bits 'n' Bobs          |bits_n_bobs                   |2.2.5               |Manifest: NOSIGNATURE
+		createdeco-2.1.3.jar                              |Create Deco                   |createdeco                    |2.1.3               |Manifest: NOSIGNATURE
+		createdieselgenerators-1.21.1-1.3.15.jar          |Create Diesel Generators      |createdieselgenerators        |1.21.1-1.3.15       |Manifest: NOSIGNATURE
+		ploughandroll-1.2.0-alpha.1.jar                   |Create Mod Roller & Plough Fix|create_mod_roller_plough_fix  |1.1.0               |Manifest: NOSIGNATURE
+		dev.ryanhcode.offroad.offroad-neoforge-1.21.1-1.3.|Create Offroad                |offroad                       |1.3.1               |Manifest: NOSIGNATURE
+		dev.simulated_team.simulated.simulated-neoforge-1.|Create Simulated              |simulated                     |1.3.1               |Manifest: NOSIGNATURE
+		bits_n_dyes-1.1.2.jar                             |Create: Bits 'n' Dyes         |bits_n_dyes                   |1.1.2               |Manifest: NOSIGNATURE
+		create_cold_sweat-1.1.2.jar                       |Create: Cold Sweat            |create_cold_sweat             |1.1.2               |Manifest: NOSIGNATURE
+		create_connected-1.3.2-mc1.21.1.jar               |Create: Connected             |create_connected              |1.3.2-mc1.21.1      |Manifest: NOSIGNATURE
+		Design-n-Decor-1.21.1-2.2b.jar                    |Design n' Decor               |dndecor                       |2.2b                |Manifest: NOSIGNATURE
+		diy_campfires-1.21.1neo-1.3.0.1.jar               |DIY Campfires                 |diy_campfires                 |1.3.0.1             |Manifest: NOSIGNATURE
+		drippyloadingscreen_neoforge_3.1.5_MC_1.21.1.jar  |Drippy Loading Screen         |drippyloadingscreen           |3.1.5               |Manifest: NOSIGNATURE
+		dye_depot-2.1.1.jar                               |Dye Depot                     |dye_depot                     |2.1.1               |Manifest: NOSIGNATURE
+		e4mc-neoforge-6.2.1.jar                           |e4mc                          |e4mc                          |6.2.1               |Manifest: NOSIGNATURE
+		emi-1.1.24+1.21.1+neoforge.jar                    |EMI                           |emi                           |1.1.24+1.21.1+neofor|Manifest: NOSIGNATURE
+		entity_model_features-3.2.4-1.21-neoforge.jar     |Entity Model Features         |entity_model_features         |3.2.4               |Manifest: NOSIGNATURE
+		entity_texture_features_1.21-neoforge-7.1.jar     |Entity Texture Features       |entity_texture_features       |7.1                 |Manifest: NOSIGNATURE
+		entityculling-neoforge-1.10.5-mc1.21.1.jar        |EntityCulling                 |entityculling                 |1.10.5              |Manifest: NOSIGNATURE
+		fancymenu_neoforge_3.9.10_MC_1.21.1.jar           |FancyMenu                     |fancymenu                     |3.9.10              |Manifest: NOSIGNATURE
+		zfastnoise-1.0.13+1.21.1+neoforge.jar             |Fast Noise Mod                |zfastnoise                    |1.0.13+1.21.1+neofor|Manifest: NOSIGNATURE
+		flywheel-neoforge-1.21.1-1.0.6.jar                |Flywheel                      |flywheel                      |1.0.6               |Manifest: NOSIGNATURE
+		fzzy_config-0.7.6+1.21+neoforge.jar               |Fzzy Config                   |fzzy_config                   |0.7.6+1.21+neoforge |Manifest: NOSIGNATURE
+		ImmersiveEngineering-1.21.1-12.3.2-190.jar        |Immersive Engineering         |immersiveengineering          |12.3.2-190          |Manifest: NOSIGNATURE
+		industrialhellscape-1.1.3.jar                     |Industrial Hellscape          |industrialhellscape           |1.1.3               |Manifest: NOSIGNATURE
+		Item-Obliterator-NeoForge-MC1.21.1-2.3.0.jar      |Item Obliterator              |item_obliterator              |2.3.0               |Manifest: NOSIGNATURE
+		Jade-1.21.1-NeoForge-15.10.6.jar                  |Jade                          |jade                          |15.10.6+neoforge    |Manifest: NOSIGNATURE
+		jamlib-neoforge-1.3.6+1.21.1.jar                  |JamLib                        |jamlib                        |1.3.6+1.21.1        |Manifest: NOSIGNATURE
+		junkyard_utils-1.2.2b-neoforge-1.21.1.jar         |Junkyard Utils                |simplecanister                |1.2.2               |Manifest: NOSIGNATURE
+		jei-1.21.1-neoforge-19.44.0.401.jar               |Just Enough Items             |jei                           |19.44.0.401         |Manifest: NOSIGNATURE
+		konkrete_neoforge_1.9.9_MC_1.21.jar               |Konkrete                      |konkrete                      |1.9.9               |Manifest: NOSIGNATURE
+		thedarkcolour.kffmod-5.12.0.jar                   |Kotlin For Forge              |kotlinforforge                |5.12.0              |Manifest: NOSIGNATURE
+		lambdynamiclights-4.8.10+1.21.1.jar               |LambDynamicLights             |lambdynlights                 |4.8.10+1.21.1       |Manifest: NOSIGNATURE
+		lambdynamiclights-api-4.8.10+1.21.1-mojmap.jar    |LambDynamicLights (API)       |lambdynlights_api             |4.8.10+1.21.1       |Manifest: NOSIGNATURE
+		lambdynamiclights-4.8.10+1.21.1-neoforge.jar      |LambDynamicLights (Runtime)   |lambdynlights_runtime         |4.8.10+1.21.1       |Manifest: NOSIGNATURE
+		lithium-neoforge-0.15.4+mc1.21.1.jar              |Lithium                       |lithium                       |0.15.4+mc1.21.1     |Manifest: NOSIGNATURE
+		lithostitched-1.8.0+beta4-neoforge-21.1.jar       |Lithostitched                 |lithostitched                 |1.8.0+beta4         |Manifest: NOSIGNATURE
+		marbledsfirstaid-1.21.1neo-1.2.1.0.jar            |Marbled's First Aid           |marbledsfirstaid              |1.2.1.0             |Manifest: NOSIGNATURE
+		examplemod-1.0.0.jar                              |matrixmod                     |matrixmod                     |0.1                 |Manifest: NOSIGNATURE
+		melody_neoforge_1.0.10_MC_1.21.jar                |Melody                        |melody                        |1.0.10              |Manifest: NOSIGNATURE
+		client-1.21.1-20240808.144430-srg.jar             |Minecraft                     |minecraft                     |1.21.1              |Manifest: a1:d4:5e:04:4f:d3:d6:e0:7b:37:97:cf:77:b0:de:ad:4a:47:ce:8c:96:49:5f:0a:cf:8c:ae:b2:6d:4b:8a:3f
+		Necronomicon-NeoForge-1.6.0+1.21.jar              |Necronomicon                  |necronomicon                  |1.6.0               |Manifest: NOSIGNATURE
+		neo-voxy-0.3.3.jar                                |neo-voxy                      |voxy                          |0.3.3               |Manifest: NOSIGNATURE
+		neoforge-21.1.248-universal.jar                   |NeoForge                      |neoforge                      |21.1.248            |Manifest: NOSIGNATURE
+		NoSurfaceLava-1.1+1.21.x-26.2.jar                 |No Surface Lava               |no_surface_lava               |1.1                 |Manifest: NOSIGNATURE
+		notenoughcrashes-neoforge-4.4.9+1.21.1.jar        |Not Enough Crashes            |notenoughcrashes              |4.4.9+1.21.1        |Manifest: NOSIGNATURE
+		opencomputers-1.9.4-2.jar                         |OpenComputers                 |opencomputers                 |1.9.4-2             |Manifest: NOSIGNATURE
+		oregenerationdisabler-1.0.1.jar                   |Ore Generation Disabler       |oregenerationdisabler         |1.0.1               |Manifest: NOSIGNATURE
+		Panoptic-1.08a-NeoForge-1.21.1.jar                |Panoptic                      |panoptic                      |1.08a               |Manifest: NOSIGNATURE
+		Patchouli-1.21.1-93-NEOFORGE.jar                  |Patchouli                     |patchouli                     |1.21.1-93-NEOFORGE  |Manifest: NOSIGNATURE
+		Paxi-1.21.1-NeoForge-5.1.3.jar                    |Paxi                          |paxi                          |1.21.1-NeoForge-5.1.|Manifest: NOSIGNATURE
+		TextPlaceholderAPI-neoforge-e1a427d5b9.jar        |Placeholder API Neoforge      |placeholder_api               |2.4.1+1.21          |Manifest: NOSIGNATURE
+		pmtemperature-1.1.5.jar                           |PMTemperature                 |pmtemperature                 |1.1.5               |Manifest: NOSIGNATURE
+		ponder-neoforge-1.0.82+mc1.21.1.jar               |Ponder                        |ponder                        |1.0.82+mc1.21.1     |Manifest: NOSIGNATURE
+		pridelib-1.2.4+1.21.1-mojmap.jar                  |Pride Lib                     |pride                         |1.2.4+1.21.1        |Manifest: NOSIGNATURE
+		pmweather-1_21_1-0_17_13-alpha-nosky(1).jar       |ProtoManly's Weather          |pmweather                     |0.17.13             |Manifest: NOSIGNATURE
+		papi-neoforge-1.21.1-1.2.1.jar                    |Put A Plug In it!             |papi                          |1.2.1               |Manifest: NOSIGNATURE
+		removergeodos-1.0.0.jar                           |RemoverGeodo                  |removergeodos                 |1.0.0               |Manifest: NOSIGNATURE
+		rhino-2101.2.8-build.91.jar                       |Rhino                         |rhino                         |2101.2.8-build.91   |Manifest: NOSIGNATURE
+		sable-neoforge-1.21.1-2.0.4.jar                   |Sable                         |sable                         |2.0.4               |Manifest: NOSIGNATURE
+		sable-companion-common-1.21.1-1.6.0.jar           |Sable Companion               |sablecompanion                |1.6.0               |Manifest: NOSIGNATURE
+		savaru-inv-neoforge-1.21.1-2.1.4.5.jar            |Savaru Inv                    |savaru_inv                    |2.1.4.5             |Manifest: NOSIGNATURE
+		Searchables-neoforge-1.21.1-1.0.2.jar             |Searchables                   |searchables                   |1.0.2               |Manifest: NOSIGNATURE
+		searchlights-1.3.1.jar                            |SearchLights                  |searchlights                  |1.3.1               |Manifest: NOSIGNATURE
+		shut_up_gl_error-neoforge-2.0.0+1.21.1.jar        |Shut Up GL Error              |shut_up_gl_error              |2.0.0+1.21.1        |Manifest: NOSIGNATURE
+		better-snowy-biome-v2.5.1.jar                     |Snowy Biomes: Enhanced        |mr_better_snowybiome          |1-v2.5.1            |Manifest: NOSIGNATURE
+		softimprints-neoforge-1.21.1-2.8.0.jar            |Soft Imprints                 |softimprints                  |2.8.0               |Manifest: NOSIGNATURE
+		spark-1.10.124-neoforge.jar                       |spark                         |spark                         |1.10.124            |Manifest: NOSIGNATURE
+		spectrelib-neoforge-0.17.2+1.21.jar               |SpectreLib                    |spectrelib                    |0.17.2+1.21         |Manifest: NOSIGNATURE
+		SpeedFly_1.21.1-1.0.0.jar                         |SpeedFly                      |flightboost                   |1.0.0               |Manifest: NOSIGNATURE
+		spruceui-6.2.5+1.21.1-mojmap.jar                  |SpruceUI                      |spruceui                      |6.2.5+1.21.1        |Manifest: NOSIGNATURE
+		structurify-neoforge-2.0.33+mc1.21.1.jar          |Structurify                   |structurify                   |2.0.33              |Manifest: NOSIGNATURE
+		struts-1.3.0.jar                                  |Strut Your Stuff              |struts                        |1.3.0               |Manifest: NOSIGNATURE
+		tectonic-3.0.26-neoforge-21.1.jar                 |Tectonic                      |tectonic                      |3.0.26              |Manifest: NOSIGNATURE
+		ThirstWasReclaimed-1.21.1-3.0.4.jar               |Thirst Was Reclaimed          |thirst                        |1.21.1-3.0.4        |Manifest: NOSIGNATURE
+		threatengl-neoforge-2.0.4-release.10.jar          |ThreatenGL                    |threatengl                    |2.0.4-release.10    |Manifest: NOSIGNATURE
+		TRansition-1.0.21-1.21.1-neoforge-SNAPSHOT.jar    |TRansition                    |transition                    |1.0.21              |Manifest: NOSIGNATURE
+		TRender-1.0.15-1.21.1-neoforge-SNAPSHOT.jar       |TRender                       |trender                       |1.0.15              |Manifest: NOSIGNATURE
+		veil-neoforge-1.21.1-4.3.2.jar                    |Veil                          |veil                          |4.3.2               |Manifest: NOSIGNATURE
+		whitenoise-1.21.1-neoforge-2.2.0.jar              |WhiteNoise                    |whitenoise                    |2.2.0               |Manifest: NOSIGNATURE
+		worldedit-mod-7.3.8.jar                           |WorldEdit                     |worldedit                     |7.3.8+6939-7d32b45  |Manifest: NOSIGNATURE
+		yet_another_config_lib_v3-3.8.2+1.21.1-neoforge.ja|YetAnotherConfigLib           |yet_another_config_lib_v3     |3.8.2+1.21.1-neoforg|Manifest: NOSIGNATURE
+		yumi-mc-foundation-1.0.0-beta.1+1.21.1-mojmap.jar |Yumi Minecraft Libraries: Foun|yumi_mc_core                  |1.0.0-beta.1+1.21.1 |Manifest: NOSIGNATURE
+		YungsApi-1.21.1-NeoForge-5.1.6.jar                |YUNG's API                    |yungsapi                      |1.21.1-NeoForge-5.1.|Manifest: NOSIGNATURE
+	Crash Report UUID: fca79ed5-44a1-456f-ad97-7950ffd2c24c
+	FML: 4.0.43
+	NeoForge: 21.1.248
+	Flywheel Backend: flywheel:indirect
+	Suspected Mods: Not Enough Crashes (notenoughcrashes), Minecraft (minecraft)

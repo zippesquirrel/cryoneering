@@ -23,23 +23,10 @@
 			#Configure how much stress a source can accommodate for.
 			[kinetics.stressValues.v2.capacity]
 				gray_portable_engine = 64.0
-				verdant_portable_engine = 64.0
-				tan_portable_engine = 64.0
-				mint_portable_engine = 64.0
-				teal_portable_engine = 64.0
-				forest_portable_engine = 64.0
 				purple_portable_engine = 64.0
 				brown_portable_engine = 64.0
-				rose_portable_engine = 64.0
-				ginger_portable_engine = 64.0
-				aqua_portable_engine = 64.0
-				maroon_portable_engine = 64.0
-				indigo_portable_engine = 64.0
-				olive_portable_engine = 64.0
-				amber_portable_engine = 64.0
 				light_blue_portable_engine = 64.0
 				yellow_portable_engine = 64.0
-				beige_portable_engine = 64.0
 				torsion_spring = 8.0
 				black_portable_engine = 64.0
 				cyan_portable_engine = 64.0
@@ -48,13 +35,10 @@
 				pink_portable_engine = 64.0
 				green_portable_engine = 64.0
 				red_portable_engine = 64.0
-				coral_portable_engine = 64.0
 				magenta_portable_engine = 64.0
-				slate_portable_engine = 64.0
 				steering_wheel = 16.0
 				blue_portable_engine = 64.0
 				white_portable_engine = 64.0
-				navy_portable_engine = 64.0
 				orange_portable_engine = 64.0
 
 #.

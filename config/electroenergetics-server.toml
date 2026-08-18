@@ -74,7 +74,7 @@ alternateWirePlacement = false
 	# Range: 9.999999747378752E-5 ~ 3.4028234663852886E38
 	rotorStressMultiplier = 1.0
 	#.
-	#decide output power of alternators through voltage
+	#Defines the output power of alternators through voltage
 	# Default: 48.0
 	# Range: 9.999999747378752E-5 ~ 3.4028234663852886E38
 	rotorPowerMultiplier = 48.0
@@ -83,6 +83,11 @@ alternateWirePlacement = false
 	# Default: 100.0
 	# Range: 9.999999747378752E-5 ~ 3.4028234663852886E38
 	rotorFullLoadCurrent = 100.0
+	#.
+	#Defines how the speed relates to frequency
+	# Default: 6.400000095367432
+	# Range: 9.999999747378752E-5 ~ 3.4028234663852886E38
+	hertzPerRPM = 6.400000095367432
 
 #.
 #Resistance Values

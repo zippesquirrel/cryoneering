@@ -59,8 +59,8 @@
     "entity": true,
     "entity_variant": true
   },
-  "supplementaries": {
-    "hat_stand": true
+  "immersiveengineering": {
+    "multiblock_icon": true
   },
   "jade": {
     "coordinates.rel": false,

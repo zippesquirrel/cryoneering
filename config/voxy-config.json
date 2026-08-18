@@ -36,6 +36,7 @@
   "enable_extended_request_distance": false,
   "follow_lod_request_distance": true,
   "request_distance": 48,
+  "ssao_mode": "best",
   "use_environmental_fog": true,
   "leaf_lod_mode": "balanced",
   "enable_far_player_rendering": true,

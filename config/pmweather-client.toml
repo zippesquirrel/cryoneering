@@ -4,7 +4,7 @@
 	#Quality of volumetric clouds
 	#Allowed Values: POTATO, LOW, MEDIUM, HIGH, PC_KILLER
 	volumetricsquality = "MEDIUM"
-	#Render scale of volumetric clouds (Causes artifacting but greatly improves performance)
+	#Render scale of volumetric clouds (Causes artifacting but greatly improves performance) (Value is curved at resolutions greater than 1080p)
 	# Default: 2.5
 	# Range: 1.0 ~ 4.0
 	volumetricsdownsample = 2.5
@@ -33,7 +33,7 @@
 	#Particle Density of Rain
 	# Default: 30
 	# Range: 5 ~ 60
-	rainparticledensity = 30
+	rainparticledensity = 50
 	#Radar resolution
 	# Default: 100
 	# Range: 32 ~ 200
@@ -60,6 +60,6 @@
 	#Whether anemometers will shake at high speed
 	funenometers = false
 	#Whether to use the metric system over imperial
-	metric = false
+	metric = true
 	#Whether radars should be forced into 3x3 size, even when extended
 	3x3radar = false

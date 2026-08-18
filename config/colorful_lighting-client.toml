@@ -1,0 +1,21 @@
+[entity_lights]
+	#Light level of burning entities (LambDynamicLights uses 15). 0 disables.
+	# Default: 15
+	# Range: 0 ~ 15
+	burningEntityLightLevel = 15
+	#Light level of glow squids. 0 disables.
+	# Default: 7
+	# Range: 0 ~ 15
+	glowSquidLightLevel = 7
+	#Light level of blazes. 0 disables.
+	# Default: 10
+	# Range: 0 ~ 15
+	blazeLightLevel = 10
+	#Light level of magma cubes. 0 disables.
+	# Default: 8
+	# Range: 0 ~ 15
+	magmaCubeLightLevel = 8
+	#Light level of allays. 0 disables.
+	# Default: 5
+	# Range: 0 ~ 15
+	allayLightLevel = 5

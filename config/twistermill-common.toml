@@ -1,0 +1,316 @@
+#TwisterMill settings
+[twistermill]
+
+	#Twistermill Bearing settings
+	[twistermill.twistermill_bearing]
+		#SU multiplier for Twistermill Bearing output. Range: 0.1 - 100.0. Default: 1.0
+		# Default: 1.0
+		# Range: 0.1 ~ 100.0
+		suFactor = 1.0
+		#Static extra SU added per assembled contraption block. Range: 1 - 1024. Default: 8
+		# Default: 8
+		# Range: 1 ~ 1024
+		suPerBlock = 8
+		#Maximum Twistermill Bearing SU multiplier reached at average bound servo angle 45°. Range: 1 - 4. Default: 1
+		# Default: 1
+		# Range: 1 ~ 4
+		servoAngleSuMaxMultiplier = 1
+		#How often Twistermill Bearing ramps RPM toward target. Range: 10 - 1000 ticks in steps of 10. Default: 200
+		rpmRampTicks = 20
+		#How often Twistermill Bearing samples wind speed. Range: 10 - 1000 ticks in steps of 10. Default: 40
+		windUpdateTicks = 10
+		#Maximum RPM change per ramp update for Twistermill Bearing. Range: 1 - 64. Default: 4
+		# Default: 8
+		# Range: 1 ~ 64
+		rpmRampStep = 8
+		#Maximum RPM for Twistermill Bearing when Weather2 is the active weather backend. Range: 10 - 256. Default: 64
+		# Default: 64
+		# Range: 10 ~ 256
+		weather2MaxRPM = 64
+		#Maximum RPM for Twistermill Bearing when PMWeather is the active weather backend. Range: 10 - 256. Default: 32
+		# Default: 32
+		# Range: 10 ~ 256
+		pmweatherMaxRPM = 32
+		#Invert Twistermill Bearing redstone comparator output (0..15) after normal calculation. Default: false
+		invertTwistermillBearingComparator = false
+		#Maximum number of blocking blocks above a Twistermill Bearing that still count as outside. 0 disables the Weather Bearing sky obstruction check. Range: 0 - 10. Default: 3
+		# Default: 3
+		# Range: 0 ~ 10
+		allowedBlocksAboveForOutside = 3
+
+	#Weather Sail settings
+	[twistermill.sails]
+		#Maximum number of blocks Weather Sail placement assist may search in the selected direction. Range: 1 - 10. Default: 3
+		# Default: 3
+		# Range: 1 ~ 10
+		sail_placement_assist_range = 3
+		#Enable Weather Sail wind force contribution to Sable physics. Default: true.
+		enable_sail_wind_force = true
+		#Smooth TwisterMill Weather Sail force changes over Sable physics substeps. Default: false.
+		smooth_sail_force_updates = false
+		#Weather Sail force smoothing strength. Lower values react faster; higher values smooth more strongly. Range: 0.1 - 10.0. Default: 1.0.
+		# Default: 1.0
+		# Range: 0.1 ~ 10.0
+		sail_force_smoothing_strength = 1.0
+		#Show the red incoming-wind force vector and green resulting pitch-force vector for Weather Sails when Sail wind force is enabled. This controls rendering only and does not change physics. Default: false.
+		enable_sail_wind_force_vectors = false
+		#Enable periodic diagnostics for Weather Sail wind sampling and computed force. Default: false.
+		enable_sail_wind_diagnostics = false
+		#Maximum Sail force conversion from incoming wind into tangential rotor-driving force (Peak-Efficiency / Force Redirection). This is the peak green/blue force ratio and is fully configurable. Range: 10–200%. Default: 80%.
+		# Default: 80
+		# Range: 10 ~ 200
+		peak_efficiency_rotor_blades = 80
+		#Pitch angle in degrees at which the maximal Sail peak-efficiency is reached. Range: 1–89. Default: 50.
+		# Default: 50
+		# Range: 1 ~ 89
+		sail_peak_efficiency_pitch_degrees = 50
+		#Diagnostic log interval for Twister Sail wind diagnostics. Range: 10 - 1200 ticks. Default: 100.
+		# Default: 100
+		# Range: 10 ~ 1200
+		sail_wind_diagnostic_interval_ticks = 100
+		#Wind force coefficient for Weather Sail physics. Range: 0.0 - 10.0. Default: 1.0.
+		# Default: 1.0
+		# Range: 0.0 ~ 10.0
+		sail_wind_force_coefficient = 1.0
+		#Minimum exposure threshold below which force is ignored. Range: 0.0 - 1.0. Default: 0.1.
+		# Default: 0.1
+		# Range: 0.0 ~ 1.0
+		sail_wind_min_exposure = 0.1
+		#Maximum force magnitude per Weather Sail block contribution. Range: 0.0 - 1000.0. Default: 5.0.
+		# Default: 5.0
+		# Range: 0.0 ~ 1000.0
+		sail_wind_max_force_per_block = 5.0
+		#Maximum total force magnitude per physics object from Weather Sail contributions. Range: 0.0 - 5000.0. Default: 60.0.
+		# Default: 60.0
+		# Range: 0.0 ~ 5000.0
+		sail_wind_max_force_per_object = 60.0
+
+	#Ship Contraptions settings
+	[twistermill.ship_contraptions]
+		#Enable remembered contraption memory for Weather Bearings. Default: true.
+		enable_weather_bearing_contraption_memory = true
+		#Enable remembered contraption memory for Windvane Bearings. Default: true.
+		enable_windvane_bearing_contraption_memory = true
+		#Enable remembered contraption memory for Servo Bearings. Default: true.
+		enable_servo_bearing_contraption_memory = true
+		#Enable remembered contraption memory for Inverted Servo Bearings. Default: true.
+		enable_inverted_servo_bearing_contraption_memory = true
+		#Sable mass of each Blade Arm block. Requires a world/server restart and reassembly. Range: 1 - 200. Default: 33.
+		# Default: 33
+		# Range: 1 ~ 200
+		blade_arm_block_mass = 33
+		#Sable mass of each Blade Arm East Face block. Requires a world/server restart and reassembly. Range: 1 - 200. Default: 33.
+		# Default: 33
+		# Range: 1 ~ 200
+		blade_arm_eastface_block_mass = 33
+		#Sable mass of each Blade Arm West Face block. Requires a world/server restart and reassembly. Range: 1 - 200. Default: 33.
+		# Default: 33
+		# Range: 1 ~ 200
+		blade_arm_westface_block_mass = 33
+		#Automatically reseat loaded Windvane Bearing Sable attachments after server/world load and chunk load. Default: false.
+		auto_reseat_windvane_bearing_on_load = false
+		#Automatically reseat loaded Weather Bearing Sable attachments after server/world load and chunk load. Default: false.
+		auto_reseat_weather_bearing_on_load = false
+		#Automatically reseat loaded Servo Bearing Sable attachments after server/world load and chunk load. Default: false.
+		auto_reseat_servo_on_load = false
+		#Automatically reseat loaded Inverted Servo Bearing Sable attachments after server/world load and chunk load. Default: false.
+		auto_reseat_inverted_servo_on_load = false
+
+	#Worldgen settings
+	[twistermill.worldgen]
+		#Enable Signal Quartz Ore generation for this world. Once enabled in-world, it stays enabled for that world.
+		generate_ores_in_world = false
+
+	#Experimental content visibility and recipe availability. Registry entries always remain available for existing worlds.
+	[twistermill."experimental content"]
+		#Show the Blade Arm block in the TwisterMill creative tab and enable matching recipes when present. Default: false
+		showBladeArmBlock = false
+		#Show the Blade Arm East Face block in the TwisterMill creative tab and enable matching recipes when present. Default: false
+		showBladeArmEastfaceBlock = false
+		#Show the Blade Arm West Face block in the TwisterMill creative tab and enable matching recipes when present. Default: false
+		showBladeArmWestfaceBlock = false
+		#Show Aluminum Truss in the TwisterMill creative tab and enable its recipes. Default: true
+		showAluminumTruss = true
+		#Show the Nostalgic Grass Block in the TwisterMill creative tab and enable its recipes. Default: false
+		showNostalgicGrassBlock = false
+
+	#Drop and reward settings
+	[twistermill.drops]
+		#Give the configured reward when the Binary Code Transmitter advancement is completed. Default: false
+		enable_netherite_advancement_drop = false
+		#Registered item ID used for the Binary Code Transmitter advancement reward. Default: minecraft:ancient_debris
+		advancement_drop_item = "minecraft:ancient_debris"
+		#Item count used for the Binary Code Transmitter advancement reward. Runtime range: 1 - 64. Default: 6
+		# Default: 6
+		# Range: > -2147483648
+		advancement_drop_count = 6
+
+	#Tooltip settings
+	[twistermill.tooltips]
+		#Is item mass tooltip active? Default: true
+		showMassTooltip = true
+
+	#Servo Bearings settings
+	[twistermill.servo_bearings]
+		#Enable binary frame input decoding on Servo Bearing opposite-facing side. Default: true
+		enable_servo_bearing_binary_input = true
+		#Enable binary frame input decoding on Inverted Servo Bearing opposite-facing side. Default: true
+		enable_inverted_servo_bearing_binary_input = true
+		#When enabled, Servo Bearing speed signal 0 maps to 0.1 degrees/tick. When disabled, speed signal 0 maps to 0 degrees/tick. Default: false
+		enable_servo_speed_zero_movement = false
+		#When enabled, Inverted Servo Bearing speed signal 0 maps to 0.1 degrees/tick. When disabled, speed signal 0 maps to 0 degrees/tick. Default: false
+		enable_inv_servo_speed_zero_movement = false
+		#Enable extra diagnostics/logging/troubleshooting for Servo/Inverted Servo Bearing Sable and Mode 7 blade-anchor slots. Keep disabled during normal gameplay. Default: false.
+		enable_servo_slot_diagnostics = false
+		#Sable motor stiffness per effective inertia for Servo and Inverted Servo Bearings. Requires a world/server restart. Range: 0.0 - 10000000.0. Default: 1600.0.
+		# Default: 1600.0
+		# Range: 0.0 ~ 1.0E7
+		servo_stiffness_per_inertia = 1600.0
+		#Sable motor damping per effective inertia for Servo and Inverted Servo Bearings. Requires a world/server restart. Range: 0.0 - 1000000.0. Default: 40.0.
+		# Default: 40.0
+		# Range: 0.0 ~ 1000000.0
+		servo_damping_per_inertia = 40.0
+		#Multiplier for Servo Bearing GUI mode 7 motor stiffness during requested disassembly return-to-zero and physical zero confirmation for all block facings; damping is multiplied by the square root of this value. Requires a world/server restart. Range: 1.0 - 100.0. Default: 4.0.
+		# Default: 4.0
+		# Range: 1.0 ~ 100.0
+		mode_7_disassembly_return_motor_strength_multiplier = 4.0
+		#Multiplier for the commanded Servo Bearing return-to-zero speed during requested disassembly in GUI mode 7. Applies to the full return curve, including its minimum step, and does not change motor or physical safety thresholds. Requires a world/server restart. Range: 0.05 - 10.0. Default: 5.0.
+		# Default: 5.0
+		# Range: 0.05 ~ 10.0
+		disassembly_return_speed_multiplier = 5.0
+		#Multiplier for the commanded Servo and Inverted Servo Bearing return-to-zero speed during requested disassembly in GUI modes 1 to 3. Applies to the full return curve, including its minimum step, and does not change motor or physical safety thresholds. Requires a world/server restart. Range: 0.05 - 10.0. Default: 5.0.
+		# Default: 5.0
+		# Range: 0.05 ~ 10.0
+		disassembly_return_speed_multiplier_modes_1_to_3 = 5.0
+		#Multiplier for the commanded Servo and Inverted Servo Bearing return-to-zero speed during requested disassembly in GUI modes 4 to 6. Applies to the full return curve, including its minimum step, and does not change motor or physical safety thresholds. Requires a world/server restart. Range: 0.05 - 10.0. Default: 5.0.
+		# Default: 5.0
+		# Range: 0.05 ~ 10.0
+		disassembly_return_speed_multiplier_modes_4_to_6 = 5.0
+		#Multiplier applied to Servo Bearing motor stiffness while mounted on an existing propeller-slot sublevel. Requires a world/server restart. Range: 0.0 - 100.0. Default: 4.0.
+		# Default: 4.0
+		# Range: 0.0 ~ 100.0
+		propeller_slot_servo_stiffness_multiplier = 4.0
+		#Multiplier applied to Servo Bearing motor damping while mounted on an existing propeller-slot sublevel. Requires a world/server restart. Range: 0.0 - 100.0. Default: 4.0.
+		# Default: 4.0
+		# Range: 0.0 ~ 100.0
+		propeller_slot_servo_damping_multiplier = 4.0
+		#Sable motor damping per effective inertia in Free Bearing mode for Servo and Inverted Servo Bearings; stiffness remains 0.0. Requires a world/server restart. Range: 0.0 - 1000.0. Default: 0.03.
+		# Default: 0.03
+		# Range: 0.0 ~ 1000.0
+		free_bearing_damping_per_inertia = 0.03
+		#Minimum effective inertia used when scaling Servo and Inverted Servo Bearing Sable motors. Requires a world/server restart. Range: 0.0001 - 1000000.0. Default: 10.0.
+		# Default: 10.0
+		# Range: 1.0E-4 ~ 1000000.0
+		min_effective_inertia = 10.0
+
+	#Diagnostics logging settings. Keep disabled during normal gameplay. Runtime commands can temporarily enable each category without changing this file.
+	[twistermill.diagnostics]
+		#Enable diagnostics logging for Weather Bearing. Default: false.
+		enable_weather_bearing_diagnostics = false
+		#Enable diagnostics logging for Windvane Bearing. Default: false.
+		enable_windvane_bearing_diagnostics = false
+		#Enable diagnostics logging for Servo Bearing. Default: false.
+		enable_servo_diagnostics = false
+		#Enable diagnostics logging for Inverted Servo Bearing. Default: false.
+		enable_inverted_servo_diagnostics = false
+		#Show detailed Aluminum Truss model, blockstate, and tag lines in the F3 Targeted Block debug overlay. Default: false.
+		show_aluminum_truss_debug_overlay = false
+
+	#Windvane Bearing settings
+	[twistermill.windvane_bearing]
+		#Stress capacity generated per Windvane Bearing RPM before the global SU factor is applied. Range: 0.0 - 100000.0. Default: 12.8
+		# Default: 12.8
+		# Range: 0.0 ~ 100000.0
+		su_per_rpm = 12.8
+		#Sable motor stiffness multiplier per effective inertia for Windvane Bearing top rotation. Range: 0.0 - 10000000.0. Default: 1600.0
+		# Default: 1600.0
+		# Range: 0.0 ~ 1.0E7
+		servo_stiffness_per_inertia = 1600.0
+		#Sable motor damping multiplier per effective inertia for Windvane Bearing top rotation. Range: 0.0 - 1000000.0. Default: 40.0
+		# Default: 40.0
+		# Range: 0.0 ~ 1000000.0
+		servo_damping_per_inertia = 40.0
+		#Minimum effective inertia used when scaling the Windvane Bearing Sable motor. Range: 0.0001 - 1000000.0. Default: 10.0
+		# Default: 10.0
+		# Range: 1.0E-4 ~ 1000000.0
+		min_effective_inertia = 10.0
+		#Maximum yaw RPM commanded by Windvane Bearing wind tracking. 0 disables commanded yaw motion. Range: 0 - 256. Default: 6
+		# Default: 6
+		# Range: 0 ~ 256
+		max_yaw_rpm = 6
+		#Yaw target deadzone in degrees for Windvane Bearing tracking. Range: 0.0 - 180.0. Default: 3.6
+		# Default: 3.6
+		# Range: 0.0 ~ 180.0
+		yaw_deadzone_deg = 3.6
+		#Offset applied to the Windvane Bearing wind target in local degrees. Range: -180.0 - 180.0. Default: 0.0
+		# Default: 0.0
+		# Range: -180.0 ~ 180.0
+		yaw_target_offset_deg = 0.0
+		#Minimum tick length for an all-sides Windvane Bearing pulse sequence 0 -> 15 -> 0 to toggle park mode. Range: 1 - 200 ticks. Default: 2
+		# Default: 2
+		# Range: 1 ~ 200
+		pulse_min_ticks = 2
+		#Maximum tick window for an all-sides Windvane Bearing pulse sequence 0 -> 15 -> 0 to toggle park mode. Range: 10 - 60 ticks. Default: 25
+		# Default: 25
+		# Range: 10 ~ 60
+		windvane_bearing_pulse_max_ticks = 25
+		#Cooldown after a Windvane Bearing pulse action. Effective minimum is windvane_bearing_pulse_max_ticks + 10 ticks. Range: 20 - 200 ticks. Default: 60
+		# Default: 60
+		# Range: 20 ~ 200
+		windvane_bearing_pulse_cooldown_ticks = 60
+		#How often Windvane Bearing samples the world wind angle. Range: 1 - 12000 ticks. Default: 60
+		# Default: 60
+		# Range: 1 ~ 12000
+		wind_angle_update_ticks = 60
+		#How often a disassembled Windvane Bearing refreshes placement marker status. Range: 1 - 12000 ticks. Default: 30
+		# Default: 30
+		# Range: 1 ~ 12000
+		placement_status_refresh_ticks_disassembled = 30
+		#How often an assembled Windvane Bearing refreshes placement marker status. Range: 1 - 12000 ticks. Default: 60
+		# Default: 60
+		# Range: 1 ~ 12000
+		placement_status_refresh_ticks_assembled = 60
+		#Proportional yaw controller gain for Windvane Bearing tracking. Range: 0.0 - 10.0. Default: 0.24
+		# Default: 0.24
+		# Range: 0.0 ~ 10.0
+		yaw_controller_gain = 0.24
+		#Maximum yaw acceleration in degrees per tick squared. Range: 0.0 - 360.0. Default: 0.08
+		# Default: 0.08
+		# Range: 0.0 ~ 360.0
+		max_yaw_accel_deg_per_tick2 = 0.08
+		#Minimum non-zero yaw tracking speed in degrees per tick. Range: 0.0 - 360.0. Default: 0.045
+		# Default: 0.045
+		# Range: 0.0 ~ 360.0
+		yaw_min_tracking_speed_deg_per_tick = 0.045
+		#Yaw velocity threshold below which Windvane Bearing counts as stopped. Range: 0.0 - 360.0. Default: 0.025
+		# Default: 0.025
+		# Range: 0.0 ~ 360.0
+		yaw_stop_velocity_deg_per_tick = 0.025
+		#Park-mode zero snap epsilon in degrees. Range: 0.0 - 5.0. Default: 0.0001
+		# Default: 1.0E-4
+		# Range: 0.0 ~ 5.0
+		park_zero_snap_epsilon_deg = 1.0E-4
+		#Return-to-zero speed in degrees per tick before Windvane Bearing disassembles. Range: 0.0001 - 360.0. Default: 1.0
+		# Default: 1.0
+		# Range: 1.0E-4 ~ 360.0
+		disassemble_return_degrees_per_tick = 1.0
+		#Zero-angle epsilon in degrees for Windvane Bearing return-to-zero disassembly. Range: 0.0 - 180.0. Default: 0.5
+		# Default: 0.5
+		# Range: 0.0 ~ 180.0
+		disassemble_zero_epsilon_deg = 0.5
+		#Ticks Windvane Bearing must remain at zero before disassembly proceeds. Range: 1 - 200 ticks. Default: 2
+		# Default: 2
+		# Range: 1 ~ 200
+		disassemble_stable_ticks = 2
+		#Legacy load recovery retry window for Windvane Bearing Sable refresh. Range: 1 - 12000 ticks. Default: 100
+		# Default: 100
+		# Range: 1 ~ 12000
+		sable_load_recovery_ticks = 100
+		#Reload reattach grace window during which retryable Windvane Bearing Sable failures keep the persistent link. Range: 1 - 72000 ticks. Default: 1200
+		# Default: 1200
+		# Range: 1 ~ 72000
+		sable_reload_reattach_grace_ticks = 1200
+		#Minimum diagnostic log interval for retained Windvane Bearing Sable refresh failures. Range: 1 - 12000 ticks. Default: 200
+		# Default: 200
+		# Range: 1 ~ 12000
+		sable_reload_reattach_log_interval_ticks = 200

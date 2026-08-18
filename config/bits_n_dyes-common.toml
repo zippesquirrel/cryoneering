@@ -1,0 +1,23 @@
+#.
+#Options to help improve the behaviour of Bits 'n' Dyes alongside other mods. (Opt-in)
+[compatabilityOptions]
+	#.
+	#Suppresses dyed vaults, package frogports and redstone requesters from other mods in favour of Bits 'n' Dyes' dyeing system. Intended for Create: Vibrant Vaults but may work with other mods with proper tags.
+	suppressExternalDyedLogisticsComponents = true
+
+#.
+#Feature flags to enable or disable certain features of the mod.
+[featureFlags]
+
+	#.
+	#Behaviour feature toggles.
+	[featureFlags.behaviours]
+		#.
+		#Ability to dye fluid components not covered by Bits 'n' Bobs' dyeable pipe and tank behaviours.
+		dyedFluidComponents = true
+		#.
+		#Ability to dye item vaults.
+		dyedVaults = true
+		#.
+		#Ability to dye package frogports and redstone requesters.
+		dyedLogisticsComponents = true

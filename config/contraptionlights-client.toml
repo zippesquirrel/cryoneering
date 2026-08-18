@@ -27,11 +27,11 @@
 #Light cast onto a moving structure by nearby world sources.
 [lightOntoStructures]
 	#Light Create contraptions from nearby dynamic world sources such as held torches, glowing mobs, and dropped glowing items, plus directed or shaped light from LambDynamicLights such as another mod's flashlight or a beacon beam.
-	enableWorldToContraptionLambLight = false
+	enableWorldToContraptionLambLight = true
 	#Light Sable sub-levels from nearby world light: dynamic sources, static blocks like torches, glowstone, and lava, and directed or shaped light from LambDynamicLights such as another mod's flashlight or a beacon beam.
-	enableWorldToSubLevelLambLight = false
+	enableWorldToSubLevelLambLight = true
 	#Light blocks and entities rendered through Flywheel, such as Create kinetics (rotating shafts and cogs) and content from other Flywheel-based mods, from nearby dynamic world sources such as held torches, glowing mobs, and dropped glowing items, plus directed or shaped light from LambDynamicLights such as another mod's flashlight or a beacon beam.
-	enableWorldToFlywheelLight = false
+	enableWorldToFlywheelLight = true
 	#Light contraptions and sub-levels from nearby world light sources.
 	enableWorldToStructureVeilLight = false
 

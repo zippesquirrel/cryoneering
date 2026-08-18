@@ -1,5 +1,5 @@
 {
-  "enabled": true,
+  "enabled": false,
   "scanRadius": 96,
   "blockLights": {
     "minecraft:redstone_torch": {
