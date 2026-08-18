@@ -1,11 +1,7 @@
 config/essentialpatcher-equipped.json
 *.disabled
-mods/Essential_1-4-0-3_neoforge_1-21-1.jar
-mods/essentialpatcher-1.21.1-NeoForge-1.0.7.jar
 config/iris.properties
 config/sodium-fingerprint.json
-mods/essentialpatcher-1.21.1-NeoForge-1.0.7.jar
-mods/essentialpatcher-1.21.1-NeoForge-1.0.7.jar
 config/yacl.json5
 /config/world_preview
 config/trender.json
@@ -75,4 +71,6 @@ ops.json
 command_history.txt
 mods/e4mc*.jar
 mods/Essential*.jar
+mods/essential-patcher*.jar
+resourcepacks/index
 *.bak
