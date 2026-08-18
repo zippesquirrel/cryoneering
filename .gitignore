@@ -14,6 +14,7 @@ config/necronomicon.json5
 config/lithium.properties
 /config/jei
 /config/jade
+debug
 config/item_obliterator.json5
 config/iris.properties
 config/immediatelyfast.json
