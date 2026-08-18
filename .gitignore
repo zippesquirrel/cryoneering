@@ -36,6 +36,7 @@ config/essentialpatcher.json
 /.pg-native
 /.sable
 /cache
+.cache
 usernamecache.json
 usercache.json
 servers.essential.dat
