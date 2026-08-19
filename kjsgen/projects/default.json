@@ -1,0 +1,74 @@
+{
+  "format": 1,
+  "name": "default",
+  "defaultTargetFile": "kjsgen_recipes",
+  "exportComments": true,
+  "reloadOnExport": true,
+  "recipes": [
+    {
+      "uid": "0cfe0655-58a5-48aa-ad60-81b81e0a0914",
+      "type": "kjsgen:shaped",
+      "recipeId": "neopona:stew_pot",
+      "slots": {
+        "output": {
+          "kind": "ITEM",
+          "id": "caupona:stew_pot"
+        },
+        "in3": {
+          "kind": "ITEM_TAG",
+          "id": "c:plates/iron"
+        },
+        "in6": {
+          "kind": "ITEM_TAG",
+          "id": "c:plates/iron"
+        },
+        "in7": {
+          "kind": "ITEM_TAG",
+          "id": "c:plates/iron"
+        },
+        "in8": {
+          "kind": "ITEM_TAG",
+          "id": "c:plates/iron"
+        },
+        "in5": {
+          "kind": "ITEM_TAG",
+          "id": "c:plates/iron"
+        },
+        "in2": {
+          "kind": "ITEM_TAG",
+          "id": "c:plates/iron"
+        },
+        "in0": {
+          "kind": "ITEM_TAG",
+          "id": "c:plates/iron"
+        }
+      },
+      "params": {}
+    },
+    {
+      "uid": "358d052b-f384-4c83-ae4f-bc3bd6c1a6c7",
+      "type": "kjsgen:shaped",
+      "slots": {
+        "in3": {
+          "kind": "ITEM_TAG",
+          "id": "c:plates/iron"
+        },
+        "in7": {
+          "kind": "ITEM_TAG",
+          "id": "c:plates/iron"
+        },
+        "in5": {
+          "kind": "ITEM_TAG",
+          "id": "c:plates/iron"
+        },
+        "output": {
+          "kind": "ITEM",
+          "id": "minecraft:bowl",
+          "count": 4
+        }
+      },
+      "params": {}
+    }
+  ],
+  "removals": []
+}

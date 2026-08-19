@@ -77,3 +77,4 @@ mods/essential-patcher*.jar
 resourcepacks/index
 *.bak
 fancymenu_data/last_world.fmdata
+/resourcepacks/.index
