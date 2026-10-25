@@ -170,6 +170,11 @@
 	# └── Format: ["item_id", "item_id", ...etc]
 	# ⌄ 
 	"Insulation Blacklist" = []
+	#─────────────────────────────────────────────────────────────────────────//v
+	# Defines the items that provide insulation when worn in a curio slot
+	# See Insulation Ingredients for formatting. This setting does not have a "fillSlots" option
+	# ⌄ 
+	"Insulating Curios" = []
 
 [Consumables]
 	#─────────────────────────────────────────────────────────────────────────//v

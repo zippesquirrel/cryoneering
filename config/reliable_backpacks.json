@@ -1,0 +1,8 @@
+{
+  "enable_accessories_integration": true,
+  "enable_curios_integration": true,
+  "enable_trinkets_integration": true,
+  "enable_entity_stealing": true,
+  "enable_chest_slot": false,
+  "backpack_rows": 2
+}

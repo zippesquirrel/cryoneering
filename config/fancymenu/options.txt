@@ -8,7 +8,7 @@ B:play_vanilla_menu_music = 'true';
 ##[customization]
 
 B:modpack_mode = 'false';
-B:show_customization_overlay = 'false';
+B:show_customization_overlay = 'true';
 B:advanced_customization_mode = 'false';
 
 
@@ -137,7 +137,7 @@ B:show_welcome_screen = 'false';
 
 ##[keyframe_editor]
 
-B:arrow_keys_move_preview = 'false';
+B:arrow_keys_move_preview = 'true';
 
 
 ##[advanced]

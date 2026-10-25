@@ -11,8 +11,8 @@ debug_draw_loaded_chunks = false
 # Range: 0.0 ~ 100.0
 sub_level_snapshot_interpolation_delay_ticks = 1.5
 #The renderer to use for sub-levels
-#Allowed Values: SODIUM_REACHAROUND
-sub_level_renderer = "SODIUM_REACHAROUND"
+#Allowed Values: VANILLA
+sub_level_renderer = "VANILLA"
 #The zoom sensitivity for sub-level camera types
 # Default: 0.2
 # Range: 0.0 ~ 100.0

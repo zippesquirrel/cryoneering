@@ -1,0 +1,19 @@
+#How peripherals find their computer
+[linking]
+	#Let a monitor or keyboard link to a computer just by touching it.
+	#Off by default, so a Peripheral Cable is needed even when blocks are side by side.
+	adjacentLinking = false
+
+[screen]
+	#Remove CC cursor blinking screen, default is true
+	alwaysLive = false
+
+#Fun additions you might want to turn off if youre boring.
+[funsies]
+	#Should cats lie on keyboards when you are using them (Rare), its very cute but can be a bit destructive with Keyboard Smash.
+	catsLieOnKeyboards = true
+	#Should cats fight over keyboards, if turned off the first one to get there wins.
+	#Doesnt work very well, sometimes no cat will end up lying down on it, they will all just stand there.
+	catsFightForKeyboards = false
+	#Should entities walking on keyboards, as well as punching a keyboard, press random keys.
+	keyboardSmash = true

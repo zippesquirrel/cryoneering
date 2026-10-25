@@ -1,0 +1,17 @@
+==== papi leak report ====
+time: 2026-08-19T12:12:17.208109800
+heap used: 6019 MiB
+heap total: 8312 MiB
+heap max: 12288 MiB
+
+-- GC --
+G1 Young Generation count=94 timeMs=2605
+G1 Concurrent GC count=62 timeMs=471
+G1 Old Generation count=0 timeMs=0
+
+-- Watched sizes --
+SophisticatedCore ItemStackKey.CACHE size: n/a
+
+-- Client model system --
+ModelManager BlockState->int map size: n/a
+baked model map #1: size=286823 exampleValue=net.frozenblock.glowtone.neoforge.render.NeoForgeEmissiveModel multipartCount=0

@@ -1,6 +1,9 @@
 // This runs immediately when the script loads
 console.info("Client script loaded!");
 
+
+
+
 // Function to send data to the server
 function sendToServer() {
     // Use Client.player to send a packet to the server side

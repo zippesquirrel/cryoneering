@@ -1,0 +1,13 @@
+ServerEvents.recipes(event => {
+  event.recipes.createdieselgenerators
+    .distillation(
+      [
+        Fluid.of("createdieselgenerators:diesel", 50),
+        Fluid.of("createdieselgenerators:gasoline", 50),
+        Fluid.of("kubejs:polyurethane",50)
+      ],
+      Fluid.of("createdieselgenerators:crude_oil", 100)
+    )
+    .processingTime(100)
+    .heated();
+})

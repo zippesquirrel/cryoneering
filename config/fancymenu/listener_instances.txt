@@ -1,2 +1,12 @@
 type = listener_instances
 
+listener_instance {
+  listener_instance_identifier = 3770f6d6-5635-40a3-ae0a-5d96c82406f6-1787199199362
+  listener_provider_identifier = player_death
+  listener_instance_action_script_identifier = b662fefa-81ec-4c04-80ee-02eaed4a6abe-1787199199362
+  [executable_action_instance:cfe73fa5-5620-495c-a47a-6805a992115f-1787199205395][action_type:set_variable] = days:$$days_survived
+  [executable_action_instance:7e0d7e1c-b732-473b-9730-9097e753a3e4-1787199396416][action_type:set_variable] = death_reason:$$death_reason_string
+  [executable_action_instance:89ff4909-e974-49c5-9cd1-add6d7612d49-1787199722263][action_type:set_variable] = death_time:{"placeholder":"world_daytime_hour"}:{"placeholder":"world_daytime_minute"}
+  [executable_block:b662fefa-81ec-4c04-80ee-02eaed4a6abe-1787199199362][type:generic] = [executables:cfe73fa5-5620-495c-a47a-6805a992115f-1787199205395;7e0d7e1c-b732-473b-9730-9097e753a3e4-1787199396416;89ff4909-e974-49c5-9cd1-add6d7612d49-1787199722263;]
+}
+

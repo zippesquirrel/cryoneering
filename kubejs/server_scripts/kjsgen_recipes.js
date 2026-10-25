@@ -11,6 +11,45 @@ ServerEvents.recipes(event => {
   event.remove({ output: 'minecraft:bowl' })
   event.shaped('4x minecraft:bowl', ['A A', ' A '], {
       A: '#c:plates/iron'
-    })
+    }).id('neopona:metal_bowl')
+  if (Platform.isLoaded('create')) {
+    // caupona:gravy_boat
+    event.remove({ output: 'caupona:gravy_boat' })
+    event.recipes.create.filling('caupona:gravy_boat', ['caupona:gravy_boat[minecraft:damage=5]', Fluid.of('electroenergetics:plant_oil', 250)]).id('neopona:ee_oil_jug_refilling')
+  }
+  if (Platform.isLoaded('create')) {
+    // caupona:gravy_boat
+    event.remove({ output: 'caupona:gravy_boat' })
+    event.recipes.create.filling('caupona:gravy_boat', ['caupona:gravy_boat[minecraft:damage=5]', Fluid.of('createdieselgenerators:plant_oil', 250)]).id('neopona:dg_oil_jug_refilling')
+  }
+  if (Platform.isLoaded('create')) {
+    // caupona:gravy_boat
+    event.remove({ output: 'caupona:gravy_boat' })
+    event.recipes.create.filling('caupona:gravy_boat', ['caupona:gravy_boat[minecraft:damage=5]', Fluid.of('immersiveengineering:plantoil', 250)]).id('neopona:ie_oil_jug_refilling')
+  }
+  // caupona:gravy_boat
+  event.remove({ output: 'caupona:gravy_boat' })
+  event.shapeless(Item.of('caupona:gravy_boat[minecraft:damage=5]'), ['minecraft:glass_bottle']).id('neopona:glass_bottle_to_empty_oil_jug_copy')
+  // minecraft:glass_bottle
+  event.remove({ output: 'minecraft:glass_bottle' })
+  event.shapeless('minecraft:glass_bottle', ['caupona:gravy_boat[minecraft:damage=5]']).id('neopona:empty_oil_jug_to_glass_bottle_copy')
+  if (Platform.isLoaded('create')) {
+    // caupona:gravy_boat
+    event.remove({ output: 'caupona:gravy_boat' })
+    event.recipes.create.filling('caupona:gravy_boat', ['minecraft:glass_bottle', Fluid.of('createdieselgenerators:plant_oil', 250)]).id('neopona:dg_glass_bottle_oil_filling')
+  }
+  if (Platform.isLoaded('create')) {
+    // caupona:gravy_boat
+    event.remove({ output: 'caupona:gravy_boat' })
+    event.recipes.create.filling('caupona:gravy_boat', ['minecraft:glass_bottle', Fluid.of('electroenergetics:plant_oil', 250)]).id('neopona:ee_glass_bottle_oil_filling')
+  }
+  if (Platform.isLoaded('create')) {
+    // caupona:gravy_boat
+    event.remove({ output: 'caupona:gravy_boat' })
+    event.recipes.create.filling('caupona:gravy_boat', ['minecraft:glass_bottle', Fluid.of('immersiveengineering:plantoil', 250)]).id('neopona:ie_glass_bottle_oil_filling')
+  }
+  // cold_sweat:goat_fur
+  event.remove({ output: 'cold_sweat:goat_fur' })
+  event.shapeless('cold_sweat:goat_fur', ['minecraft:feather', 'minecraft:feather'])
 })
 // kjsgen:end default

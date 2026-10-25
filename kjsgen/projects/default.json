@@ -48,6 +48,7 @@
     {
       "uid": "358d052b-f384-4c83-ae4f-bc3bd6c1a6c7",
       "type": "kjsgen:shaped",
+      "recipeId": "neopona:metal_bowl",
       "slots": {
         "in3": {
           "kind": "ITEM_TAG",
@@ -64,6 +65,185 @@
         "output": {
           "kind": "ITEM",
           "id": "minecraft:bowl",
+          "count": 4
+        }
+      },
+      "params": {}
+    },
+    {
+      "uid": "40822605-a23a-4108-bdbf-462b7459dcf0",
+      "type": "kjsgen:create_filling",
+      "recipeId": "neopona:ee_oil_jug_refilling",
+      "slots": {
+        "base": {
+          "kind": "ITEM",
+          "id": "caupona:gravy_boat",
+          "components": "minecraft:damage\u003d5"
+        },
+        "output": {
+          "kind": "ITEM",
+          "id": "caupona:gravy_boat"
+        },
+        "fluid": {
+          "kind": "FLUID",
+          "id": "electroenergetics:plant_oil",
+          "amount": 250
+        }
+      },
+      "params": {}
+    },
+    {
+      "uid": "2fe6ea50-f5ee-49c2-bff9-e37231969545",
+      "type": "kjsgen:create_filling",
+      "recipeId": "neopona:dg_oil_jug_refilling",
+      "slots": {
+        "base": {
+          "kind": "ITEM",
+          "id": "caupona:gravy_boat",
+          "components": "minecraft:damage\u003d5"
+        },
+        "output": {
+          "kind": "ITEM",
+          "id": "caupona:gravy_boat"
+        },
+        "fluid": {
+          "kind": "FLUID",
+          "id": "createdieselgenerators:plant_oil",
+          "amount": 250
+        }
+      },
+      "params": {}
+    },
+    {
+      "uid": "8f4732b7-c84a-4fb9-8740-49715fa53344",
+      "type": "kjsgen:create_filling",
+      "recipeId": "neopona:ie_oil_jug_refilling",
+      "slots": {
+        "base": {
+          "kind": "ITEM",
+          "id": "caupona:gravy_boat",
+          "components": "minecraft:damage\u003d5"
+        },
+        "output": {
+          "kind": "ITEM",
+          "id": "caupona:gravy_boat"
+        },
+        "fluid": {
+          "kind": "FLUID",
+          "id": "immersiveengineering:plantoil",
+          "amount": 250
+        }
+      },
+      "params": {}
+    },
+    {
+      "uid": "876ed08b-665f-4fc3-b58a-41ebef33737a",
+      "type": "kjsgen:shapeless",
+      "recipeId": "neopona:glass_bottle_to_empty_oil_jug_copy",
+      "slots": {
+        "in0": {
+          "kind": "ITEM",
+          "id": "minecraft:glass_bottle"
+        },
+        "output": {
+          "kind": "ITEM",
+          "id": "caupona:gravy_boat",
+          "components": "minecraft:damage\u003d5"
+        }
+      },
+      "params": {}
+    },
+    {
+      "uid": "9f52b03e-b9c7-441d-adf5-e591ae3066e6",
+      "type": "kjsgen:shapeless",
+      "recipeId": "neopona:empty_oil_jug_to_glass_bottle_copy",
+      "slots": {
+        "output": {
+          "kind": "ITEM",
+          "id": "minecraft:glass_bottle"
+        },
+        "in0": {
+          "kind": "ITEM",
+          "id": "caupona:gravy_boat",
+          "components": "minecraft:damage\u003d5"
+        }
+      },
+      "params": {}
+    },
+    {
+      "uid": "3b296ba2-6def-4ddc-b08a-466fb335b887",
+      "type": "kjsgen:create_filling",
+      "recipeId": "neopona:dg_glass_bottle_oil_filling",
+      "slots": {
+        "base": {
+          "kind": "ITEM",
+          "id": "minecraft:glass_bottle"
+        },
+        "output": {
+          "kind": "ITEM",
+          "id": "caupona:gravy_boat"
+        },
+        "fluid": {
+          "kind": "FLUID",
+          "id": "createdieselgenerators:plant_oil",
+          "amount": 250
+        }
+      },
+      "params": {}
+    },
+    {
+      "uid": "dfa3fc7f-e48f-4782-a3b2-7675ee4b8c6f",
+      "type": "kjsgen:create_filling",
+      "recipeId": "neopona:ee_glass_bottle_oil_filling",
+      "slots": {
+        "fluid": {
+          "kind": "FLUID",
+          "id": "electroenergetics:plant_oil",
+          "amount": 250
+        },
+        "base": {
+          "kind": "ITEM",
+          "id": "minecraft:glass_bottle"
+        },
+        "output": {
+          "kind": "ITEM",
+          "id": "caupona:gravy_boat"
+        }
+      },
+      "params": {}
+    },
+    {
+      "uid": "6967d821-6cab-4c01-8524-64da5db84df3",
+      "type": "kjsgen:create_filling",
+      "recipeId": "neopona:ie_glass_bottle_oil_filling",
+      "slots": {
+        "base": {
+          "kind": "ITEM",
+          "id": "minecraft:glass_bottle"
+        },
+        "output": {
+          "kind": "ITEM",
+          "id": "caupona:gravy_boat"
+        },
+        "fluid": {
+          "kind": "FLUID",
+          "id": "immersiveengineering:plantoil",
+          "amount": 250
+        }
+      },
+      "params": {}
+    },
+    {
+      "uid": "51c2bb2e-e2fb-4b78-a82d-02be6d04e076",
+      "type": "kjsgen:shapeless",
+      "slots": {
+        "output": {
+          "kind": "ITEM",
+          "id": "cold_sweat:goat_fur"
+        },
+        "in0": {
+          "kind": "ITEM",
+          "id": "minecraft:feather",
           "count": 4
         }
       },

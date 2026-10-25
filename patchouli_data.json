@@ -8,7 +8,35 @@
         "caupona:intro/stove",
         "caupona:intro/lead_cookwares",
         "caupona:intro/lead",
-        "caupona:intro/counter_with_dolium"
+        "caupona:intro/counter_with_dolium",
+        "caupona:sautee_recipes/huevos_pericos",
+        "caupona:tweaks/dispenser",
+        "caupona:tweaks/water_interaction",
+        "caupona:worldgen/plants",
+        "caupona:worldgen/volcanic_fumarole",
+        "caupona:resting/oil",
+        "caupona:intro/skimmer",
+        "caupona:intro/frying_pans",
+        "caupona:intro/sauteed_dishes",
+        "caupona:intro/road",
+        "caupona:intro/chimney",
+        "caupona:intro/hypocaust",
+        "caupona:intro/spices",
+        "caupona:intro/mosaic_tiles",
+        "caupona:intro/situla",
+        "caupona:intro/jei"
+      ],
+      "bookmarks": [
+        {
+          "entry": "caupona:sautee_recipes/huevos_pericos",
+          "page": 0
+        }
+      ],
+      "completedManualQuests": []
+    },
+    "advancedperipherals:manual": {
+      "viewedEntries": [
+        "advancedperipherals:peripherals/environment_detector"
       ],
       "bookmarks": [],
       "completedManualQuests": []

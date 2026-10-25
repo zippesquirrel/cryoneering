@@ -1,12 +1,24 @@
 {
   "recent": {
     "ITEM": [
+      "minecraft:feather",
+      "cold_sweat:goat_fur",
+      "caupona:gravy_boat",
+      "minecraft:glass_bottle",
       "minecraft:bowl",
       "create:iron_sheet",
       "caupona:stew_pot"
     ],
     "ITEM_TAG": [
       "c:plates/iron"
+    ],
+    "FLUID": [
+      "immersiveengineering:plantoil",
+      "createdieselgenerators:plant_oil",
+      "electroenergetics:plant_oil"
+    ],
+    "FLUID_TAG": [
+      "c:plantoil"
     ]
   },
   "favorites": {}

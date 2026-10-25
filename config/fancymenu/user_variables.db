@@ -1,14 +1,68 @@
 type = user_variables
 
 variable {
-  name = days
-  value = 353
+  name = u_id
+  value = bac6d256ec934470998b5e527286fce8
   reset_on_launch = false
 }
 
 variable {
-  name = snow
+  name = u_id_b10
+  value = 13458675807221400688
+  reset_on_launch = false
+}
+
+variable {
+  name = custom_name
+  value = danger dino 30
+  reset_on_launch = false
+}
+
+variable {
+  name = form_onscreen
   value = true
+  reset_on_launch = false
+}
+
+variable {
+  name = death_time
+  value = 15:32
+  reset_on_launch = false
+}
+
+variable {
+  name = days
+  value = 0
+  reset_on_launch = false
+}
+
+variable {
+  name = OpenJDK 64-Bit Server VMu_id_b10
+  value = 802199590636
+  reset_on_launch = false
+}
+
+variable {
+  name = death_reason
+  value = Fuzzie_Jeff froze to death
+  reset_on_launch = false
+}
+
+variable {
+  name = form_visible
+  value = true
+  reset_on_launch = false
+}
+
+variable {
+  name = u_id_cropped
+  value = bac6d256ec
+  reset_on_launch = false
+}
+
+variable {
+  name = u_id_hyphen
+  value = 1345-6758-7221-0068-
   reset_on_launch = false
 }
 
